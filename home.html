@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel="stylesheet" href="./styles/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+    <script>
+        $(function() {
+            $('input[type=radio][name=trip-type]').change(function() {
+                var returnPicker = $("#return-container");
+                if (this.value == 'round-trip') {
+                    returnPicker.show();
+                } else {
+                    returnPicker.hide();
+                }
+            });
+
+            $(".datepicker").datepicker();
+        });
+    </script>
+</head>
+<body>
+<header>
+    <div id="travel-alerts"></div>
+    <div id="logo">
+        <!--<img src="placeholder-logo.png" width="170" height="50"/>-->
+        <span id="title">Vacation Planner</span>
+    </div>
+    <div id="nav">
+        <ul class="nav-links">
+            <li>Flights</li>
+            <li>Hotels</li>
+            <li>Rentals</li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </div>
+</header>
+<div id="section">
+    <form>
+        <span id="plan-your-flight">Plan Your Flight!</span>
+        <div id="trip-type-container">
+            <label class="radio-label" for="round-trip">Round Trip</label>
+            <input class="radio-input" id="round-trip" type="radio" name="trip-type" value="round-trip" checked/>
+            <label class="radio-label" for="one-way">One Way</label>
+            <input class="radio-input" id="one-way" type="radio" name="trip-type" value="one-way"/>
+        </div>
+
+        <br style="clear:both;"/>
+
+        <div id="trip-location-container">
+            <div id="from-container">
+                <label class="input-label" for="from">From</label>
+                <input class="home-input" id="from" type="text" name="from" value=""/>
+            </div>
+            <div id="to-container">
+                <label class="input-label" for="to">To</label>
+                <input class="home-input" id="to" type="text" name="to" value=""/>
+            </div>
+        </div>
+
+        <br style="clear:both;"/>
+
+        <div id="trip-time-container">
+            <div id="depart-container">
+                <label class="input-label" for="depart-input">Depart:</label>
+                <input class="home-input datepicker" id="depart-input" type="text" name="datepicker">
+            </div>
+            <div id="return-container">
+                <label class="input-label" for="return-input">Return:</label>
+                <input class="home-input datepicker" id="return-input" type="text" name="datepicker">
+            </div>
+        </div>
+
+        <br style="clear:both;"/>
+
+        <div id="trip-passengers-container">
+            <label id="adult-label" class="input-label" for="adults">Adults</label>
+            <select id="adults" name="adults">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+            </select>
+            <label id="children-label" class="input-label" for="children">Children</label>
+            <select id="children" name="children">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+            </select>
+        </div>
+
+        <button id="search-flights" type="submit" name="submitButton" value="search-flights">Search Flights</button>
+    </form>
+</div>
+<footer>
+    <p>© 2016</p>
+</footer>
+</body>
+</html>
