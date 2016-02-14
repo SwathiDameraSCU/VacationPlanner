@@ -2,23 +2,18 @@ package controllers;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import play.*;
-import play.api.data.ObjectMapping;
 import play.mvc.*;
-
 import views.html.*;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+
 
 public class Application extends Controller
 {
@@ -32,22 +27,32 @@ public class Application extends Controller
 
     public Result getFlights()
     {
-        JSONObject object = new JSONObject();
+        boolean roundTrip = Boolean.parseBoolean(request().getQueryString("round-trip"));
 
+        JSONObject object = new JSONObject();
         JSONObject requestObject = new JSONObject();
 
         JSONArray sliceArray = new JSONArray();
         JSONObject sliceArrayObjectOne = new JSONObject();
-        sliceArrayObjectOne.put("origin", "SFO");
-        sliceArrayObjectOne.put("destination", "JFK");
-        sliceArrayObjectOne.put("date", "2016-02-09");
+        sliceArrayObjectOne.put("origin", request().getQueryString("origin"));
+        sliceArrayObjectOne.put("destination", request().getQueryString("destination"));
+        sliceArrayObjectOne.put("date", request().getQueryString("departure-date"));
         sliceArray.put(sliceArrayObjectOne);
 
+        if(roundTrip)
+        {
+            JSONObject sliceArrayObjectTwo = new JSONObject();
+            sliceArrayObjectTwo.put("origin", request().getQueryString("destination"));
+            sliceArrayObjectTwo.put("destination", request().getQueryString("origin"));
+            sliceArrayObjectTwo.put("date", request().getQueryString("arrival-date"));
+            sliceArray.put(sliceArrayObjectTwo);
+        }
+
         JSONObject passengerObject = new JSONObject();
-        passengerObject.put("adultCount", 1);
+        passengerObject.put("adultCount", request().getQueryString("adult-count"));
         passengerObject.put("infantInLapCount", 0);
         passengerObject.put("infantInSeatCount", 0);
-        passengerObject.put("childCount", 0);
+        passengerObject.put("childCount", request().getQueryString("child-count"));
         passengerObject.put("seniorCount", 0);
 
         requestObject.put("slice",sliceArray);
