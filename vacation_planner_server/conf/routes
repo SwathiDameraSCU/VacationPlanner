@@ -11,3 +11,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /flights                   controllers.Application.getFlights()
 
 GET     /airports                   controllers.Application.getAirports()
+
+POST    /bookings                  controllers.Application.bookings()
+
+GET     /bookings/:bookingId         controllers.Application.bookingDetails(bookingId: String)

@@ -18,3 +18,4 @@ routesGenerator := InjectedRoutesGenerator
 
 libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.5.1"
 libraryDependencies += "org.json" % "json" % "20151123"
+libraryDependencies += "org.mongodb" % "mongo-java-driver" % "3.2.1"

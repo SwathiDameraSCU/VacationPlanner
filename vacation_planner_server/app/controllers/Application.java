@@ -1,13 +1,18 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.mongodb.util.JSON;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import com.mongodb.*;
 import play.mvc.*;
 import views.html.*;
 import java.io.BufferedReader;
@@ -19,6 +24,10 @@ public class Application extends Controller
 {
     private static final String SITAAPIKey="d9d8fd5403a18c8121b86c50a71d58b8";
     private static final String qpxExpressKey="AIzaSyClbK0I0qMsVgd2rKJxz5u9pXNHyu2UguA";
+
+    private static MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+    private static DB db= mongoClient.getDB("Vacation_Planner");
+    private static DBCollection dbBookingsCollection = db.getCollection("Bookings");
 
     public Result index()
     {
@@ -220,6 +229,38 @@ public class Application extends Controller
         }
     }
 
+    public Result bookings()
+    {
+        JsonNode json = request().body().asJson();
+        if(json == null)
+        {
+            return badRequest("Expecting Json data");
+        }
+        else
+        {
+            BasicDBObject doc= new BasicDBObject("details",JSON.parse(json.toString()));
+            dbBookingsCollection.insert(doc);
+            String bookingId = doc.getString("_id");
+            doc.put("booking_id", bookingId);
+            doc.remove("_id");
+            return created(doc.toString());
+        }
+    }
+
+    public Result bookingDetails(final String bookingId)
+    {
+        BasicDBObject query = new BasicDBObject();
+
+        query.put("_id", new ObjectId(bookingId));
+        DBObject doc = dbBookingsCollection.findOne(query);
+
+        if(doc == null)
+            return notFound(bookingId);
+
+        doc.put("booking_id", bookingId);
+        doc.removeField("_id");
+        return ok(doc.toString());
+    }
 
 }
 
