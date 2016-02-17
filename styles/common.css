@@ -1,0 +1,422 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+.header {
+    /*font-family: Tahoma, Geneva, sans-serif;*/
+    font: bold 16px "Lucida Grande", "Verdana", sans-serif;
+    /*background-color: #00796B;*/
+    background: ##00796b;
+     /* Opera 11.10+ */
+    background: -o-linear-gradient(to top, #66aea6, #66aea6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
+    background: -moz-linear-gradient(to top,  #66aea6,  #00796b);
+    background: -ms-linear-gradient(to top,  #66aea6,  #00796b);
+    /* Newer Browsers */
+    background: linear-gradient(to top,#66aea6,  #00796b);
+    width: 100%;
+    padding: 0;
+    /*overflow:auto;*/
+    display: block;
+    /*height: 70px;*/
+}
+body {
+    background-color: #B2DFDB;
+    margin: 0;
+    width: 100%;
+}
+.bgColor {
+background: ##00796b;
+      /* Opera 11.10+ */
+     background: -o-linear-gradient(to top, #66aea6, #66aea6);
+     background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
+     background: -moz-linear-gradient(to top,  #66aea6,  #00796b);
+     background: -ms-linear-gradient(to top,  #66aea6,  #00796b);
+     /* Newer Browsers */
+     background: linear-gradient(to top,#66aea6,  #00796b);
+     height:60px;
+}
+.logo-image {
+    /*background: url('../images/Picture2.png') no-repeat;*/
+
+   	display: block;
+   	-moz-box-sizing: border-box;
+   	box-sizing: border-box;
+/*   	background: url('../images/Picture2.png') no-repeat;*/
+    width: 150px;
+    height: 50px;
+    /*padding-top: 8px;*/
+}
+.red {
+    color: red;
+}
+.grey {
+    color:#e5e5e5;
+}
+.alert {
+    width: 100%;
+    font-family: "trebuchet ms", Georgia,"Times New Roman";
+    text-align: center;
+}
+
+.backWhite {
+    background-color: white;
+}
+.col-1 {
+    width: 60%;
+    display: inline-block;
+    height:100%
+}
+.col-2 {
+    width: 40%;
+    float:right;
+    font-family: "trebuchet ms", Georgia,"Times New Roman";
+    color:white;
+    height: 100%
+}
+
+.nav-div {
+    height:60px;
+}
+#nav {
+    float: left;
+}
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+    float: left;
+}
+
+#nav li {
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    padding: 19px 21px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /*border: solid white;
+    border-width: 0 1px 0 1px;*/
+    float: left;
+}
+
+/*#nav li:hover {
+    border-color: #4DB6AC;
+    border-bottom-style: solid;
+    background-color: #009688;
+}*/
+#nav li a input {
+  display: none;
+}
+
+
+#nav li a label {
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+
+#nav li a label:before {
+  font-family: fontawesome;
+  color: white;
+  font-weight: normal;
+}
+
+#nav li a label[for*='1']:before { content: '\f072'; }
+#nav li a label[for*='2']:before { content: '\f1b9'; }
+#nav li a label:hover {
+text-decoration: underline;
+  cursor: pointer;
+}
+/*span.rentals {
+position:relative;
+}
+span.rentals:before {
+        content: '\f16b';
+}
+#nav ul.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+#nav ul.nav-links a:before {
+    content: '\f16b';
+}*/
+
+
+
+#nav ul.nav-links a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+#right-nav {
+    float: right;
+}
+
+div.custom-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+    float: right;
+}
+div.custom-dropdown ul li {
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    width: 15%;
+}
+/*#right-nav li:hover {
+     border-color: #4DB6AC;
+     border-bottom-style: solid;
+     background-color: #009688;
+}*/
+div.custom-dropdown ul li a {
+    text-decoration: none;
+    color: white;
+}
+div.custom-dropdown ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer {
+     background: ##00796b;
+      /* Opera 11.10+ */
+     background: -o-linear-gradient(to top, #66aea6, #66aea6);
+     background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
+     background: -moz-linear-gradient(to top,  #66aea6,  #00796b);
+     background: -ms-linear-gradient(to top,  #66aea6,  #00796b);
+     /* Newer Browsers */
+     background: linear-gradient(to top,#66aea6,  #00796b);
+     clear:left;
+     margin-top: 60px;
+     font-size: 13px;
+     text-align: left;
+     font-family: "trebuchet ms", Georgia,"Times New Roman";
+     padding-top: 15px;
+     padding-left:15px;
+     color: white;
+}
+.footer ul.footer-nav-links {
+    padding-left: 0;
+}
+.footer ul.footer-nav-links li {
+    list-style: none;
+    display: inline;
+    float: left;
+}
+.footer ul.footer-nav-links li.marginLeft {
+    margin-left:15px;
+}
+.footer ul.footer-nav-links li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.footer ul.footer-nav-links li a:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+div.custom-dropdown ul li a {
+	/*display: block;*/
+	/*float: left;*/
+	height: 17px;
+	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	-webkit-text-stroke: 1px transparent;
+	font: bold 14px "Lucida Grande", "Verdana", sans-serif;
+	color: rgba(255,255,255,.85);
+	text-decoration: none;
+	width: 100%;
+}
+div.custom-dropdown ul li a.selected {
+	background: #829db4 !important;
+}
+/* Advanced Checkbox Hack to achieve responsive Navigation in Small screens */
+body {
+    -webkit-animation: bugfix infinite 1s;
+}
+input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 100%;
+}
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(4); /* IE */
+  -moz-transform: scale(4); /* FF */
+  -webkit-transform: scale(4); /* Safari and Chrome */
+  -o-transform: scale(4); /* Opera */
+}
+label {
+    display: none;
+    cursor: pointer;
+}
+div.custom-dropdown {
+    position: relative;
+    /*width: 100%;*/
+}
+div.custom-dropdown a, div.custom-dropdown label {
+    color: white;
+    text-decoration: none;
+    font: 1.4em sans-serif;
+    padding: 22px 0px;
+}
+div.custom-dropdown ul {
+    padding: 0;
+    margin: 0 auto;
+    /*width: 100%;*/
+    list-style: none;
+}
+div.custom-dropdown ul > li {
+    /*float: left;*/
+    /*width: 20%;*/
+   background: #00796b;
+    /* Opera 11.10+ */
+   background: -o-linear-gradient(to top, #66aea6, #66aea6);
+   background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
+   background: -moz-linear-gradient(to top,  #66aea6,  #00796b);
+   background: -ms-linear-gradient(to top,  #66aea6,  #00796b);
+   /* Newer Browsers */
+   background: linear-gradient(to top,#66aea6,  #00796b);
+	text-align: center;
+    /*transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    transition-property: box-shadow, color;
+    box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35);*/
+    cursor: pointer;
+}
+div.custom-dropdown ul > li:hover {
+    /*background-color: rgba(0, 0, 0, 0.85);*/
+    /*background-color: #00544a;*/
+    /*background: #00544a;*/
+    color: #fff;
+    /*box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35), inset 0 0 0 2em rgba(0, 0, 0, 0.3);*/
+}
+div.custom-dropdown ul > li:hover > a {
+    color: #fff;
+}
+div.custom-dropdown ul > li.selected {
+    background: #00544a !important;
+}
+div.custom-dropdown input[type=checkbox]:checked ~ ul > li.selected {
+    background: #00544a !important;
+}
+div.custom-dropdown ul > li a.selected {
+    background: #00544a !important;
+}
+div.custom-dropdown input[type=checkbox]:checked ~ ul > li a.selected {
+    background: #00544a !important;
+}
+
+/* small screens */
+@media screen and (max-width: 44em) {
+    html,
+    body {
+        margin: 0;
+        font-size:0.9em;
+    }
+    .logo-image {
+            display: block;
+           -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            background: url("../images/logo-name-only.jpg") no-repeat;
+            clip: rect(0px,60px,200px,0px);
+            width: 70px;
+            height: 50px;
+            padding-top: 8px;
+        }
+    .bgColor {
+        height: 50px;
+    }
+
+    div.custom-dropdown ul {
+        display: none;
+        height: 100%;
+    }
+    div.custom-dropdown ul li {
+        padding: 10px;
+    }
+    .right-nav-links {
+         display: none;
+         height: 100%;
+    }
+    div.custom-dropdown ul li a {
+        font-size: 12px;
+    }
+    div.custom-dropdown ul li a.selected {
+	    background: #006c60 !important;
+    }
+    div.custom-dropdown label {
+        position: relative;
+        display: block;
+        /*width: 100%;*/
+        width: 50%;
+        float:right;
+        min-height: 1em;
+        font-size: 1.1em;
+        margin: 0;
+        background: ##00796b;
+         /* Opera 11.10+ */
+        background: -o-linear-gradient(to top, #66aea6, #66aea6);
+        background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
+        background: -moz-linear-gradient(to top,  #66aea6,  #00796b);
+        background: -ms-linear-gradient(to top,  #66aea6,  #00796b);
+        /* Newer Browsers */
+        background: linear-gradient(to top,#66aea6,  #00796b);
+        /*padding: 23px;*/
+        padding: 17px;
+    }
+    div.custom-dropdown label:after {
+        position: absolute;
+        right: .25em;
+        top: .5em;
+        /*top: 0;*/
+        content: "\2261";
+        font-size: 2em;
+    }
+    div.custom-dropdown input[type=checkbox]:checked ~ label:after {
+        color: #222;
+    }
+    div.custom-dropdown input[type=checkbox]:checked ~ ul {
+
+        z-index: 1;
+    clear:both;
+        display: block;
+          width: 50%;
+    }
+    div.custom-dropdown input[type=checkbox]:checked ~ ul > li {
+        width: 100%;
+        opacity: .8;
+        text-align: left;
+        font-size:0.8em;
+    }
+    /*div.custom-dropdown input[type=checkbox]:checked ~ ul > li:after {
+        position: absolute;
+        right: .25em;
+        content: "\203A";
+        font: bold 1.4em sans-serif;
+    }*/
+    div.custom-dropdown ul > li:hover a {
+        /*background-color: rgba(0, 0, 0, 0.85);*/
+        color: #fff;
+        /*box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35), inset 0 0 0 2em rgba(0, 0, 0, 0.3);*/
+    }
+    label {
+        font-size: 0;
+    }
+    label:before {
+        margin: 0;
+        font-size: 20px;
+    }
+}

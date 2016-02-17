@@ -1,46 +1,20 @@
-header {
-    font-family: Tahoma, Geneva, sans-serif;
+/*.header {
+    /*font-family: Tahoma, Geneva, sans-serif;*/
+    font-family: "trebuchet ms", Georgia,"Times New Roman";
     background-color: #00796B;
     width: 100%;
     padding: 0;
     overflow:auto;
-}
-
+}*/
 body {
     margin: 0;
 }
-
-
 #nav, #logo{
     display: inline-block;
 }
-
-#nav {
-    float: right;
-}
-
 #logo {
     float: left;
 }
-
-
-#nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: inline;
-    float: right;
-}
-
-
-#nav li:hover {
-    border-color: #4DB6AC;
-    border-bottom-style: solid;
-    background-color: #009688;
-}
-
-
 .input-label {
     color: #009688;
     text-transform: uppercase;
@@ -48,41 +22,19 @@ body {
     font-size: 14px;
     width: 50px;
 }
-
 .home-input {
     font-size: 28px;
     font-weight: 700;
 }
-
-
-#nav li {
-    font-family: 'Waiting for the Sunrise', sans-serif;
-    font-size: 20px;
-    display: inline-block;
-    padding: 19px 21px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border: solid white;
-    border-width: 0 1px 0 1px;
-    float: left;
-}
-
-
 #from-container, #to-container, #depart-container, #return-container{
     float: left;
 }
-
 #trip-time-container {
     margin-top: 20px;
 }
-
-
-
 .input-label, .home-input {
     display: block;
 }
-
 #trip-passengers-container, #adult-label, #children-label, button {
     display: inline;
 }
@@ -100,7 +52,6 @@ form {
 #section {
     background-color: #B2DFDB;
 }
-
 button {
     background-color: #00796B;
     border: none;
@@ -138,9 +89,4 @@ label {
     color: white;
     padding: 19px 21px;
     text-align: center;
-}
-
-a {
-    text-decoration: none;
-    color: white;
 }
