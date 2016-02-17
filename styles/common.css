@@ -389,11 +389,10 @@ div.custom-dropdown input[type=checkbox]:checked ~ ul > li a.selected {
         color: #222;
     }
     div.custom-dropdown input[type=checkbox]:checked ~ ul {
-
         z-index: 1;
-    clear:both;
+        clear:both;
         display: block;
-          width: 50%;
+        width: 50%;
     }
     div.custom-dropdown input[type=checkbox]:checked ~ ul > li {
         width: 100%;
