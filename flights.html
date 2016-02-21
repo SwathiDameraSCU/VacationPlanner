@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade101 - Vacation Planner</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/home.css">  
+     
+    <link rel="stylesheet" href="styles/flights.css">       
+    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>  
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+</head>
+<body>
+<header>
+    <div id="travel-alerts" class="backWhite red alert">
+        Flights to New York are delayed due to weather conditions
+    </div>
+    <div class="bgColor">
+    <div class="header col-1">
+        <div class="nav-div">
+            <div id="logo">
+                <img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
+                <!--<img class="logo-image" alt="Escapade Logo"/>-->
+                <!--<span id="title">Vacation Planner</span>-->
+            </div>
+            <nav>
+                <div id="nav" class="nav">
+                    <ul class="nav-links">
+                        <li><a href="home.html" class="selected">
+                            <input id="tab1" type="radio" name="tabs" checked>
+                            <label for="tab1"> Flights</label>
+                        </a></li>
+                        <li><a href="rentals.html" class="selected">
+                            <input id="tab2" type="radio" name="tabs" checked>
+                            <label for="tab2"> Rentals</label>
+                        </a></li>
+                        <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
+                        <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+    </div>
+    <div class="col-2">
+    <nav>
+        <div id="right-nav" class="right-nav custom-dropdown">
+            <input type="checkbox" checked="false" id="button">
+            <label for="button"></label>
+            <ul class="right-nav-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    </div>
+</header>
+
+<div id="radioDiv"> 
+	<input type="radio" id="rb1" name="rb" value="" checked>Round Trip
+	<input type="radio" id="rb2" name="rb" value="" >One Way
+</div>
+
+<div class="SearchBox">
+     <div class="searchDiv">
+             <input type="text" class="SearchInputBox" id="source" value="Source" disabled="disabled"/>
+	     <input type="text" class="SearchInputBox" id="dest" value="Destination" disabled="disabled"/>
+	     <input type="text" class="SearchInputBox" id="datepicker1"/>
+	     <input type="text" class="SearchInputBox" id="datepicker2"/> 
+	     <input type="button" id="searchButton" value="Search" class="button"/>
+    </div>
+
+</div>
+
+<div id="selection" class="selectDiv">
+	<h1> Select your departure to </h1>
+ </div>
+<div>
+<form>
+ 
+ <div>
+ <table id="data2" class="bordered"></table>
+ </div>
+
+</form>
+
+
+<footer>
+    <div class="footer">
+        <nav>
+            <div class="footer-nav">
+                <ul class="footer-nav-links">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li class="marginLeft"><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        </br></br>
+        <span class="grey">© 2016 All Rights Reserved</span>
+    </div>
+</footer>
+
+ <script type="text/javascript">
+	$(document).ready(function(){
+ 		$("#selection").hide();
+		$("#data2").hide();
+	});
+              $('#searchButton').click(function() {
+			 //isoDateReviver("2016-02-09T18:20-08:00");
+				
+                    $("#selection").show();
+		    $("#data2").show();
+					//If anything is already there we are removing all rows using remove
+                    $("#data2").children().remove();
+			//here instead of flight.js u can pass json array also
+                    $.getJSON( "flights.json", function( response ) {
+					
+					
+					var table='<table ><tr><th>Source</th><th>Destination</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Price</th><th>Select</th></tr>';
+					
+					var len=response.options.length;					
+					
+					for(var i=0;  i<len; i++)
+					{
+
+						var opt=response.options[i];
+						var duration=0;
+						var source=null;
+						var via='-';
+						var dest=null;
+						var dept_time=0;
+						var arrival_time=0;
+						var nm=0;
+						var len_=opt.leg.length;
+
+						for(var j=0;j<opt.leg.length;j++)
+						{						
+							var flig=opt.leg[j];
+							$.each(flig,function(key,val)
+							{
+							   	if(nm!=0)	{
+									source+='<br>'+val.origin;
+									console.log(source);
+									dest+='<br>'+val.destination;
+									duration+='<br>'+calDuration(val.duration);
+									arrival_time+='<br>'+getTime(val.arrivalTime);									
+									dept_time+='<br>'+getTime(val.departureTime);
+									
+								 }else{
+									source=val.origin;
+									dest=val.destination;
+									duration+=calDuration(val.duration);
+									arrival_time=getTime(val.arrivalTime);
+									dept_time=getTime(val.departureTime);
+									nm+=1;
+								}
+									
+							});
+	
+						}
+						table+='<tr class="flight"><td>'+source+'</td><td>'+dest+'</td><td>'+dept_time+'</td><td>'+arrival_time+'</td><td>'+duration+'</td>';
+				var price= (response.options[i].totalSales).replace("USD".toUpperCase(),"$ ");
+                    	table+='<td>'+price+'</td>';
+		    	        table+='<td><input type="button" class ="gridButton" value = "select" onclick="onButtonSelect(\''+source+'\',\''+dest+'\',\''+dept_time+'\',\''+arrival_time+'\',\''+duration+'\',\''+price+'\');"></input></td></tr>';		
+		    
+				}
+					 table+="</table>";
+					$('#data2').append(table);
+		
+				});
+                }); 
+		
+		// function for button click
+		function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price){
+			//var row = $(this).find('td:first').text();
+			alert("origin :" + origin + ", Duration :" + duration);
+			window.document.location.href = 'review.html?origin='+origin+'&destination='+destination+'&departureTime='+departureTime+'&arrivalTime='+arrivalTime+'&duration='+duration+'&price='+price;
+
+		}
+  
+$(function() {
+    $( "#datepicker1" ).datepicker();
+  });
+$(function() {
+    $( "#datepicker2" ).datepicker();
+  });
+
+function getTime(dateTime) {
+	var d = new Date(dateTime);
+	var n = d.toLocaleTimeString();
+	return n;
+}
+
+function calDuration(mins){ 
+    var m = mins % 60;
+    var	h = (mins-m)/60;
+    var HRSMINS = h.toString() + "hr " + (m<10?"0":"") + m.toString() +"min";
+    return HRSMINS;
+}
+
+ </script>
+
+</body>
+</html>
+</body>
+</html>
