@@ -1,4 +1,4 @@
-package controllers;
+package data.airports;
 
 /**
  * Created by kanikaagrawal on 2/6/16.
@@ -12,6 +12,4 @@ public class Airport
     public String timezone;
     public Float lat;
     public Float lng;
-    public String terminal;
-    public String gate;
 }

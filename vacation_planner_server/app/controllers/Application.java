@@ -1,7 +1,11 @@
 package controllers;
 
+import base.StringExtensions;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.mongodb.util.JSON;
+import data.airports.Airport;
+import data.airports.AirportClient;
+import data.airports.AirportsResponse;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -22,17 +26,13 @@ import java.util.HashMap;
 
 public class Application extends Controller
 {
-    private static final String SITAAPIKey="d9d8fd5403a18c8121b86c50a71d58b8";
     private static final String qpxExpressKey="AIzaSyClbK0I0qMsVgd2rKJxz5u9pXNHyu2UguA";
 
     private static MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
     private static DB db= mongoClient.getDB("Vacation_Planner");
     private static DBCollection dbBookingsCollection = db.getCollection("Bookings");
 
-    public Result index()
-    {
-        return ok(index.render("Your new application is ready."));
-    }
+    private static final AirportClient airportClient = new AirportClient();
 
     public Result getFlights()
     {
@@ -178,52 +178,20 @@ public class Application extends Controller
     {
         try
         {
-            String url = "https://airport.api.aero/airport?user_key="+ SITAAPIKey;
+            final AirportsResponse airportsResponse =  airportClient.getAirports();
+            if(!airportsResponse.success)
+                return internalServerError(airportsResponse.errorMessage);
 
-            HttpClient client = HttpClientBuilder.create().build();
-            HttpGet request = new HttpGet(url);
+            final HashMap<String, String> airports = new HashMap<>();
+            for(final Airport airport: airportsResponse.airports)
+                if(airport!=null && StringExtensions.isNotNullOrEmpty(airport.name) &&
+                        StringExtensions.isNotNullOrEmpty(airport.code))
+                    airports.put(airport.code, airport.name);
 
-            request.addHeader("ACCEPT", "application/json");
-
-            HttpResponse response = client.execute(request);
-
-            BufferedReader rd = new BufferedReader(
-                    new InputStreamReader(response.getEntity().getContent()));
-
-            StringBuffer result = new StringBuffer();
-            String line = "";
-
-            while ((line = rd.readLine()) != null) {
-                result.append(line);
-            }
-
-            JSONObject obj = new JSONObject(result.toString());
-            JSONArray arr = obj.getJSONArray("airports");
-
-            HashMap<String, String> airports = new HashMap<>();
-            for(int i = 0;i < arr.length();i++)
-            {
-                JSONObject currAirport = arr.getJSONObject(i);
-
-                if(currAirport!=null)
-                {
-                    if(currAirport.has("name") && currAirport.has("code") && currAirport.get("name") instanceof String
-                            && currAirport.get("code") instanceof String)
-                    {
-                        String airportName = currAirport.getString("name");
-                        String airportCode = currAirport.getString("code");
-                        airports.put(airportCode, airportName);
-
-                    }
-                }
-            }
-
-            JSONObject airportsObj = new JSONObject(airports);
+            final JSONObject airportsObj = new JSONObject(airports);
             return ok(airportsObj.toString());
-
         }
-
-        catch(Exception ex)
+        catch(final Exception ex)
         {
             return internalServerError(ex.getMessage());
         }
