@@ -1,4 +1,6 @@
-package data.airports;
+package data.airports.response;
+
+import data.airports.request.Airport;
 
 import java.util.List;
 

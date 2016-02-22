@@ -1,4 +1,6 @@
 package data.airports;
+import data.airports.response.AirportsResponse;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;

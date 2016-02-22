@@ -1,4 +1,4 @@
-package data.airports;
+package data.airports.request;
 
 /**
  * Created by kanikaagrawal on 2/6/16.
