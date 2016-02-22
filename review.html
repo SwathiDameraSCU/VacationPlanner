@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade101 - Vacation Planner</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/review.css">
+    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'> 
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body onload="renderDate();setValues();">
+<header>
+    <div id="travel-alerts" class="backWhite red alert">
+        Flights to New York are delayed due to weather conditions
+    </div>
+    <div class="bgColor">
+    <div class="header col-1">
+        <div class="nav-div">
+            <div id="logo">
+                <img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
+                <!--<img class="logo-image" alt="Escapade Logo"/>-->
+                <!--<span id="title">Vacation Planner</span>-->
+            </div>
+            <nav>
+                <div id="nav" class="nav">
+                    <ul class="nav-links">
+                        <li><a href="home.html" class="selected">
+                            <input id="tab1" type="radio" name="tabs" checked>
+                            <label for="tab1"> Flights</label>
+                        </a></li>
+                        <li><a href="rentals.html" class="selected">
+                            <input id="tab2" type="radio" name="tabs" checked>
+                            <label for="tab2"> Rentals</label>
+                        </a></li>
+                        <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
+                        <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+    </div>
+    <div class="col-2">
+    <nav>
+        <div id="right-nav" class="right-nav custom-dropdown">
+            <input type="checkbox" checked="false" id="button">
+            <label for="button"></label>
+            <ul class="right-nav-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    </div>
+</header>
+
+<div id="alignBody">
+	<div>
+	
+ 	<div id="div1">
+		<h1> Review your trip </h1>
+	</div>
+	
+	<div id="div2">
+		<p id="p1"><span id="para1">Nice Job! You picked one of our cheapest flights.</span><br>
+		<span id="para2">Book now so you don't miss out on this price!</span></p>
+	</div>
+	<div id="div3">
+		<div id="div4">
+			<span id="dateDisplay"></span>		
+		</div>
+
+		<div id="div5">
+			<span id="span3"> From </span></br>
+			<span id="span4"> To </span>
+		</div>
+		<div id="div6">
+			<span id="span5"> </span></br>
+			<span id="span6"> </span>
+		</div>
+	</div>
+	
+	</div>	
+	
+	<section class="dynamic">
+       
+   	</section>
+
+	<div class="searchBtn">
+		<input type="button" id="searchButton" value="Continue Booking" class="button"/>
+	</div>	
+	</div>
+	
+	
+</div>
+<footer>
+    <div class="footer">
+        <nav>
+            <div class="footer-nav">
+                <ul class="footer-nav-links">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li class="marginLeft"><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        </br></br>
+        <span class="grey">© 2016 All Rights Reserved</span>
+    </div>
+</footer>
+<script>
+
+function renderDate(){ 
+	var mydate= new Date();
+	var year = mydate.getYear();
+	if(year < 1000){
+	 year += 1900;
+	}
+	var day = mydate.getDay();
+	var month = mydate.getMonth();
+	var daym = mydate.getDate();
+	var dayarray = new Array("Sun","Mon","Tue", "Wed", "Thur", "Fri", "Sat");
+	var montharray = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	
+	$('#dateDisplay').append(""+dayarray[day] + ", " +daym+ " " +montharray[month]);
+}
+
+function setValues(){ 
+	var origin;
+	var destination;
+	var departureTime;
+	var arrivalTime;
+	var duration;
+	var price;
+	if (typeof(Storage) !== "undefined") {
+	// Store
+	origin = (localStorage.getItem("origin")).split(",");
+	destination = (localStorage.getItem("destination")).split(",");
+	departureTime = (localStorage.getItem("departureTime")).split(",");
+	arrivalTime = (localStorage.getItem("arrivalTime")).split(",");
+	duration = (localStorage.getItem("duration")).split(",");
+	price = (localStorage.getItem("price")).split(",");
+	} else {
+		alert( "Sorry, your browser does not support Web Storage!!");
+	}
+	//alert(origin);
+	//alert("1"+origin.length);
+	for (var i = 0; i < origin.length; i++) {
+	$('.dynamic').append("<section id='sec1'><div class='deptArrDur' id='dept'>"+departureTime[i]+"</div><div class='org'>"+origin[i]+"</div></section><section><div></div></section><section><div id='arr' class='deptArrDur'>"+arrivalTime[i]+"</div><div id='dest'>"+destination[i]+"</div></section><section><div id='dur' class='deptArrDur'>"+duration[i]+"</div></section><br><br><br><br>");
+	}
+		
+	//document.getElementById('price').innerHTML="Total Price : " +price;
+	document.getElementById('span5').innerHTML=""+origin[0];
+	document.getElementById('span6').innerHTML=""+destination[destination.length-1];
+	}
+
+
+</script>
+</body>
+</html>
+</body>
+</html>

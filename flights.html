@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
@@ -122,7 +122,7 @@
 		    $("#data2").show();
 					//If anything is already there we are removing all rows using remove
                     $("#data2").children().remove();
-			//here instead of flight.js u can pass json array also
+			
                     $.getJSON( "flights.json", function( response ) {
 					
 					
@@ -183,8 +183,31 @@
 		// function for button click
 		function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price){
 			//var row = $(this).find('td:first').text();
-			alert("origin :" + origin + ", Duration :" + duration);
-			window.document.location.href = 'review.html?origin='+origin+'&destination='+destination+'&departureTime='+departureTime+'&arrivalTime='+arrivalTime+'&duration='+duration+'&price='+price;
+			//alert("origin :" + origin + ", Duration :" + duration);
+			//window.document.location.href = 'review.html?origin='+origin+'&destination='+destination+'&departureTime='+departureTime+'&arrivalTime='+arrivalTime+'&duration='+duration+'&price='+price;
+			var splitOrigin = origin.split("<br>");
+var splitDestination = destination.split("<br>");
+var splitDepartureTime = departureTime.split("<br>");
+var splitArrivalTime = arrivalTime.split("<br>");
+var splitDuration = duration.split("<br>");
+var splitPrice = price.split("<br>");
+//alert(splitOrigin.length);
+
+if (typeof(Storage) !== "undefined") {
+// Store
+localStorage.setItem("origin", splitOrigin);
+localStorage.setItem("destination", splitDestination);
+localStorage.setItem("departureTime", splitDepartureTime);
+localStorage.setItem("arrivalTime", splitArrivalTime);
+localStorage.setItem("duration", splitDuration);
+    localStorage.setItem("price", splitPrice);
+} else {
+alert( "Sorry, your browser does not support Web Storage...");
+}
+
+//alert("origin :" + origin + ", Duration :" + duration);
+window.document.location.href = 'review.html';
+
 
 		}
   
