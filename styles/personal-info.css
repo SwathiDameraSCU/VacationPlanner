@@ -1,0 +1,33 @@
+#enter-your-info {
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 50px;
+}
+
+#personal-info {
+    text-align: center;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center; /* align horizontal */
+    flex-direction: column;
+}
+
+#personal-info input {
+    display: inline;
+    margin-bottom: 15px;
+}
+
+#personal-info button {
+    float: none;
+}

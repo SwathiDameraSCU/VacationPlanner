@@ -3,7 +3,7 @@
     /*font-family: Tahoma, Geneva, sans-serif;*/
     font: bold 16px "Lucida Grande", "Verdana", sans-serif;
     /*background-color: #00796B;*/
-    background: ##00796b;
+    background: #00796b;
      /* Opera 11.10+ */
     background: -o-linear-gradient(to top, #66aea6, #66aea6);
     background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
@@ -23,7 +23,7 @@ body {
     width: 100%;
 }
 .bgColor {
-background: ##00796b;
+    background: #00796b;
       /* Opera 11.10+ */
      background: -o-linear-gradient(to top, #66aea6, #66aea6);
      background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
@@ -186,7 +186,7 @@ div.custom-dropdown ul li a:hover {
     cursor: pointer;
 }
 .footer {
-     background: ##00796b;
+     background: #00796b;
       /* Opera 11.10+ */
      background: -o-linear-gradient(to top, #66aea6, #66aea6);
      background: -webkit-gradient(linear, left top, left bottom, from(#66aea6), to#66aea6);
@@ -318,6 +318,24 @@ div.custom-dropdown ul > li a.selected {
 div.custom-dropdown input[type=checkbox]:checked ~ ul > li a.selected {
     background: #00544a !important;
 }
+
+.text-input label{
+    display: block;
+    color: #009688;
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: 100%;
+}
+
+.text-input input{
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+}
+
+
 
 /* small screens */
 @media screen and (max-width: 44em) {
