@@ -82,7 +82,7 @@ public class Application extends Controller
                         {
                             final LegDetails legDetail =
                                     new LegDetails(leg.departureTime, leg.arrivalTime, leg.destination, leg.duration,
-                                            leg.origin, segment.connectionDuration);
+                                            leg.origin, segment.connectionDuration, segment.flight.carrier, segment.flight.number);
 
                             legDetails.add(legDetail);
                         }
