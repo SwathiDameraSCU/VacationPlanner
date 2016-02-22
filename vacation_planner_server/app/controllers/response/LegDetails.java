@@ -19,9 +19,11 @@ public class LegDetails
     public final String destination;
     public final String origin;
     public final int connectionDuration;
+    public final String carrier;
+    public final int number;
 
     public LegDetails(final Date departureTime, final Date arrivalTime, final String destination,
-                      final int duration, final String origin, final int connectionDuration)
+                      final int duration, final String origin, final int connectionDuration, final String carrier, final int number)
     {
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
@@ -29,5 +31,7 @@ public class LegDetails
         this.destination = destination;
         this.origin = origin;
         this.connectionDuration = connectionDuration;
+        this.carrier = carrier;
+        this.number = number;
     }
 }
