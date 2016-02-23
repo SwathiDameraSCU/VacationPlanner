@@ -58,17 +58,23 @@
     </div>
     </div>
 </header>
-
+<div>
 <div id="alignBody">
+<section class="left">
 	<div>
 	
  	<div id="div1">
 		<h1> Review your trip </h1>
 	</div>
-	
+	<!--<div id="tripAmount">
+		<span> Trip Total: </span><span id="displayPrice"> </span>
+	</div>-->
 	<div id="div2">
-		<p id="p1"><span id="para1">Nice Job! You picked one of our cheapest flights.</span><br>
-		<span id="para2">Book now so you don't miss out on this price!</span></p>
+		<div id="tickDiv"><img src="images/tick.png" alt="Tick Image"/>
+		<span id="para1">Nice Job! You picked one of our cheapest flights.</span><br>
+		<span id="para2">Book now so you don't miss out on this price!</span>
+		</div>
+		<div></div>
 	</div>
 	<div id="div3">
 		<div id="div4">
@@ -84,20 +90,30 @@
 			<span id="span6"> </span>
 		</div>
 	</div>
-	
 	</div>	
-	
+
 	<section class="dynamic">
        
    	</section>
+	</section>
+<section class="right">
 
-	<div class="searchBtn">
-		<input type="button" id="searchButton" value="Continue Booking" class="button"/>
-	</div>	
+<section>
+<p> <h3> Trip Total </h3></p>
+	<div id="tripAmount" class="styleDiv">
+		<span id="displayPrice"> </span>
 	</div>
-	
+</section>
+
+</section>
+	<div class="searchBtn">
+		<input type="button" id="searchButton" value="Continue Booking" class="button" onclick="nextPage();"/>
+	</div>	
+	</div>	
+</div>
 	
 </div>
+
 <footer>
     <div class="footer">
         <nav>
@@ -153,10 +169,14 @@ function setValues(){
 	$('.dynamic').append("<section id='sec1'><div class='deptArrDur' id='dept'>"+departureTime[i]+"</div><div class='org'>"+origin[i]+"</div></section><section><div></div></section><section><div id='arr' class='deptArrDur'>"+arrivalTime[i]+"</div><div id='dest'>"+destination[i]+"</div></section><section><div id='dur' class='deptArrDur'>"+duration[i]+"</div></section><br><br><br><br>");
 	}
 		
-	//document.getElementById('price').innerHTML="Total Price : " +price;
 	document.getElementById('span5').innerHTML=""+origin[0];
 	document.getElementById('span6').innerHTML=""+destination[destination.length-1];
-	}
+	document.getElementById('displayPrice').innerHTML =" "+price;
+}
+
+function nextPage(){
+	window.document.location.href = 'personal-info.html';
+}
 
 
 </script>
