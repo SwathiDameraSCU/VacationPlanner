@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 </head>
 <body>
@@ -180,12 +181,12 @@
 				});
                 }); 
 		
-		// function for button click
-		function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price){
+// function for button click
+function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price){
 			//var row = $(this).find('td:first').text();
 			//alert("origin :" + origin + ", Duration :" + duration);
 			//window.document.location.href = 'review.html?origin='+origin+'&destination='+destination+'&departureTime='+departureTime+'&arrivalTime='+arrivalTime+'&duration='+duration+'&price='+price;
-			var splitOrigin = origin.split("<br>");
+var splitOrigin = origin.split("<br>");
 var splitDestination = destination.split("<br>");
 var splitDepartureTime = departureTime.split("<br>");
 var splitArrivalTime = arrivalTime.split("<br>");
@@ -214,6 +215,7 @@ window.document.location.href = 'review.html';
 $(function() {
     $( "#datepicker1" ).datepicker();
   });
+
 $(function() {
     $( "#datepicker2" ).datepicker();
   });
@@ -230,6 +232,19 @@ function calDuration(mins){
     var HRSMINS = h.toString() + "hr " + (m<10?"0":"") + m.toString() +"min";
     return HRSMINS;
 }
+
+function setHomeDetails(){
+ 
+	var origin;
+	var destination;
+	
+	//if (typeof(Storage) !== "undefined") {
+	// get home details
+	//origin = (localStorage.getItem("origin"));
+	//destination = (localStorage.getItem("destination"));
+	//}
+}
+
 
  </script>
 
