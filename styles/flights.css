@@ -97,3 +97,9 @@ padding-right: 10px;
     padding-right: 10px;
     text-align: center;
 }
+
+#datepicker1{
+    background-image: url(http://i988.photobucket.com/albums/af3/mudassarkhan/calender.png);
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
