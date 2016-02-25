@@ -1,0 +1,196 @@
+#alignBody {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 10%;
+    font-family: 'Waiting for the Sunrise', sans-serif; 
+    height: 100%;
+}
+
+#p1{
+	float: left;	
+}
+
+#tripAmount{
+	font-weight: bold;
+	font-size : 1.2em;
+	height: 100%;
+	width:100%;
+	//margin-left: 50%;
+}
+
+#div2{
+margin-top: 2%;
+margin-bottom: 2%;
+height: 100%;
+width: 100%;
+}
+
+#div3{
+ height: 100px;
+ margin-top: 8%;
+ margin-bottom: 2%;
+width: 100%;
+}
+
+#div4{
+float: left;
+}
+
+#dept{
+float: left;
+margin-top: 0%;
+width: 100%;
+}
+
+#arr{
+float: left;
+}
+
+#div5{
+float: left;
+margin-left: 3%;
+}
+
+#div6{
+float: left;
+margin-left: 3%;
+}
+#p1{
+width: 100%;
+}
+
+#tickDiv{
+ background-color: #CCFFCC;
+}
+
+#tickDiv img{
+width : 1%;
+height: 1%;
+}
+
+section { 
+    float:left;
+    height: 100%;
+}
+
+.searchBtn{
+ 	/*margin-top: 15%;
+	margin-bottom: 2%;
+	width:100%;
+	height: 100%;*/
+	margin-top: 2%;
+    	margin-bottom: 2%;
+    	width: 100%;
+    	height: 100%;
+    	float: left;
+}
+
+.deptArrDur{
+	font-family: 'Papyrus', sans-serif; 
+	font-size: 1.1em;
+}
+
+#arr{
+	margin-left: 160%;
+	font-size: 1.1em;
+	width: 100%;
+}
+
+#dest{
+	margin-left: 160%;
+	font-size: 1.1em;
+	width: 100%;
+}
+
+#dur{
+	margin-left: 250%;
+	font-size: 1.1em;
+	width: 100%;
+}
+
+#para1{
+	font-size: 1.5em;
+	font-weight: bold;
+	width: 100%;
+}
+
+#dateDisplay{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#para2{
+	font-size: 1em;
+	width: 100%;
+	padding: 2%;
+}
+
+
+#span3{
+	margin-left: 12%;
+	font-size: 1.1em;
+}
+
+#span4{
+	margin-left: 12%;
+	font-size: 1.1em;
+}
+
+#span5{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#span6{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #00796b;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #4ca197}
+
+.button:active {
+  background-color: #4ca197;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.left{
+float:left;
+width:80%;
+padding:2%;
+}
+
+.right{
+float:right;
+width:10%;
+padding:3%;
+}
+
+div.styleDiv {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 3%;
+}
+
+div#tickDiv{
+  border-left: 3px solid green;
+  padding: 1%;
+  color: green;
+}
+	

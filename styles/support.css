@@ -1,0 +1,127 @@
+body {
+  margin:0px;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+}
+h1, h2, h3, h4, h5, h6, a {
+  margin:0; padding:0;
+}
+.login {
+  margin:0 auto;
+  max-width:500px;
+}
+form {
+    padding: 2%;
+}
+.login-form label {
+  text-align:left;
+  color:#3e779d;
+  display:block;
+  font-weight:bold;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+   font-size:16px;
+   padding-left:30px;
+}
+.login-form {
+  box-sizing:border-box;
+  padding-top:15px;
+  margin:20px auto 20px 15px;
+  text-align:center;
+  overflow: hidden;
+}
+.login-form h4 {
+    font-family: "trebuchet ms", Georgia,"Times New Roman";
+    color:#3e779d;
+    font-weight:bold;
+    font-size:16px;
+}
+.login input[type=text] {
+  width: 80%;
+  max-width:400px;
+  height:30px;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  margin:10px 0;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+  font-size:14px;
+}
+.login textarea {
+  width: 80%;
+  max-width:400px;
+  height:60px;
+  /*font-family: 'Ubuntu', sans-serif;*/
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  margin:10px 0;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+  font-size:14px;
+}
+.login-form input[type=submit] {
+  height:30px;
+  width:100px;
+  background: #3e779d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+  background: -moz-linear-gradient(to top,  #65a9d7,  #3e779d);
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  cursor:pointer;
+  margin-top: 10px;
+}
+/*Media Querie*/
+/*@media only screen and (min-width : 150px) and (max-width : 530px){
+  .login-form h3 {
+    text-align:center;
+    margin:0;
+  }
+  .sign-up, .no-access {
+    margin:10px 0;
+  }
+  .login-button {
+    margin-bottom:10px;
+  }
+}*/
+#support-div {
+    clear: left;
+	padding: 5px;
+	width: 100%;
+	/*margin: 20px auto;*/
+}
+#support-content {
+    /*margin-top: 20px;*/
+    /*padding-top: 20px;*/
+    width:60%;
+    float:left;
+}
+#other-support-content {
+    float: left;
+    margin-top: 20px;
+    color:#3e779d;
+    padding-left: 20px;
+    padding-top: 30px;
+
+}
+#other-support-content ul {
+    list-style: none;
+    padding-left:10px;
+    margin:0;
+    font-family: "trebuchet ms", Georgia,"Times New Roman";
+}
+li.noSquare {
+    list-style: none;
+    content: " ";
+    padding-left: 10px;
+}
+/*ul.square li:before {
+    content: "\2022";
+}*/
+ul.noSquare li:before {
+    list-style: none;
+    content: " ";
+    padding-left: 10px;
+}

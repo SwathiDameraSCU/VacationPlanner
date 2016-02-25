@@ -1,0 +1,96 @@
+body {
+  margin:0px;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+}
+h1, h2, h3, h4, h5, h6, a {
+  margin:0; padding:0;
+}
+#form-payment {
+    margin:0;
+}
+.payment-form label {
+clear:left;
+  text-align:left;
+  color:#3e779d;
+  display:block;
+  font-weight:bold;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+   font-size:16px;
+   padding-left:30px;
+}
+.payment-form {
+  box-sizing:border-box;
+  /*padding-top:15px;
+  margin:20px auto 20px 15px;*/
+  text-align:center;
+  overflow: hidden;
+  float:left;
+}
+.payment-form input[type=text] {
+  width: 80%;
+  max-width:400px;
+  height:30px;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  margin:10px 0;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+  font-size:14px;
+}
+.payment-form textarea {
+  width: 80%;
+  max-width:400px;
+  height:60px;
+  /*font-family: 'Ubuntu', sans-serif;*/
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  margin:10px 0;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+  font-size:14px;
+}
+.payment-form input[type=submit] {
+  height:30px;
+  width:120px;
+  background: #3e779d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+  background: -moz-linear-gradient(to top,  #65a9d7,  #3e779d);
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  cursor:pointer;
+  margin-top: 10px;
+}
+
+#payment-div {
+    clear: left;
+	padding: 5px;
+	width: 50%;
+}
+.payment-icons {
+    float: left;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+.clearLeft {
+clear:left;
+}
+.fa-cc-amex {
+    color:#0ebfe9;
+}
+.fa-cc-visa {
+    color:0ebfe9;
+}
+.fa-cc-discover {
+    color:#801919;
+}
+.fa-cc-diners-club {
+    color:#0080ff;
+}
+.fa-cc-mastercard {
+    color:#ccac00;
+}

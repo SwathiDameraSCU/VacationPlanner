@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+#nav, #logo{
+    display: inline-block;
+}
+#logo {
+    float: left;
+}
+.input-label {
+    color: #009688;
+    text-transform: uppercase;
+    display: inline;
+    font-size: 14px;
+    width: 50px;
+}
+.home-input {
+    font-size: 28px;
+    font-weight: 700;
+}
+#from-container, #to-container, #depart-container, #return-container{
+    float: left;
+}
+#trip-time-container {
+    margin-top: 20px;
+}
+.input-label, .home-input {
+    display: block;
+}
+#trip-passengers-container, #adult-label, #children-label, button {
+    display: inline;
+}
+
+#to-container, #return-container, button {
+    float: right;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 7%;
+}
+
+#section {
+    background-color: #B2DFDB;
+}
+button {
+    background-color: #00796B;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #4DB6AC;
+}
+
+#plan-your-flight {
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 50px;
+}
+
+label {
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-weight: bold;
+    display: inline;
+}
+
+#title {
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    padding: 19px 21px;
+    text-align: center;
+}
