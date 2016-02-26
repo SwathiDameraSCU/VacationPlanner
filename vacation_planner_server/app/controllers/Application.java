@@ -98,6 +98,8 @@ public class Application extends Controller
             final ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(out, flightResponse);
 
+            response().setHeader("Access-Control-Allow-Origin", "*");
+
             return ok(out.toString());
         }
         catch (Exception ex)
@@ -121,6 +123,9 @@ public class Application extends Controller
                     airports.put(airport.code, airport.name);
 
             final JSONObject airportsObj = new JSONObject(airports);
+
+            response().setHeader("Access-Control-Allow-Origin", "*");
+
             return ok(airportsObj.toString());
         }
         catch(final Exception ex)
@@ -143,6 +148,7 @@ public class Application extends Controller
             String bookingId = doc.getString("_id");
             doc.put("booking_id", bookingId);
             doc.remove("_id");
+            response().setHeader("Access-Control-Allow-Origin", "*");
             return created(doc.toString());
         }
     }
@@ -159,6 +165,8 @@ public class Application extends Controller
 
         doc.put("booking_id", bookingId);
         doc.removeField("_id");
+
+        response().setHeader("Access-Control-Allow-Origin", "*");
         return ok(doc.toString());
     }
 
