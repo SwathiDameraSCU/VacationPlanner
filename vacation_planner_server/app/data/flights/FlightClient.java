@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class FlightClient
 {
-    private static final String QPX_EXPRESS_KEY="AIzaSyClbK0I0qMsVgd2rKJxz5u9pXNHyu2UguA";
+    private static final String QPX_EXPRESS_KEY= "AIzaSyDcNsU4mGpKqI22r7fNN0kI3MNrSZafZhc";  //"AIzaSyClbK0I0qMsVgd2rKJxz5u9pXNHyu2UguA";
     private static final String QPX_BASE_URL = "https://www.googleapis.com/qpxExpress/v1/";
     private static final String QPX_FLIGHT_URL = QPX_BASE_URL + "trips/search";
 
