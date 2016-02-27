@@ -33,10 +33,16 @@ body {
      background: linear-gradient(to top,#66aea6,  #00796b);
      height:60px;
 }
+
+#logo {
+    display: inline-block;
+    float: left;
+}
+
 .logo-image {
     /*background: url('../images/Picture2.png') no-repeat;*/
 
-   	display: block;
+   	display: inline;
    	-moz-box-sizing: border-box;
    	box-sizing: border-box;
 /*   	background: url('../images/Picture2.png') no-repeat;*/
