@@ -33,10 +33,10 @@ function formatDuration(legs) {
 }
 
 
-function getDiv(flightSlices, sliceReducer, noFlex) {
+function getDiv(flightSlices, sliceReducer) {
   var html = flightSlices.reduce(function(div, flightSlice) {
     return div + '<span>' +sliceReducer(flightSlice) + '</span>';
-  }, (noFlex) ? '<div>' : '<div class="flex-container">');
+  }, '<div class="flex-container">');
   return html + '</div>'
 }
 
@@ -66,7 +66,7 @@ function updateFlights(flights) {
 
         // TODO use a map & airline to dynamically select logo
         return '<img src="images/airlines/AA.jpg" />';
-      }, true /* no flexbox */) +
+      }) +
       '</td>' +
       '<td class="flightDtls">' +
           getDiv(option.flightSlices, function(slice) {
