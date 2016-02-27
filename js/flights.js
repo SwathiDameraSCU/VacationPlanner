@@ -107,6 +107,10 @@ $(document).ready(function() {
   $('#dest').val(getUrlParam('from') || 'Destination');
   $('#datepicker1').val(getUrlParam('depart'));
   $('#datepicker2').val(getUrlParam('arrive'));
+  $('#rb1')[0].checked = getUrlParam('trip-type') !== 'one-way';
+  $('#rb2')[0].checked = getUrlParam('trip-type') === 'one-way';
+  $('#adults').val(getUrlParam('adults'));
+  $('#children').val(getUrlParam('children'));
 
   $("#datepicker1, #datepicker2").datepicker();
 

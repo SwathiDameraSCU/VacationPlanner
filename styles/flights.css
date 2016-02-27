@@ -122,3 +122,8 @@ td.flightDtls {
     flex-direction: column;
     justify-content: space-around;
 }
+
+#trip-passengers-container, #trip-passengers-container > label, #radioDiv {
+    display: inline;
+    font-family: 'Waiting for the Sunrise', sans-serif;
+}
