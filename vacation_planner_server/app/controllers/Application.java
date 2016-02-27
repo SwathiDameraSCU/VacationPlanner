@@ -52,10 +52,10 @@ public class Application extends Controller
             destination = request().getQueryString("destination");
             adultCount = Integer.parseInt(request().getQueryString("adult-count"));
             childCount  = Integer.parseInt(request().getQueryString("child-count"));
-            departureDate = DateExtensions.getDateFromString(request().getQueryString("departure-date"), "yyyy-MM-dd");
+            departureDate = DateExtensions.getDateFromString(request().getQueryString("departure-date"), "MM-dd-yyyy");
 
             if(isRoundTrip)
-                arrivalDate = DateExtensions.getDateFromString(request().getQueryString("arrival-date"), "yyyy-MM-dd");
+                arrivalDate = DateExtensions.getDateFromString(request().getQueryString("arrival-date"), "MM-dd-yyyy");
         }
         catch(final Exception ex)
         {
