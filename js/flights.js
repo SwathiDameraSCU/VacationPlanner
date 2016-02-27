@@ -10,13 +10,14 @@ function getUrlParam(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-var to = getUrlParam('to');
-var from = getUrlParam('from');
-var roundTrip = getUrlParam('trip-type') !== 'one-way';
-var departDate = getUrlParam('depart');
-var returnDate = getUrlParam('arrive');
-var numberAdults = getUrlParam('adults');
-var numberChildren = getUrlParam('children');
+function selectFlight(optionIndex) {
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("flightOption", flights.options[optionIndex]);
+  } else {
+    alert("Sorry, your browser does not support Web Storage...");
+  }
+  window.document.location.href = 'review.html';
+}
 
 function getTime(dateTime) {
   return new Date(dateTime).toLocaleTimeString();
@@ -31,7 +32,6 @@ function formatDuration(legs) {
   var h = (mins - m) / 60;
   return h.toString() + "hr " + (m < 10 ? "0" : "") + m.toString() + "min";
 }
-
 
 function getDiv(flightSlices, sliceReducer) {
   var html = flightSlices.reduce(function(div, flightSlice) {
@@ -51,7 +51,7 @@ function updateFlights(flights) {
     '<th>Price</th>' +
     '<th>Select</th></tr>';
 
-  flights.options.forEach(function (option) {
+  flights.options.forEach(function (option, index) {
     var getFirstLeg = function (flightSlice) { return flightSlice.legs[0] };
     var getLastLeg = function (flightSlice) { return flightSlice.legs[flightSlice.legs.length - 1]};
 
@@ -94,7 +94,7 @@ function updateFlights(flights) {
           }) +
       '</td>';
     table += '<td class="flightDtls">' + option.totalSales.replace("USD".toUpperCase(),"$ ") + '</td>';
-    table += '<td class="flightDtls"><input type="button" class ="gridButton" value = "select" /></td></tr>';
+    table += '<td class="flightDtls"><input type="button" class="gridButton" value="select" onclick="selectFlight('+ index +')" /></td></tr>';
   });
 
   table+="</table>";
@@ -103,40 +103,12 @@ function updateFlights(flights) {
 
 
 $(document).ready(function() {
-  $('#source').val(to || 'Source');
-  $('#dest').val(from || 'Destination');
-  $('#datepicker1').val(departDate);
-  $('#datepicker2').val(returnDate);
+  $('#source').val(getUrlParam('to') || 'Source');
+  $('#dest').val(getUrlParam('from') || 'Destination');
+  $('#datepicker1').val(getUrlParam('depart'));
+  $('#datepicker2').val(getUrlParam('arrive'));
 
   $("#datepicker1, #datepicker2").datepicker();
 
   updateFlights(flights); // TODO replace w/ backend call
 });
-
-
-/*
-// function for button click
-function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price) {
-
-  var splitOrigin = origin.split("<br>");
-  var splitDestination = destination.split("<br>");
-  var splitDepartureTime = departureTime.split("<br>");
-  var splitArrivalTime = arrivalTime.split("<br>");
-  var splitDuration = duration.split("<br>");
-  var splitPrice = price.split("<br>");
-
-  // Store
-  if (typeof(Storage) !== "undefined") {
-    localStorage.setItem("origin", splitOrigin);
-    localStorage.setItem("destination", splitDestination);
-    localStorage.setItem("departureTime", splitDepartureTime);
-    localStorage.setItem("arrivalTime", splitArrivalTime);
-    localStorage.setItem("duration", splitDuration);
-    localStorage.setItem("price", splitPrice);
-  } else {
-    alert("Sorry, your browser does not support Web Storage...");
-  }
-
-  window.document.location.href = 'review.html';
-}
-*/
