@@ -14,3 +14,7 @@ GET     /airports                   controllers.Application.getAirports()
 POST    /bookings                  controllers.Application.bookings()
 
 GET     /bookings/:bookingId         controllers.Application.bookingDetails(bookingId: String)
+
+GET     /users/:username     controllers.Application.userDetails(username: String)
+
+POST    /users     controllers.Application.createUser()
