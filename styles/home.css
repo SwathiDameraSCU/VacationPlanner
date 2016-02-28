@@ -76,7 +76,8 @@ label {
 #error {
     text-align: center;
     color: red;
-    display: block;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 #trip-location-container, #trip-time-container {
