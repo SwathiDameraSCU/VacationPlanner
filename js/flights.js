@@ -1,326 +1,130 @@
-{
-  "options": [
-    {
-      "totalSales": "USD372.60",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T07:30-08:00",
-            "duration": 93,
-            "arrivalTime": "2016-02-09T09:03-08:00",
-            "origin": "SFO",
-            "destination": "LAS",
-            "flightId": "Lthscn9qfnLx5+t7",
-            "connectionDuration": 162
-          }
-        },
-        {
-          "leg2": {
-            "departureTime": "2016-02-09T11:45-08:00",
-            "duration": 292,
-            "arrivalTime": "2016-02-09T19:37-05:00",
-            "origin": "LAS",
-            "destination": "JFK",
-            "flightId": "LORB-kW09oIVZCwG"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD372.60",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T18:20-08:00",
-            "duration": 90,
-            "arrivalTime": "2016-02-09T19:50-08:00",
-            "origin": "SFO",
-            "destination": "LAS",
-            "flightId": "LKdQYn+M0TIQMl0S",
-            "connectionDuration": 140
-          }
-        },
-        {
-          "leg2": {
-            "departureTime": "2016-02-09T22:10-08:00",
-            "duration": 289,
-            "arrivalTime": "2016-02-10T05:59-05:00",
-            "origin": "LAS",
-            "destination": "JFK",
-            "flightId": "LQudDYXdumljc7k3"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T12:50-08:00",
-            "duration": 332,
-            "arrivalTime": "2016-02-09T21:22-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LZPBTYFQ2EXF9iUa"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T11:36-08:00",
-            "duration": 330,
-            "arrivalTime": "2016-02-09T20:06-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LiOEkI8gG+vljDRD"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T13:40-08:00",
-            "duration": 330,
-            "arrivalTime": "2016-02-09T22:10-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LxeEYKv4VFgErISD"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T14:00-08:00",
-            "duration": 323,
-            "arrivalTime": "2016-02-09T22:23-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LOW2f0U4T0L6R7Q4"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T09:20-08:00",
-            "duration": 335,
-            "arrivalTime": "2016-02-09T17:55-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LPa9s4IUZUT0J83b"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T07:25-08:00",
-            "duration": 335,
-            "arrivalTime": "2016-02-09T16:00-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "L8tSq5dtjGst61G8"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T15:10-08:00",
-            "duration": 325,
-            "arrivalTime": "2016-02-09T23:35-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LeN8BKwcaJBCsLlJ"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T07:05-08:00",
-            "duration": 330,
-            "arrivalTime": "2016-02-09T15:35-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LBkV+yMSojQOErX2"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T23:00-08:00",
-            "duration": 329,
-            "arrivalTime": "2016-02-10T07:29-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LLBDhmgahUmsyPSy"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T00:59-08:00",
-            "duration": 319,
-            "arrivalTime": "2016-02-09T09:18-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "Li+PYts6vr20mhAm"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T09:00-08:00",
-            "duration": 334,
-            "arrivalTime": "2016-02-09T17:34-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LZHJ5wLGEUum7AT3"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T15:45-08:00",
-            "duration": 321,
-            "arrivalTime": "2016-02-10T00:06-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LMY0SGc9eEFdsiPX"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T21:10-08:00",
-            "duration": 320,
-            "arrivalTime": "2016-02-10T05:30-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LKxSY+lOtGqA3AY2"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T07:00-08:00",
-            "duration": 322,
-            "arrivalTime": "2016-02-09T15:22-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LL3ujnVn3a3jzI34"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T21:30-08:00",
-            "duration": 331,
-            "arrivalTime": "2016-02-10T06:01-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LRO1P3KRdOTaAKux"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T11:25-08:00",
-            "duration": 335,
-            "arrivalTime": "2016-02-09T20:00-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "Ls8Y4RrKrxA2nJ2I"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T23:20-08:00",
-            "duration": 330,
-            "arrivalTime": "2016-02-10T07:50-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LTxzUBzsCf2NjK+q"
-          }
-        }
-      ]
-    },
-    {
-      "totalSales": "USD561.10",
-      "leg": [
-        {
-          "leg1": {
-            "departureTime": "2016-02-09T15:00-08:00",
-            "duration": 323,
-            "arrivalTime": "2016-02-09T23:23-05:00",
-            "origin": "SFO",
-            "destination": "JFK",
-            "flightId": "LxKcta6UQkK+rLX4"
-          }
-        }
-      ]
-    }
-  ]
+var flights = {};
+
+function getUrlParam(name) {
+  var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)"), results = regex.exec(window.location.href);
+  if (results == null || results[2] == null) {
+    return null;
+  }
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+function selectFlight(optionIndex) {
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("flightOption", flights.options[optionIndex]);
+  } else {
+    alert("Sorry, your browser does not support Web Storage...");
+  }
+  window.document.location.href = 'review.html';
+}
+
+function getTime(dateTime) {
+  return new Date(dateTime).toLocaleTimeString();
+}
+
+function formatDuration(legs) {
+  var mins = legs.reduce(function (sum, current) {
+    return sum + current.duration + current.connectionDuration;
+  }, 0);
+
+  var m = mins % 60;
+  var h = (mins - m) / 60;
+  return h.toString() + "hr " + (m < 10 ? "0" : "") + m.toString() + "min";
+}
+
+function getDiv(flightSlices, sliceReducer) {
+  var html = flightSlices.reduce(function(div, flightSlice) {
+    return div + '<span>' +sliceReducer(flightSlice) + '</span>';
+  }, '<div class="flex-container">');
+  return html + '</div>'
+}
+
+function updateFlights(flights) {
+  var table = '<table><tr>' +
+    '<th></th>' + // Airline logo
+    '<th>Source</th>' +
+    '<th>Destination</th>' +
+    '<th>Departure Time</th>' +
+    '<th>Arrival Time</th>' +
+    '<th>Duration</th>' +
+    '<th>Price</th>' +
+    '<th>Select</th></tr>';
+
+  flights.options.forEach(function (option, index) {
+    var getFirstLeg = function (flightSlice) { return flightSlice.legs[0] };
+    var getLastLeg = function (flightSlice) { return flightSlice.legs[flightSlice.legs.length - 1]};
+
+    table += '<tr class="flight">' +
+      '<td class="flightDtls">' +
+      getDiv(option.flightSlices, function(slice) {
+        var airline = slice.legs.reduce(function (prevAirline, flight){
+          return (flight.carrier === prevAirline && prevAirline != null)
+            ? 'Multiple'
+            : flight.carrier;
+        });
+
+        // TODO use a map & airline to dynamically select logo
+        return '<img src="images/airlines/AA.jpg" />';
+      }) +
+      '</td>' +
+      '<td class="flightDtls">' +
+          getDiv(option.flightSlices, function(slice) {
+            return getFirstLeg(slice).origin
+          }) +
+      '</td>' +
+      '<td class="flightDtls">' +
+          getDiv(option.flightSlices, function(slice) {
+            return getLastLeg(slice).destination
+          }) +
+      '</td>' +
+      '<td class="flightDtls">' +
+          getDiv(option.flightSlices, function(slice) {
+            return getTime(getFirstLeg(slice).departureTime)
+          }) +
+      '</td>' +
+      '<td class="flightDtls">' +
+          getDiv(option.flightSlices, function(slice) {
+            return getTime(getLastLeg(slice).arrivalTime)
+          }) +
+      '</td>' +
+      '<td class="flightDtls">' +
+          getDiv(option.flightSlices, function(slice) {
+            return formatDuration(slice.legs)
+          }) +
+      '</td>';
+    table += '<td class="flightDtls">' + option.totalSales.replace("USD".toUpperCase(),"$ ") + '</td>';
+    table += '<td class="flightDtls"><input type="button" class="gridButton" value="select" onclick="selectFlight('+ index +')" /></td></tr>';
+  });
+
+  table+="</table>";
+  $('#data2').append(table);
+}
+
+function queryFlights() {
+  $.get("http://localhost:9000/flights", {
+    origin: $('#source').val(),
+    destination: $('#dest').val(),
+    'departure-date': $('#datepicker1').val(),
+    'arrival-date': $('#datepicker2').val(),
+    'round-trip': $('#rb1')[0].checked,
+    'adult-count': $('#adults').val(),
+    'child-count': $('#children').val()
+  }, function (data) {
+    flights = JSON.parse(data);
+    updateFlights(flights);
+  });
+}
+
+$(document).ready(function() {
+  $('#source').val(getUrlParam('to') || 'Source');
+  $('#dest').val(getUrlParam('from') || 'Destination');
+  $('#datepicker1').val(getUrlParam('depart'));
+  $('#datepicker2').val(getUrlParam('arrive'));
+  $('#rb1')[0].checked = getUrlParam('trip-type') !== 'one-way';
+  $('#rb2')[0].checked = getUrlParam('trip-type') === 'one-way';
+  $('#adults').val(getUrlParam('adults'));
+  $('#children').val(getUrlParam('children'));
+
+  $("#datepicker1, #datepicker2").datepicker();
+
+  queryFlights();
+});

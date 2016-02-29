@@ -1,9 +1,8 @@
 
 
 form {
-    width: 55%;
+    width: 80%;
     margin: 0 auto;
-    padding: 7%;
     font-family: 'Waiting for the Sunrise', sans-serif; 
 }
 
@@ -112,4 +111,19 @@ td.flightDtls > div {
 td.flightDtls {
     height: 100px; 
     border-bottom: 2px solid #B0B0B0 ;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#trip-passengers-container, #trip-passengers-container > label, #radioDiv {
+    display: inline;
+    font-family: 'Waiting for the Sunrise', sans-serif;
 }
