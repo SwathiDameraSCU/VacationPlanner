@@ -3,7 +3,8 @@
     margin: 0 auto;
     margin-top: 10px;
     margin-left: 10%;
-    font-family: 'Waiting for the Sunrise', sans-serif; 
+    /*font-family: 'Waiting for the Sunrise', sans-serif; */
+    font-family: 'Calibri', sans-serif;
     height: 100%;
 }
 
@@ -16,7 +17,7 @@
 	font-size : 1.2em;
 	height: 100%;
 	width:100%;
-	//margin-left: 50%;
+	/*margin-left: 50%;*/
 }
 
 #div2{
@@ -27,10 +28,10 @@ width: 100%;
 }
 
 #div3{
- height: 100px;
+ height: 100%;
  margin-top: 8%;
- margin-bottom: 2%;
-width: 100%;
+/* margin-bottom: 2%;*/
+ width: 100%;
 }
 
 #div4{
@@ -65,8 +66,8 @@ width: 100%;
 }
 
 #tickDiv img{
-width : 1%;
-height: 1%;
+	width : 1%;
+	height: 1%;
 }
 
 section { 
@@ -74,12 +75,7 @@ section {
     height: 100%;
 }
 
-.searchBtn{
- 	/*margin-top: 15%;
-	margin-bottom: 2%;
-	width:100%;
-	height: 100%;*/
-	margin-top: 2%;
+.searchBtn{		
     	margin-bottom: 2%;
     	width: 100%;
     	height: 100%;
@@ -88,7 +84,6 @@ section {
 
 .deptArrDur{
 	font-family: 'Papyrus', sans-serif; 
-	font-size: 1.1em;
 }
 
 #arr{
@@ -149,7 +144,7 @@ section {
 
 .button {
   display: inline-block;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 20px;
   cursor: pointer;
   text-align: center;	
@@ -160,37 +155,315 @@ section {
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px #999;
+  margin-right: 2%;
 }
 
 .button:hover {background-color: #4ca197}
 
 .button:active {
-  background-color: #4ca197;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  	background-color: #4ca197;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
 }
 
 .left{
-float:left;
-width:80%;
-padding:2%;
+	float:left;
+	width:75%;
+	padding:2%;
 }
 
 .right{
-float:right;
-width:10%;
-padding:3%;
+	float:right;
+	width:15%;
+	padding:3%;
 }
 
 div.styleDiv {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: 3%;
+  	border-top: 1px solid black;
+  	border-bottom: 1px solid black;
+  	padding: 3%;
 }
 
 div#tickDiv{
-  border-left: 3px solid green;
-  padding: 1%;
-  color: green;
+  	border-left: 3px solid green;
+  	padding: 1%;
+  	color: green;
 }
-	
+
+.rightDisplay{
+	width: 250%;
+}
+
+.separator{
+	margin: 5%;
+}
+
+.totalClass{
+	float : right;
+	margin: 5%;
+}
+
+.stylePrice{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.itemClass{
+	border-bottom: 1px solid grey;
+}
+
+#priceBorder{
+	border-top: 1px solid grey;
+}
+
+.divBorder{
+	border-bottom: 1px solid grey;
+}
+
+
+.borderTop{
+	border-top: 1px solid grey;
+}
+
+.floatRight{
+     float : right;
+}
+
+.styleAnch{
+    color: blue;
+    text-decoration: none;
+    border-bottom: 1px solid green;
+}
+
+.ulStyle
+{
+    list-style-type: none;
+	   
+}
+.ulStyleTr
+{
+    list-style-type: none;
+}
+.ulStyleBag
+{
+    list-style-type: none;
+}
+.ulStyleTrCl
+{
+    list-style-type: none;
+}
+
+.styleHeading{
+    font-size: 1.9em;
+}
+
+.style{
+	margin: 0%;	
+}
+
+#freeCnl img{
+	width : 1%;
+	height: 1%;
+}
+#freeCnl{
+	margin-top: 2%;
+    	margin-bottom: 2%;
+    	width: 100%;
+    	height: 100%;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: green;
+}
+
+.imageDiv{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+.firstDiv{
+width: 100%;
+height: 100%;
+}
+
+.depDate{
+width: 20%;
+float: left;
+height: 100%;
+}
+
+.fromToDiv{
+width: 80%;
+float: left;
+height: 100%;
+}
+
+.flightDetails{
+height: 100%;
+width: 100%;
+}
+
+.deptDetails{
+height: 100%;
+width: 19%;
+float: left;
+}
+
+.arrDetails{
+height: 100%;
+width: 20%;
+float: left;
+}
+
+.toImageStyle{
+height: 100%;
+width: 15%;
+float: left;
+padding-left: 4%;
+}
+
+#arrowImg img{
+	width : 20%;
+	height: 10%;
+}
+
+.durDtls{
+height: 100%;
+float: left;
+width: 40%;
+}
+
+.fromToLabels{
+height: 100%;
+padding-left: 3%;
+
+}
+
+.fromToValues{
+height: 100%;
+}
+
+.fromToValPadding{
+padding-left: 10%;
+}
+
+.fromClass{
+width: 100%;
+padding-right: 12%;
+color: #6b6b6b;
+font-size: 1.1em; 
+font-weight: bold;
+}
+
+.toClass{
+width:100%;
+padding-right: 14%;
+color: #6b6b6b;
+font-size: 1.1em; 
+font-weight: bold;
+}
+
+.articleStyle{
+width: 100%;
+height: 100%;
+float :left;
+}
+
+.borderTop{
+border-top: 1px solid grey;
+}
+
+#passPerPerson{
+color: #6b6b6b;
+}
+
+#itemPriceSummary{
+color: #6b6b6b;
+}
+
+#lbltotals{
+color: #6b6b6b;
+}
+
+.ratesStyle{
+color: #6b6b6b;
+}
+
+.styleImpInfo{
+color: #323232;
+}
+
+.fromToStyle{
+font-size: 1.1em;
+}
+
+.deptArrDurStyle{
+font-size: 1.2em;
+font-weight: 570;
+}
+
+.orgDestVia{
+font-size: 1em;
+color: #6b6b6b;
+}
+
+.borderBottom{
+border-bottom: 1px solid grey;
+}
+
+.fromClass1{
+width: 100%;
+padding-left: 35%;
+}
+
+.paddingLeft47{
+height: 100%;
+font-size: 0.8em;
+padding-left: 48%;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+}
+
+.paddingLeft38{
+height: 100%;
+font-size: 0.8em;
+padding-left: 38.5%;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+}
+
+.fromToLabels1{
+height: 100%;
+font-size: 0.8em;
+}
+
+.fromToValues1{
+height: 100%;
+font-size: 0.8em;
+}
+
+.flghtNumber{
+color: #6b6b6b;
+font-size: 1.1em;
+}
+
+.carrier{
+color: #6b6b6b;
+font-size: 1.1em;
+}
+
+.stopStyle{
+font-size: 1.8em;
+font-weight: bold;
+}
+
+.stopDestnStyle{
+font-size: 1.5em;
+color: #6b6b6b;
+}
+
+.styleFromToText{
+padding-left: 2%;
+font-weight: bold;
+}
+
