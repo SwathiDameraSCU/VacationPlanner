@@ -1,0 +1,36 @@
+Hi,
+
+Here are your booking details:
+
+BookingId : ${bookingId}
+
+Flights:
+
+    <#list flights as flight>
+    Flight:
+        Origin:              ${flight.origin}
+        Destination:         ${flight.destination}
+        Departure Time:      ${flight.departureTime}
+        Arrival Time:        ${flight.arrivalTime}
+        Flight Carrier:      ${flight.carrier}
+        Flight Number:       ${flight.number}
+        <#if flight.connectionDuration??>
+        Connection Duration: ${flight.connectionDuration}
+        </#if>
+
+    </#list>
+
+
+Passengers:
+
+    <#list passengers as passenger>
+    Passenger:
+        Name:          ${passenger.firstName} ${passenger.lastName}
+        Gender:        ${passenger.gender}
+        Date of Birth: ${passenger.dob}
+
+    </#list>
+
+Regards,
+Escapade101 Team.
+

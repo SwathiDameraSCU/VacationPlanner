@@ -35,7 +35,7 @@ public class FlightClient
         }
         catch (final Exception ex)
         {
-            throw new RuntimeException("Failed to create Flight Client", ex);
+            throw new RuntimeException("Failed to create FlightDetails Client", ex);
         }
     }
 
