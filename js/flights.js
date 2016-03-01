@@ -10,7 +10,7 @@ function getUrlParam(name) {
 
 function selectFlight(optionIndex) {
   if (typeof(Storage) !== "undefined") {
-    localStorage.setItem("flightOption", flights.options[optionIndex]);
+    localStorage.setItem("flightOption", JSON.stringify(flights.options[optionIndex]));
   } else {
     alert("Sorry, your browser does not support Web Storage...");
   }
