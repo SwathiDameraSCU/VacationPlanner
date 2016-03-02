@@ -19,41 +19,18 @@ $(document).ready(function() {
     var returnDate = $("#return-input").val();
     var roundTrip = $('input[name="trip-type"]').val() === 'round-trip';
 
-    var error;
-
-    if (to == null || to === "") {
-      error = '"To" field is required';
-    } else if (from == null || from === "") {
-      error = '"From" field is required';
-    } else if (departDate == null || departDate === "") {
-      error = '"Departure Date" is required'
-    } else if (roundTrip && (returnDate == null  || returnDate === "")) {
-      error = '"Return Date is required';
-    } else if (_.keys(airports).indexOf(to) == -1) {
-      error = '"' + to + '" is not a valid airport identifier'
-    } else if (_.keys(airports).indexOf(from) == -1) {
-      error = '"' + from + '" is not a valid airport identifier'
-    } else if (new Date(departDate) - Date.now() < 0) {
-      error = 'Departure date "' + departDate + '" is in the past';
-    } else if (roundTrip && (new Date(returnDate) - Date.now() < 0)) {
-      error = 'Return date "' + returnDate + '" is in the past';
-    } else if (roundTrip && new Date(returnDate) - new Date(departDate) < 0) {
-      error = 'Return date must be after departure date';
-    }
+    var error = validateFlightForm(to, from, departDate, returnDate, roundTrip, airports);
 
     if (error != null) {
       $("#error").html(error);
       event.preventDefault();
     }
   });
+
+  autoCompleteAirportInfo("#to, #from", airports)
 });
 
-$.get("http://localhost:9000/airports", function (data) {
-  console.log('done');
-  airports = JSON.parse(data);
-  $("#to, #from").autocomplete({
-    source: _.map(airports, function(full, abbrev) {
-      return {label: full + ' (' + abbrev + ')', value: abbrev};
-    })
-  });
+loadAirports(function (airportData) {
+  airports = airportData;
+  autoCompleteAirportInfo("#to, #from", airports)
 });
