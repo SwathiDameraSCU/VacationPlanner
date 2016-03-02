@@ -2,3 +2,42 @@ This is your new Play application
 =================================
 
 This file will be packaged with your application, when using `activator dist`.
+
+Steps to setup Server:
+
+1. Install java jdk8.
+
+2. Get code "vacation_planner_server" code from the master
+If you have not cloned the repository already, do git clone.
+Else, switch to branch "master", do "git pull origin master".
+
+3. cd into "vacation_planner_server" directory.
+
+4. For linux/mac run "./activator". For windows run "activator.bat".
+
+5. For the first time it will take around 15 minutes to download all dependencies. After which you will see "[vacation_planner] $"
+
+6. Type "run" in the terminal. After the server has started, it will show you the message "Server Started" in the terminal and will tell you the Port Number on which it is listening for HTTP Requests.
+
+7.  In your browser, you can try "http://localhost:<Port Number>/airports" and it will you give the JSON object of the airports.
+
+8. Sample query for getting flight information
+	1. Round-Trip
+		http://localhost:<Port Number>/flights?origin=SFO&destination=JFK&departure-date=2016-02-14&adult-count=1&child-count=0&round-trip=true&arrival-date=2016-02-16
+
+	2. One-way
+		http://localhost:<Port Number>/flights?origin=SFO&destination=JFK&departure-date=2016-02-14&adult-count=1&child-count=0&round-trip=false
+
+
+Steps to setup mongodb
+
+1.  Install mongodb - Installation intsructions -(http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+
+2. Open terminal: type "mongod" to start the db server.
+3. Open another tab and type "mongo" to start the db client.
+4. In the mongo db client terminal:
+    a. For creating database: " use Vacation_Planner"
+    b. For creating tables: "db.createCollection("Bookings", {autoIndexID: true})”.
+    c. db.createCollection("Users")
+
+No need to manually insert the data..it will all be handled by the apis.
