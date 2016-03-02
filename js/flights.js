@@ -6,6 +6,16 @@ var airports = {};
 var flights = {};
 var currentParams = {};
 
+var airlines = {
+  'AS': 'alaska.jpg',
+  'UA': 'united.jpg',
+  'B6': 'jet_blue.jpg',
+  'AA': 'AA.jpg',
+  'DL': 'delta.jpg'
+};
+
+var default_airline = 'default.png';
+
 function getUrlParam(name) {
   var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)"), results = regex.exec(window.location.href);
   if (results == null || results[2] == null) {
@@ -65,14 +75,17 @@ function updateFlights(flights) {
     table += '<tr class="flight">' +
       '<td class="flightDtls">' +
       getDiv(option.flightSlices, function(slice) {
-        var airline = slice.legs.reduce(function (prevAirline, flight){
-          return (flight.carrier === prevAirline && prevAirline != null)
-            ? 'Multiple'
-            : flight.carrier;
-        });
+        var airline = (slice.legs.length === 1)
+          ? slice.legs[0].carrier
+          : slice.legs.reduce(function (prevAirline, flight) {
+            return (flight.carrier === prevAirline && prevAirline != null)
+              ? 'Multiple'
+              : flight.carrier;
+          });
 
-        // TODO use a map & airline to dynamically select logo
-        return '<img src="images/airlines/AA.jpg" />';
+        var airlineLogo = (airlines[airline] == null) ? default_airline : airlines[airline];
+
+        return '<img src="images/airlines/' + airlineLogo + '" />';
       }) +
       '</td>' +
       '<td class="flightDtls">' +
