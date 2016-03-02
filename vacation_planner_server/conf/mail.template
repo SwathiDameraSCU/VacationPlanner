@@ -25,7 +25,7 @@ Passengers:
 
     <#list passengers as passenger>
     Passenger:
-        Name:          ${passenger.firstName} ${passenger.lastName}
+        Name:          ${passenger.firstName} ${passenger.middleName} ${passenger.lastName}
         Gender:        ${passenger.gender}
         Date of Birth: ${passenger.dob}
 

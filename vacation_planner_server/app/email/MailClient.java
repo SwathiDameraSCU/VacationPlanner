@@ -44,7 +44,7 @@ public class MailClient
     {
         try
         {
-            final Session session = Session.getDefaultInstance(props, new Authenticator()
+            final Session session = Session.getInstance(props, new Authenticator()
             {
                 protected PasswordAuthentication getPasswordAuthentication()
                 {
@@ -89,11 +89,12 @@ public class MailClient
             for (JsonNode node : passengerNode)
             {
                 String firstname = node.path("firstname").asText();
+                String middlename = node.path("middlename").asText();
                 String lastname = node.path("lastname").asText();
                 String gender = node.path("gender").asText();
                 String dob = node.path("dob").asText();
 
-                PassengerDetails passengerDetail = new PassengerDetails(firstname, lastname, gender, dob);
+                PassengerDetails passengerDetail = new PassengerDetails(firstname, middlename, lastname, gender, dob);
                 passengerDetails.add(passengerDetail);
             }
 
