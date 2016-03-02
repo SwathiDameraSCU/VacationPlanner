@@ -1,4 +1,20 @@
+// TODO remove
+var shouldLoadFlights = false;
+var savedResponse = {"options":[{"totalSales":"USD326.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T12:50","arrivalTime":"2016-03-10T14:50","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":399}]},{"legs":[{"departureTime":"2016-03-10T16:20","arrivalTime":"2016-03-10T18:21","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":322}]}]},{"totalSales":"USD326.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:30","arrivalTime":"2016-03-10T08:30","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":321}]},{"legs":[{"departureTime":"2016-03-10T09:55","arrivalTime":"2016-03-10T11:59","duration":124,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":330}]}]},{"totalSales":"USD326.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T09:45","arrivalTime":"2016-03-10T11:49","duration":124,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":327}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T14:58","duration":123,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":326}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:30","arrivalTime":"2016-03-10T08:30","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":321}]},{"legs":[{"departureTime":"2016-03-10T16:20","arrivalTime":"2016-03-10T18:21","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":322}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:30","arrivalTime":"2016-03-10T08:30","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":321}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T14:58","duration":123,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":326}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T09:45","arrivalTime":"2016-03-10T11:49","duration":124,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":327}]},{"legs":[{"departureTime":"2016-03-10T20:55","arrivalTime":"2016-03-10T22:56","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":336}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T09:45","arrivalTime":"2016-03-10T11:49","duration":124,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":327}]},{"legs":[{"departureTime":"2016-03-10T16:20","arrivalTime":"2016-03-10T18:21","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":322}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:30","arrivalTime":"2016-03-10T08:30","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":321}]},{"legs":[{"departureTime":"2016-03-10T20:55","arrivalTime":"2016-03-10T22:56","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":336}]}]},{"totalSales":"USD332.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T12:50","arrivalTime":"2016-03-10T14:50","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":399}]},{"legs":[{"departureTime":"2016-03-10T20:55","arrivalTime":"2016-03-10T22:56","duration":121,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":336}]}]},{"totalSales":"USD336.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T12:50","arrivalTime":"2016-03-10T14:50","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":399}]},{"legs":[{"departureTime":"2016-03-10T18:20","arrivalTime":"2016-03-10T20:26","duration":126,"destination":"SJC","origin":"SEA","connectionDuration":0,"carrier":"AS","number":328}]}]},{"totalSales":"USD936.72","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:30","arrivalTime":"2016-03-10T08:30","duration":120,"destination":"SEA","origin":"SJC","connectionDuration":0,"carrier":"AS","number":321}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T13:50","duration":55,"destination":"YVR","origin":"SEA","connectionDuration":130,"carrier":"UA","number":8244},{"departureTime":"2016-03-10T16:00","arrivalTime":"2016-03-10T18:47","duration":167,"destination":"LAX","origin":"YVR","connectionDuration":173,"carrier":"WS","number":1698},{"departureTime":"2016-03-10T21:40","arrivalTime":"2016-03-10T22:56","duration":76,"destination":"SJC","origin":"LAX","connectionDuration":0,"carrier":"WS","number":5570}]}]},{"totalSales":"USD965.12","flightSlices":[{"legs":[{"departureTime":"2016-03-10T07:35","arrivalTime":"2016-03-10T08:34","duration":59,"destination":"RNO","origin":"SJC","connectionDuration":0,"carrier":"AS","number":2250},{"departureTime":"2016-03-10T09:05","arrivalTime":"2016-03-10T11:13","duration":128,"destination":"SEA","origin":"RNO","connectionDuration":0,"carrier":"AS","number":2250}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T13:50","duration":55,"destination":"YVR","origin":"SEA","connectionDuration":130,"carrier":"UA","number":8244},{"departureTime":"2016-03-10T16:00","arrivalTime":"2016-03-10T18:47","duration":167,"destination":"LAX","origin":"YVR","connectionDuration":173,"carrier":"WS","number":1698},{"departureTime":"2016-03-10T21:40","arrivalTime":"2016-03-10T22:56","duration":76,"destination":"SJC","origin":"LAX","connectionDuration":0,"carrier":"WS","number":5570}]}]},{"totalSales":"USD969.62","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:35","arrivalTime":"2016-03-10T08:19","duration":104,"destination":"PDX","origin":"SJC","connectionDuration":71,"carrier":"AS","number":405},{"departureTime":"2016-03-10T09:30","arrivalTime":"2016-03-10T10:20","duration":50,"destination":"SEA","origin":"PDX","connectionDuration":0,"carrier":"AS","number":2172}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T13:50","duration":55,"destination":"YVR","origin":"SEA","connectionDuration":130,"carrier":"UA","number":8244},{"departureTime":"2016-03-10T16:00","arrivalTime":"2016-03-10T18:47","duration":167,"destination":"LAX","origin":"YVR","connectionDuration":173,"carrier":"WS","number":1698},{"departureTime":"2016-03-10T21:40","arrivalTime":"2016-03-10T22:56","duration":76,"destination":"SJC","origin":"LAX","connectionDuration":0,"carrier":"WS","number":5570}]}]},{"totalSales":"USD969.62","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:35","arrivalTime":"2016-03-10T08:19","duration":104,"destination":"PDX","origin":"SJC","connectionDuration":101,"carrier":"AS","number":405},{"departureTime":"2016-03-10T10:00","arrivalTime":"2016-03-10T10:50","duration":50,"destination":"SEA","origin":"PDX","connectionDuration":0,"carrier":"AS","number":2038}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T13:50","duration":55,"destination":"YVR","origin":"SEA","connectionDuration":130,"carrier":"UA","number":8244},{"departureTime":"2016-03-10T16:00","arrivalTime":"2016-03-10T18:47","duration":167,"destination":"LAX","origin":"YVR","connectionDuration":173,"carrier":"WS","number":1698},{"departureTime":"2016-03-10T21:40","arrivalTime":"2016-03-10T22:56","duration":76,"destination":"SJC","origin":"LAX","connectionDuration":0,"carrier":"WS","number":5570}]}]},{"totalSales":"USD969.62","flightSlices":[{"legs":[{"departureTime":"2016-03-10T06:35","arrivalTime":"2016-03-10T08:19","duration":104,"destination":"PDX","origin":"SJC","connectionDuration":41,"carrier":"AS","number":405},{"departureTime":"2016-03-10T09:00","arrivalTime":"2016-03-10T09:50","duration":50,"destination":"SEA","origin":"PDX","connectionDuration":0,"carrier":"AS","number":2154}]},{"legs":[{"departureTime":"2016-03-10T12:55","arrivalTime":"2016-03-10T13:50","duration":55,"destination":"YVR","origin":"SEA","connectionDuration":130,"carrier":"UA","number":8244},{"departureTime":"2016-03-10T16:00","arrivalTime":"2016-03-10T18:47","duration":167,"destination":"LAX","origin":"YVR","connectionDuration":173,"carrier":"WS","number":1698},{"departureTime":"2016-03-10T21:40","arrivalTime":"2016-03-10T22:56","duration":76,"destination":"SJC","origin":"LAX","connectionDuration":0,"carrier":"WS","number":5570}]}]},{"totalSales":"USD1493.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T10:10","arrivalTime":"2016-03-10T13:47","duration":157,"destination":"DEN","origin":"SJC","connectionDuration":112,"carrier":"UA","number":5870},{"departureTime":"2016-03-10T15:39","arrivalTime":"2016-03-10T17:34","duration":175,"destination":"SEA","origin":"DEN","connectionDuration":0,"carrier":"UA","number":948}]},{"legs":[{"departureTime":"2016-03-10T23:21","arrivalTime":"2016-03-11T05:42","duration":261,"destination":"IAH","origin":"SEA","connectionDuration":220,"carrier":"UA","number":1696},{"departureTime":"2016-03-11T09:22","arrivalTime":"2016-03-11T11:42","duration":260,"destination":"SJC","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1957}]}]},{"totalSales":"USD1493.20","flightSlices":[{"legs":[{"departureTime":"2016-03-10T08:07","arrivalTime":"2016-03-10T11:42","duration":155,"destination":"DEN","origin":"SJC","connectionDuration":237,"carrier":"UA","number":247},{"departureTime":"2016-03-10T15:39","arrivalTime":"2016-03-10T17:34","duration":175,"destination":"SEA","origin":"DEN","connectionDuration":0,"carrier":"UA","number":948}]},{"legs":[{"departureTime":"2016-03-10T23:21","arrivalTime":"2016-03-11T05:42","duration":261,"destination":"IAH","origin":"SEA","connectionDuration":220,"carrier":"UA","number":1696},{"departureTime":"2016-03-11T09:22","arrivalTime":"2016-03-11T11:42","duration":260,"destination":"SJC","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1957}]}]},{"totalSales":"USD1635.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T10:10","arrivalTime":"2016-03-10T13:47","duration":157,"destination":"DEN","origin":"SJC","connectionDuration":33,"carrier":"UA","number":5870},{"departureTime":"2016-03-10T14:20","arrivalTime":"2016-03-10T16:03","duration":163,"destination":"SFO","origin":"DEN","connectionDuration":0,"carrier":"UA","number":733},{"departureTime":"2016-03-10T19:57","arrivalTime":"2016-03-10T22:08","duration":131,"destination":"SEA","origin":"SFO","connectionDuration":0,"carrier":"UA","number":733}]},{"legs":[{"departureTime":"2016-03-10T23:21","arrivalTime":"2016-03-11T05:42","duration":261,"destination":"IAH","origin":"SEA","connectionDuration":220,"carrier":"UA","number":1696},{"departureTime":"2016-03-11T09:22","arrivalTime":"2016-03-11T11:42","duration":260,"destination":"SJC","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1957}]}]},{"totalSales":"USD1741.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T14:50","arrivalTime":"2016-03-10T18:27","duration":157,"destination":"DEN","origin":"SJC","connectionDuration":38,"carrier":"UA","number":5726},{"departureTime":"2016-03-10T19:05","arrivalTime":"2016-03-10T20:59","duration":174,"destination":"SEA","origin":"DEN","connectionDuration":0,"carrier":"UA","number":407}]},{"legs":[{"departureTime":"2016-03-10T23:21","arrivalTime":"2016-03-11T05:42","duration":261,"destination":"IAH","origin":"SEA","connectionDuration":220,"carrier":"UA","number":1696},{"departureTime":"2016-03-11T09:22","arrivalTime":"2016-03-11T11:42","duration":260,"destination":"SJC","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1957}]}]},{"totalSales":"USD2088.60","flightSlices":[{"legs":[{"departureTime":"2016-03-10T12:40","arrivalTime":"2016-03-10T18:28","duration":228,"destination":"IAH","origin":"SJC","connectionDuration":57,"carrier":"UA","number":1851},{"departureTime":"2016-03-10T19:25","arrivalTime":"2016-03-10T22:16","duration":291,"destination":"SEA","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1977}]},{"legs":[{"departureTime":"2016-03-10T23:21","arrivalTime":"2016-03-11T05:42","duration":261,"destination":"IAH","origin":"SEA","connectionDuration":220,"carrier":"UA","number":1696},{"departureTime":"2016-03-11T09:22","arrivalTime":"2016-03-11T11:42","duration":260,"destination":"SJC","origin":"IAH","connectionDuration":0,"carrier":"UA","number":1957}]}]}]};
+
+var airports = {};
 var flights = {};
+var currentParams = {};
+
+var airlines = {
+  'AS': 'alaska.jpg',
+  'UA': 'united.jpg',
+  'B6': 'jet_blue.jpg',
+  'AA': 'AA.jpg',
+  'DL': 'delta.jpg'
+};
+
+var default_airline = 'default.png';
 
 function getUrlParam(name) {
   var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)"), results = regex.exec(window.location.href);
@@ -9,12 +25,11 @@ function getUrlParam(name) {
 }
 
 function selectFlight(optionIndex) {
-  if (typeof(Storage) !== "undefined") {
+  if (Storage != null) {
     localStorage.setItem("flightOption", JSON.stringify(flights.options[optionIndex]));
-    // TODO: don't do the lookups here
-    localStorage.setItem("adults", $('#adults').val());
-    localStorage.setItem("children", $('#children').val());
-    localStorage.setItem("roundTrip", $('#rb1')[0].checked);
+    localStorage.setItem("adults", currentParams.adults);
+    localStorage.setItem("children", currentParams.children);
+    localStorage.setItem("roundTrip", currentParams.roundTrip);
   } else {
     alert("Sorry, your browser does not support Web Storage...");
   }
@@ -60,14 +75,17 @@ function updateFlights(flights) {
     table += '<tr class="flight">' +
       '<td class="flightDtls">' +
       getDiv(option.flightSlices, function(slice) {
-        var airline = slice.legs.reduce(function (prevAirline, flight){
-          return (flight.carrier === prevAirline && prevAirline != null)
-            ? 'Multiple'
-            : flight.carrier;
-        });
+        var airline = (slice.legs.length === 1)
+          ? slice.legs[0].carrier
+          : slice.legs.reduce(function (prevAirline, flight) {
+            return (flight.carrier === prevAirline && prevAirline != null)
+              ? 'Multiple'
+              : flight.carrier;
+          });
 
-        // TODO use a map & airline to dynamically select logo
-        return '<img src="images/airlines/AA.jpg" />';
+        var airlineLogo = (airlines[airline] == null) ? default_airline : airlines[airline];
+
+        return '<img src="images/airlines/' + airlineLogo + '" />';
       }) +
       '</td>' +
       '<td class="flightDtls">' +
@@ -100,35 +118,82 @@ function updateFlights(flights) {
   });
 
   table+="</table>";
-  $('#data2').append(table);
+  $('#loading').hide();
+  var data = $('#data');
+  data.html(table);
+  data.show();
 }
 
 function queryFlights() {
-  $.get("http://localhost:9000/flights", {
-    origin: $('#source').val(),
-    destination: $('#dest').val(),
-    'departure-date': $('#datepicker1').val(),
-    'arrival-date': $('#datepicker2').val(),
-    'round-trip': $('#rb1')[0].checked,
-    'adult-count': $('#adults').val(),
-    'child-count': $('#children').val()
-  }, function (data) {
-    flights = JSON.parse(data);
-    updateFlights(flights);
-  });
+    var origin = $('#source').val();
+    var destination = $('#dest').val();
+    var departureDate = $('#datepicker1').val();
+    var arrivalDate = $('#datepicker2').val();
+    var roundTrip = $('#rb1')[0].checked;
+    var adults = $('#adults').val();
+    var children= $('#children').val();
+
+
+  var error = validateFlightForm(origin, destination, departureDate, arrivalDate, roundTrip, airports);
+  if (error != null) {
+    alert(error); // TODO
+    return;
+  }
+
+  currentParams = {
+    origin: origin,
+    destination: destination,
+    departureDate: departureDate,
+    arrivalDate: arrivalDate,
+    roundTrip: roundTrip,
+    adults: adults,
+    children: children
+  };
+
+  $('#loading').show();
+  $('#data').hide();
+  if (shouldLoadFlights) {
+    $.get("http://localhost:9000/flights", {
+      origin: $('#source').val(),
+      destination: $('#dest').val(),
+      'departure-date': $('#datepicker1').val(),
+      'arrival-date': $('#datepicker2').val(),
+      'round-trip': $('#rb1')[0].checked,
+      'adult-count': $('#adults').val(),
+      'child-count': $('#children').val()
+    }, function (data) {
+      flights = JSON.parse(data);
+      updateFlights(flights);
+    });
+  } else {
+    setTimeout(function () {
+      flights = savedResponse;
+      updateFlights(flights)
+    }, 2000)
+  }
 }
 
 $(document).ready(function() {
+  $( "#loading" ).progressbar({
+    value: false
+  });
+
   $('#source').val(getUrlParam('to') || 'Source');
   $('#dest').val(getUrlParam('from') || 'Destination');
   $('#datepicker1').val(getUrlParam('depart'));
   $('#datepicker2').val(getUrlParam('arrive'));
   $('#rb1')[0].checked = getUrlParam('trip-type') !== 'one-way';
   $('#rb2')[0].checked = getUrlParam('trip-type') === 'one-way';
-  $('#adults').val(getUrlParam('adults'));
-  $('#children').val(getUrlParam('children'));
+  $('#adults').val(getUrlParam('adults') || 1);
+  $('#children').val(getUrlParam('children') || 0);
 
   $("#datepicker1, #datepicker2").datepicker();
 
   queryFlights();
+  autoCompleteAirportInfo("#source, #dest", airports)
+});
+
+loadAirports(function (airportData) {
+  airports = airportData;
+  autoCompleteAirportInfo("#source, #dest", airports)
 });
