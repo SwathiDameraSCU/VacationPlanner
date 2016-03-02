@@ -52,6 +52,8 @@ public class Application extends Controller
         final Date departureDate;
         Date arrivalDate = null;
 
+        response().setHeader("Access-Control-Allow-Origin", "*");
+
         try
         {
             isRoundTrip = Boolean.parseBoolean(request().getQueryString("round-trip"));
@@ -99,13 +101,10 @@ public class Application extends Controller
                 }
                 flightOptions.add(new FlightOption(tripOption.saleTotal, flightSlices));
             }
-
             final FlightResponse flightResponse = new FlightResponse(flightOptions);
             final OutputStream out  = new ByteArrayOutputStream();
             final ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(out, flightResponse);
-
-            response().setHeader("Access-Control-Allow-Origin", "*");
 
             return ok(out.toString());
         }
@@ -117,6 +116,7 @@ public class Application extends Controller
 
     public Result getAirports()
     {
+        response().setHeader("Access-Control-Allow-Origin", "*");
         try
         {
             final AirportsResponse airportsResponse =  airportClient.getAirports();
@@ -130,8 +130,6 @@ public class Application extends Controller
                     airports.put(airport.code, airport.name);
 
             final JSONObject airportsObj = new JSONObject(airports);
-
-            response().setHeader("Access-Control-Allow-Origin", "*");
 
             return ok(airportsObj.toString());
         }
