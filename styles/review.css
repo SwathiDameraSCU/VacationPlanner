@@ -3,7 +3,7 @@
     margin: 0 auto;
     margin-top: 10px;
     margin-left: 10%;
-    /*font-family: 'Waiting for the Sunrise', sans-serif; */
+    /*font-family: 'Waiting for the Sunrise', sans-serif;*/
     font-family: 'Calibri', sans-serif;
     height: 100%;
 }
@@ -255,6 +255,7 @@ div#tickDiv{
 
 .styleHeading{
     font-size: 1.9em;
+	font-family: 'Waiting for the Sunrise', sans-serif;
 }
 
 .style{

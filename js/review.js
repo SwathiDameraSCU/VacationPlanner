@@ -1,48 +1,42 @@
 var fli;
 var price =0;
 
-function setValues(){ 
-	$("#showOntoggle1").hide();
-	$("#showOntoggle2").hide();
-	$("#showOntoggle3").hide();
-	$("#showOntoggle4").hide();
-	$("#showOntoggle5").hide();
-	$("#div2").hide();
-	
+// new Changes
+var priceForCal =0;
+var taxInfo =0;
+var passengerCharge =0;
+var taxInfoPerPerson =0;
+var passengerPerPersonCharge =0;
+var totalPricePerPassgnr =0;
+var totalPassengers = 0;
+
+var adults =0;
+var children =0;
+
+function setValues(){	
+	$("#div2").hide();	
+	for(var i=1;i<=totalPassengers;i++){
+		$('#showOntoggleTraveller_'+i).hide();
+	}
 }
 
 function nextPage(){
 	window.document.location.href = 'personal-info.html';
 }
 
-function showOnToggle1(){
-	$("#showOntoggle1").toggle('slow');
-}
-function showOnToggle2(){
-	$("#showOntoggle2").toggle('slow');
-}
-function showOnToggle3(){
-	$("#showOntoggle3").toggle('slow');
-}
-function showOnToggle4(){
-	$("#showOntoggle4").toggle('slow');
-}
-function showOnToggle5(){
-	$("#showOntoggle5").toggle('slow');
-}
-
-
 function showBagToggle1(){
 	$("#showBagToggle1").toggle('slow');
 }
+
 function showBagToggle0(){
 	$("#showBagToggle0").toggle('slow');
 }
 
-
 function getTravellerInfo(){
-	var adults =0;
-	var children =0;
+	
+	// prev changes
+	//var adults =0;
+	//var children =0;
 	var adultPrice = 0;
 	var childrenPrice = 0;
 	var adultTax = 0;
@@ -55,29 +49,43 @@ function getTravellerInfo(){
 	     children = parseInt(localStorage.getItem("children"));
 		 price = fli.totalSales;
 	}
-	totalPrice = parseFloat(price.replace("USD".toUpperCase(),""));
+	
+	
+	// prev code
+	/*totalPrice = parseFloat(price.replace("USD".toUpperCase(),""));
 	adultPrice = parseFloat((totalPrice).toFixed(2));
 	childrenPrice = parseFloat((totalPrice/2).toFixed(2));
 	adultTax = parseFloat(((adultPrice*18)/100).toFixed(2));
-	childrenTax =parseFloat(((childrenPrice*18)/100).toFixed(2));
+	childrenTax =parseFloat(((childrenPrice*18)/100).toFixed(2));*/
+	totalPassengers = adults +children;
 
-	var totalPassengers = adults +children;
+	// latest code	
+	priceForCal = parseFloat(price.replace("USD".toUpperCase(),""));
+	taxInfo = parseFloat(((priceForCal*18)/100).toFixed(2));	
+	passengerCharge	= priceForCal-taxInfo;
+	taxInfoPerPerson = parseFloat((taxInfo/totalPassengers).toFixed(2));	
+	passengerPerPersonCharge	= parseFloat((passengerCharge/totalPassengers).toFixed(2));;
+	totalPricePerPassgnr = parseFloat((priceForCal/totalPassengers).toFixed(2));
+	//alert("taxInfo--"+taxInfoPerPerson);
 
 	document.getElementById('numberOfTickets').innerHTML=" <strong>"+totalPassengers+" Ticket(s):  </strong>";
 	
-	if(totalPassengers < 6){
-			for(var i=1;i<=adults;i++){
-				$('.ulStyleTr').append("<li><a id='toggle' onclick='showOnToggle"+i+"()' class='styleAnch'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+(parseFloat(adultPrice)+parseFloat(adultTax)).toFixed(2)+" </span> </a></li><div id='showOntoggle"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+adultPrice+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+adultTax+" </span></li></ul></div>");
+			for(var i=1;i<=totalPassengers;i++){
+				for(var i=1;i<=adults;i++){
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
+					//$('#showOntoggleTraveller_'+i).hide();
+					//$("#showOntoggleTraveller_"+i).css('visibility', 'hidden');
+				}
+				for(var i=adults+1;i<=totalPassengers;i++){																																																					
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
+					//$('#showOntoggleTraveller_'+i).hide();
+				}
 			}
-			for(var i=adults+1;i<=totalPassengers;i++){
-				$('.ulStyleTr').append("<li><a id='toggle' onclick='showOnToggle"+i+"()' class='styleAnch'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+(parseFloat(childrenPrice)+parseFloat(childrenTax)).toFixed(2)+" </span> </a></li><div id='showOntoggle"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+childrenPrice+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+childrenTax+" </span></li></ul></div>");
-			}
-	}else{
-		alert("not more than 5 passengers in one session");
-	}
+			
+		//tripTotal =(((adultPrice+adultTax)*adults)+((childrenPrice+childrenTax)*children));		
 
-		tripTotal =(((adultPrice+adultTax)*adults)+((childrenPrice+childrenTax)*children));
-		document.getElementById('displayPrice').innerHTML = "$"+tripTotal;
+		document.getElementById('displayPrice').innerHTML = "$"+priceForCal;
+		
 	}
 
 
@@ -86,7 +94,7 @@ function getTravellerInfo(){
 	}
 
 function onLoad(){
-
+ 
  var data=fli.flightSlices.length; // to check whether it is roundtrip or One way
  var fromDate = '02/29/2016';//get dates from local storage of flights.html
  var toDate = '03/01/2016';
@@ -108,18 +116,18 @@ function onLoad(){
 
     $("#showBagToggle1").hide();
 	$("#showBagToggle0").hide();
+	//$("#showOntoggleTraveller").hide();
 
 }
 
 function getFlightInfo(value){
-
-	//$('.ulStyle').append("<li><div class='borderTop'></div> <span class='separator'></span></li>");
 	
 	for(var i=value;i<=value;i++){
 			var opt=fli.flightSlices[i]; // each and every flight Slice
 			var len=opt.legs.length;
 			var totalTime=1; // duration display - by summing the each slice duration
 			var stops='';
+
 			for(var k=0;k<len;k++){ 
 				totalTime +=opt.legs[k].duration;
 			}
@@ -137,8 +145,7 @@ function getFlightInfo(value){
 			$('#showBagToggle'+i+'').append("<div class='separator'></div> <li><article class='articleStyle'><div class='flightDetails'><div class='deptDetails'><div class='deptArrDurStyle' id='departtime'>"+getTime(opt.legs[j].departureTime)+"</div></div><div class='toImageStyle' id='arrowImg'><span><img src=\"images/arrow.png\" alt='United'></span></div><div class='arrDetails'><div id='arrtime' class='deptArrDurStyle' >"+getTime(opt.legs[j].arrivalTime)+"</div></div><div class='durDtls'><div id='durTime' class='deptArrDurStyle'>"+calDuration(opt.legs[j].duration)+"</div></div><div class='firstDiv'></div><div class='fromToDiv'><div class='paddingLeft47'><span class='fromClass'> From </span><span class='fromClass'> "+opt.legs[j].origin+" </span></div><div class='paddingLeft47'><span class='toClass'> To&nbsp&nbsp&nbsp </span><span class='toClass'>"+opt.legs[j].destination+"</span></div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='carrier'>"+opt.legs[j].carrier+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'><span class='flghtNumber'>"+opt.legs[j].number+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='stopStyle'>"+calDuration(opt.legs[j].connectionDuration)+" &nbsp Stop</span><span class='stopDestnStyle'> &nbsp in &nbsp"+opt.legs[j].destination+" </span> </div></div> " );  
 			
 			$('#showBagToggle'+i+'').append("<li><span class='separator'></span></li> </article></li>");
-			
-			/*<span> Flights </span><span id='flightamount' class='floatRight'> $425.00</span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'>$137.05</span></li><li> <span> Flights </span><span id='flightamount' class='floatRight'> $425.00</span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'>$137.05</span></li>");*/
+
 		}
 		$('.testdiv').append("</ul></div>");
 		$('.ulStyle').append("    </ul>");
@@ -173,6 +180,9 @@ function getDateFormat(dateValue){
     var day = date.substring(0,4);
     var month = date.substring(4,8);
     var numb = date.substring(8,10);
+	return day+", "+month+" "+numb;
+}
 
-return day+", "+month+" "+numb;
+function showOnToggle(i){
+	$('#showOntoggleTraveller_'+i).toggle('slow');
 }
