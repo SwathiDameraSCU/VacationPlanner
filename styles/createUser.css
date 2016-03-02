@@ -6,13 +6,17 @@
     padding-top:20px;
 }
 
-.form fieldset{border:0px; padding:0px; margin:0px;}
+.form fieldset{
+    border:0px; 
+    padding:0px; 
+    margin:0px;
+}
 
 .form p.contact { 
-    font-size: 12px; 
+    font-size: 14px; 
     margin:0px 0px 10px 0;
     line-height: 14px; 
-    font-family:Arial, Helvetica;
+    font-family: 'Love Ya Like A Sister', sans-serif; 
 }
 
 .form input[type="text"] { width: 400px; }
@@ -33,7 +37,10 @@
     margin-top: -10px;
 }
 
-.form input:focus, textarea:focus { border: 1px solid #ff5400; background-color: rgba(255, 255, 255, 1); }
+.form input:focus, textarea:focus { 
+    border: 1px solid #ff5400; 
+    background-color: rgba(255, 255, 255, 1); 
+}
 
 .form .select-style{ 
     -webkit-appearance: button;
