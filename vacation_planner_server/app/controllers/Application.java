@@ -52,8 +52,6 @@ public class Application extends Controller
         final Date departureDate;
         Date arrivalDate = null;
 
-        response().setHeader("Access-Control-Allow-Origin", "*");
-
         try
         {
             isRoundTrip = Boolean.parseBoolean(request().getQueryString("round-trip"));
@@ -116,7 +114,6 @@ public class Application extends Controller
 
     public Result getAirports()
     {
-        response().setHeader("Access-Control-Allow-Origin", "*");
         try
         {
             final AirportsResponse airportsResponse =  airportClient.getAirports();
@@ -141,7 +138,6 @@ public class Application extends Controller
 
     public Result bookings()
     {
-        response().setHeader("Access-Control-Allow-Origin", "*");
         try
         {
             JsonNode json = request().body().asJson();
@@ -214,14 +210,11 @@ public class Application extends Controller
         doc.put("booking_id", bookingId);
         doc.removeField("_id");
 
-        response().setHeader("Access-Control-Allow-Origin", "*");
         return ok(doc.toString());
     }
 
     public Result userDetails(final String username)
     {
-        response().setHeader("Access-Control-Allow-Origin", "*");
-
         String basicPassword =  request().getHeader("Authorization");
 
         if(basicPassword == null || basicPassword.isEmpty())
@@ -257,7 +250,6 @@ public class Application extends Controller
         DynamicForm dynamicForm = Form.form().bindFromRequest();
         String username = dynamicForm.get("username");
         BasicDBObject query = new BasicDBObject("_id",username);
-        response().setHeader("Access-Control-Allow-Origin", "*");
         long count = dbUsersCollection.count(query);
         if(count==0)
         {
@@ -282,7 +274,12 @@ public class Application extends Controller
         {
             return badRequest("already exists " + username);
         }
+    }
 
+    public Result preFlight(final String all)
+    {
+        response().setHeader("Access-Control-Allow-Origin", "*");
+        return ok();
     }
 }
 

@@ -18,3 +18,5 @@ GET     /bookings/:bookingId         controllers.Application.bookingDetails(book
 GET     /users/:username     controllers.Application.userDetails(username: String)
 
 POST    /users     controllers.Application.createUser()
+
+OPTIONS /*all      controllers.Application.preFlight(all: String)
