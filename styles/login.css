@@ -12,13 +12,16 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
     background: #000;
     display: none;
 }
-
+#modal {
+    top:30px;
+}
 .popupContainer{
 	position:absolute;
-	width:330px;
+	/*width:330px;*/
+	width:40%;
 	height: auto;
 	left:45%;
-	top:80px;
+	top:30px;
 	background: #FFF;
 }
 
@@ -46,6 +49,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 
 /* Social Login Form */
 .social_login {}
+.social_login .g-signin2 {display:block;}
 .social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #F4F4F2; overflow: hidden;}
 .social_login .icon {display:block; width:10px; padding:5px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
 .social_login .fb .icon {background:#3B5998;}
@@ -76,3 +80,31 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 .user_register input[type="checkbox"]+label {float:left;}
 
 .user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+
+#register-name-container {
+     display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: center;
+        flex-wrap: wrap;
+        width: 100%;
+
+}
+
+#from-container, #to-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+    flex-wrap: wrap;
+}

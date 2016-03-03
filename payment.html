@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Escapade101 - Vacation Planner</title>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="48112788240-j6dte0s9d583k81vhfmir7lqa4mjjsbm.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/home.css">
@@ -80,11 +81,11 @@
                     <span class="icon_title">Connect with Facebook</span>
 
                 </a>
-
-                <a href="#" class="social_box google">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <!--<a href="#" class="social_box google">
                     <span class="icon"><i class="fa fa-google-plus"></i></span>
                     <span class="icon_title">Connect with Google</span>
-                </a>
+                </a>-->
             </div>
 
             <div class="centeredText">
@@ -125,16 +126,43 @@
         <!-- Register Form -->
         <div class="user_register">
             <form>
-                <label>Full Name</label>
+                <div id="register-name-container">
+                    <div id="register-first-name">
+                        <label class="input-label" for="from">First Name</label>
+                        <input class="home-input" id="from" type="text" name="from" value=""/>
+                    </div>
+                    <div id="register-middle-name">
+                        <label class="input-label" for="to">Middle Name</label>
+                        <input class="home-input" id="to" name="to" value=""/>
+                    </div>
+                    <div id="register-last-name">
+                        <label class="input-label" for="to">Last Name</label>
+                        <input class="home-input" id="to" name="to" value=""/>
+                    </div>
+                </div>
+
+                <label>Middle Name</label>
                 <input type="text" />
                 <br />
 
-                <label>Email Address</label>
+                <label>Last Name</label>
                 <input type="email" />
+                <br />
+
+                <label>Username</label>
+                <input type="text" />
                 <br />
 
                 <label>Password</label>
                 <input type="password" />
+                <br />
+
+                <label>Email Id</label>
+                <input type="text" />
+                <br />
+
+                <label>Phone number</label>
+                <input type="text" />
                 <br />
 
                 <div class="checkbox">
@@ -203,6 +231,7 @@
     </div>
 </footer>
 <script src="js/payment.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript">
 	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
