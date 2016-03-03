@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="styles/review.css">
     <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'> 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/review.js"></script>
 </head>
-<body onload="renderDate();setValues();">
+<body onload="onLoad();getTravellerInfo();setValues();">
 <header>
     <div id="travel-alerts" class="backWhite red alert">
         Flights to New York are delayed due to weather conditions
@@ -64,10 +65,10 @@
 	<div>
 	
  	<div id="div1">
-		<h1> Review your trip </h1>
+		<h1 class="styleHeading"> Review your trip </h1>
 	</div>
 	<!--<div id="tripAmount">
-		<span> Trip Total: </span><span id="displayPrice"> </span>
+		<span> Trip Total:  </span><span id="displayPrice"> </span>
 	</div>-->
 	<div id="div2">
 		<div id="tickDiv"><img src="images/tick.png" alt="Tick Image"/>
@@ -77,38 +78,90 @@
 		<div></div>
 	</div>
 	<div id="div3">
-		<div id="div4">
-			<span id="dateDisplay"></span>		
-		</div>
-
-		<div id="div5">
-			<span id="span3"> From </span></br>
-			<span id="span4"> To </span>
-		</div>
-		<div id="div6">
-			<span id="span5"> </span></br>
-			<span id="span6"> </span>
-		</div>
+		<ul class="ulStyle">
+		
+		</ul>
 	</div>
+
 	</div>	
 
-	<section class="dynamic">
-       
-   	</section>
+</section>
+	
+	<section class="right">
+	<section class="rightDisplay">
+	<p> <h1 class="styleHeading"> Trip Summary</h1></p>
+	<div id="passPerPerson"> 
+	<span>
+	<span id="numberOfTickets">  </span>
+	<span id="roundOrOneLabel"> </span>
+	<span class="separator"></span>
+	</span>
+	</div>
+	<div class="separator">
+	</div>
+	<div id="productPriceSummary" class="borderTop"> 
+		
+		<ul class="ulStyleTr">
+		 
+		</ul>
+		<div id="itemPriceSummary">
+			<span id="booking"> Booking Fee </span>
+			<span id="bookingFee" style="float:right"> $0.00 </span>
+		</div>		
+	</div>
+	<div id="totalContainer" class="itemClass">
+	 		<div class="separator"> </div>
+	 		<div id="tripTotal" class="totalClass">
+				<div id= "colRight">
+				<span id="lbltotals"> Trip Total: </span>
+				<span id="displayPrice" class="stylePrice">  </span>
+				</div>	
+	 		</div>
+	
+	</div>
 	</section>
-<section class="right">
-
-<section>
-<p> <h3> Trip Total </h3></p>
-	<div id="tripAmount" class="styleDiv">
-		<span id="displayPrice"> </span>
+	<section class="rightDisplay">
+	<span class="ratesStyle">Rates are quoted in US dollars</span>
+	</section>
+	<section class="rightDisplay">
+	<h3 class="styleHeading"> <span><img src="images/imp1.png" alt="Mountain View" style="width:5%;height:5%;"></span> 
+	<span> Important Flight Information </span> </h3>
+	<div>
+	<ul>
+	<li>
+	Tickets are <strong>non-refundable</strong> and <strong>non transferable</strong>. A fee of $125.00 per ticket is charged for itinerary changes. Name changes are not allowed.
+	</li>
+	<li> 
+	<div>
+	<strong>All Airlines fares are non-refundable</strong> 
+		<div>
+			<strong>Bare Fares</strong>
+ 			Airline's low 
+ 			get you from A to B with one personal item such as a small backpack or purse
+			(Maximum dimensions: 16"x14"x12")    
+		</div>
+		<div>
+		<strong>Additional purchase will be required for the following:</strong>
+		<ul>
+			<li> One Carry-on bag per passenger </li>
+			<li> All checked bags (overweight bag charges start at 41 lbs.) </li>
+			<li> Advance Seat Assignments </li>
+			<li> All onboard drinks and snacks </li>
+		</ul>
+		</div>
+	</div>
+	</li>
+	</ul>
 	</div>
 </section>
 
 </section>
-	<div class="searchBtn">
-		<input type="button" id="searchButton" value="Continue Booking" class="button" onclick="nextPage();"/>
-	</div>	
+	<div>
+	    <div class="searchBtn">
+		<input type="button" id="searchButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
+		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
+		</span> 
+	    </div>
 	</div>	
 </div>
 	
@@ -128,59 +181,6 @@
         <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
-<script>
 
-function renderDate(){ 
-	var mydate= new Date();
-	var year = mydate.getYear();
-	if(year < 1000){
-	 year += 1900;
-	}
-	var day = mydate.getDay();
-	var month = mydate.getMonth();
-	var daym = mydate.getDate();
-	var dayarray = new Array("Sun","Mon","Tue", "Wed", "Thur", "Fri", "Sat");
-	var montharray = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-	
-	$('#dateDisplay').append(""+dayarray[day] + ", " +daym+ " " +montharray[month]);
-}
-
-function setValues(){ 
-	var origin;
-	var destination;
-	var departureTime;
-	var arrivalTime;
-	var duration;
-	var price;
-	if (typeof(Storage) !== "undefined") {
-	// Store
-	origin = (localStorage.getItem("origin")).split(",");
-	destination = (localStorage.getItem("destination")).split(",");
-	departureTime = (localStorage.getItem("departureTime")).split(",");
-	arrivalTime = (localStorage.getItem("arrivalTime")).split(",");
-	duration = (localStorage.getItem("duration")).split(",");
-	price = (localStorage.getItem("price")).split(",");
-	} else {
-		alert( "Sorry, your browser does not support Web Storage!!");
-	}
-	//alert(origin);
-	//alert("1"+origin.length);
-	for (var i = 0; i < origin.length; i++) {
-	$('.dynamic').append("<section id='sec1'><div class='deptArrDur' id='dept'>"+departureTime[i]+"</div><div class='org'>"+origin[i]+"</div></section><section><div></div></section><section><div id='arr' class='deptArrDur'>"+arrivalTime[i]+"</div><div id='dest'>"+destination[i]+"</div></section><section><div id='dur' class='deptArrDur'>"+duration[i]+"</div></section><br><br><br><br>");
-	}
-		
-	document.getElementById('span5').innerHTML=""+origin[0];
-	document.getElementById('span6').innerHTML=""+destination[destination.length-1];
-	document.getElementById('displayPrice').innerHTML =" "+price;
-}
-
-function nextPage(){
-	window.document.location.href = 'personal-info.html';
-}
-
-
-</script>
-</body>
-</html>
 </body>
 </html>

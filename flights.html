@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <title>Escapade101 - Vacation Planner</title>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/home.css">  
      
     <link rel="stylesheet" href="styles/flights.css">       
     <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>  
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="js/underscore.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/flights.js"></script>
 </head>
 <body>
 <header>
@@ -72,13 +71,31 @@
 	<input type="radio" id="rb2" name="rb" value="" >One Way
 </div>
 
+<div id="trip-passengers-container">
+    <label id="adult-label" style="display: inline" class="input-label" for="adults">Adults</label>
+    <select id="adults" name="adults">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <label id="children-label" class="input-label" for="children">Children</label>
+    <select id="children" name="children">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+</div>
+
 <div class="SearchBox">
      <div class="searchDiv">
-             <input type="text" class="SearchInputBox" id="source" value="Source" disabled="disabled"/>
-	     <input type="text" class="SearchInputBox" id="dest" value="Destination" disabled="disabled"/>
+         <input type="text" class="SearchInputBox" id="source" value="Source"/>
+	     <input type="text" class="SearchInputBox" id="dest" value="Destination"/>
 	     <input type="text" class="SearchInputBox" id="datepicker1"/>
-	     <input type="text" class="SearchInputBox" id="datepicker2"/> 
-	     <input type="button" id="searchButton" value="Search" class="button"/>
+	     <input type="text" class="SearchInputBox" id="datepicker2"/>
+         <input type="button" id="searchButton" value="Search" class="button" onclick="queryFlights()"/>
     </div>
 
 </div>
@@ -86,11 +103,11 @@
 <div id="selection" class="selectDiv">
 	<p><h1>Select your departure to </h1> <span id="dept"></span></p>
 </div>
-<div>
 
 <form> 
  <div>
- 	<table id="data2" class="bordered"></table>
+     <div id="loading"></div>
+ 	<table id="data" class="bordered"></table>
  </div>
 </form>
 
@@ -105,142 +122,9 @@
                 </ul>
             </div>
         </nav>
-        </br></br>
+        <br/>
         <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
-
- <script type="text/javascript">
-	$(document).ready(function(){
- 		$("#selection").hide();
-		$("#data2").hide();
-	});
-        $('#searchButton').click(function() {
-				
-                    $("#selection").show();
-		    $("#data2").show();
-	//we are removing all rows using remove if already exists 
-                    $("#data2").children().remove();
-		
-                    $.getJSON( "flights.json", function( response ) {			
-					
-			var table='<table ><tr><th>Source</th><th>Destination</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Price</th><th>Select</th></tr>';
-					
-			var len=response.options.length;					
-						
-			for(var i=0;  i<len; i++)
-			   {
-
-				var opt=response.options[i];
-				var duration=0;
-				var source=null;
-				var dest=null;
-				var dept_time=0;
-				var arrival_time=0;
-				var nm=0;
-				var len_=opt.leg.length;
-
-				for(var j=0;j<opt.leg.length;j++)
-				   {
-						
-					var flig=opt.leg[j];
-					$.each(flig,function(key,val)
-					  {
-					 	if(nm!=0){
-							source+='<br>'+val.origin;
-							console.log(source);
-							dest+='<br>'+val.destination;
-							duration+='<br>'+calDuration(val.duration);
-							arrival_time+='<br>'+getTime(val.arrivalTime);									
-							dept_time+='<br>'+getTime(val.departureTime);
-			
-						}else{
-							source=val.origin;
-							dest=val.destination;
-							duration+=calDuration(val.duration);
-							arrival_time=getTime(val.arrivalTime);
-							dept_time=getTime(val.departureTime);
-							nm+=1;
-						}
-									
-					   });
-	
-				      }
-				
-			table+='<tr class="flight"><td class="flightDtls">'+source+'</td><td class="flightDtls">'+dest+'</td><td class="flightDtls">'+dept_time+'</td><td class="flightDtls">'+arrival_time+'</td><td class="flightDtls">'+duration+'</td>';
-			var price= (response.options[i].totalSales).replace("USD".toUpperCase(),"$ ");
-                    	table+='<td class="flightDtls">'+price+'</td>';
-		    	table+='<td class="flightDtls"><input type="button" class ="gridButton" value = "select" onclick="onButtonSelect(\''+source+'\',\''+dest+'\',\''+dept_time+'\',\''+arrival_time+'\',\''+duration+'\',\''+price+'\');"></input></td></tr>';		
-		   	} 
-			table+="</table>";
-			$('#data2').append(table);		
-		});
-            }); 
-		
-// function for button click
-function onButtonSelect(origin, destination, departureTime, arrivalTime, duration, price){
-			
-var splitOrigin = origin.split("<br>");
-var splitDestination = destination.split("<br>");
-var splitDepartureTime = departureTime.split("<br>");
-var splitArrivalTime = arrivalTime.split("<br>");
-var splitDuration = duration.split("<br>");
-var splitPrice = price.split("<br>");
-
-// Store
-if (typeof(Storage) !== "undefined") {
-	localStorage.setItem("origin", splitOrigin);
-	localStorage.setItem("destination", splitDestination);
-	localStorage.setItem("departureTime", splitDepartureTime);
-	localStorage.setItem("arrivalTime", splitArrivalTime);
-	localStorage.setItem("duration", splitDuration);
-    	localStorage.setItem("price", splitPrice);
-} else {
-	alert( "Sorry, your browser does not support Web Storage...");
-}
-
-	window.document.location.href = 'review.html';
-}
-  
-$(function() {
-    	$( "#datepicker1" ).datepicker();
-});
-
-$(function() {
-    	$( "#datepicker2" ).datepicker();
-});
-
-function getTime(dateTime) {
-	var d = new Date(dateTime);
-	var n = d.toLocaleTimeString();
-	return n;
-}
-
-function calDuration(mins){ 
-    var m = mins % 60;
-    var	h = (mins-m)/60;
-    var HRSMINS = h.toString() + "hr " + (m<10?"0":"") + m.toString() +"min";
-    return HRSMINS;
-}
-
-function setHomeDetails(){ 
-	var from =null;
-	var to = null;
-	
-	//if (typeof(Storage) !== "undefined") {
-	//get home details
-	//	from = (localStorage.getItem("from"));
-	//	to = (localStorage.getItem("to"));
-	//}
-}
-
-$(document).ready(function(){
-    document.getElementById('dept').innerHTML = $('#dest').val();
-});
-
-</script> 
-
-</body>
-</html>
 </body>
 </html>
