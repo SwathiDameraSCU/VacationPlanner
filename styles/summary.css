@@ -54,4 +54,22 @@ text-align: right;
 	float : right;
 	margin: 5%;
 }
+.fullWidth {
+    width:100%;
+}
+div.trip-summary {
+    width:30%;
+    float:left;
+    margin-top:80px;
+    margin-right:10px;
+}
+
+@media screen and (max-width: 44em) {
+div.trip-summary {
+    width:30%;
+    float:left;
+    margin-top:20px;
+}
+
+}
 
