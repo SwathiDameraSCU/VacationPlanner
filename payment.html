@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/payment.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 </head>
 <body>
@@ -58,44 +59,41 @@
     </div>
 </header>
 <!-- Payment section starts here -->
-<section>
-    <div id="payment-div" class="section">
-        <h3>Payment details</h3>
-            <form id="form-payment" enctype="text/plain" method="post">
-                    <div class="payment-form">
-                        <div class="payment-icons">
-                            <i class="fa fa-cc-visa fa-2x"></i>
-                            <i class="fa fa-cc-amex fa-2x"></i>
-                            <i class="fa fa-cc-discover fa-2x"></i>
-                            <i class="fa fa-cc-mastercard fa-2x"></i>
-                            <i class="fa fa-cc-diners-club fa-2x"></i>
-                        </div>
-                        <label for="cardNumber" class="form-label">Debit/Credit card number:</label>
-                        <input name="cardNumber" type="text" id="cardNumber" size="40" required>
-                        <label for="expDate" class="form-label">Expiration date</label>
-                        <input name="expDate" type="text" id="expDate" size="40" required>
-                        <label for="secCode" class="form-label">Security code</label>
-                        <input name="secCode" type="text" id="secCode" size="40" required>
-                        <label for="name" class="form-label">Cardholder name</label>
-                        <input name="name" type="text" id="name" size="40" required>
-                        <label for="address1" class="form-label">Billing Address 1</label>
-                        <input name="address1" type="text" id="address1" size="40" required>
-                        <label for="address2" class="form-label">Billing Address 2</label>
-                        <input name="address2" type="text" id="address2" size="40">
-                        <label for="city" class="form-label">City</label>
-                        <input name="city" type="text" id="city" size="40" required>
-                        <label for="state" class="form-label">State</label>
-                        <input name="state" type="text" id="state" size="40" required>
-                        <label for="zipCode" class="form-label">Zip Code</label>
-                        <input name="zipCode" type="text" id="zipCode" size="20" required>
-                        <br>
-                        <input type="submit"  value="Complete Booking">
+<div id="payment-div">
+    <h3>Payment details</h3>
+        <form id="form-payment" method="post">
+                <div class="payment-form">
+                    <div class="payment-icons">
+                        <i class="fa fa-cc-visa fa-2x"></i>
+                        <i class="fa fa-cc-amex fa-2x"></i>
+                        <i class="fa fa-cc-discover fa-2x"></i>
+                        <i class="fa fa-cc-mastercard fa-2x"></i>
+                        <i class="fa fa-cc-diners-club fa-2x"></i>
                     </div>
-            </form>
-        </div>
+                    <label for="cardNumber" class="form-label clearLeft">Debit/Credit card number<span class="red">*</span></label>
+                    <input name="cardNumber" type="text" id="cardNumber" size="40" required>
+                    <label for="expDate" class="form-label">Expiration date<span class="red">*</span></label>
+                    <input name="expDate" type="text" id="expDate" size="40" required>
+                    <label for="secCode" class="form-label">Security code<span class="red">*</span></label>
+                    <input name="secCode" type="text" id="secCode" size="40" required>
+                    <label for="name" class="form-label">Cardholder name<span class="red">*</span></label>
+                    <input name="name" type="text" id="name" size="40" required>
+                    <label for="address1" class="form-label">Billing Address 1<span class="red">*</span></label>
+                    <input name="address1" type="text" id="address1" size="40" required>
+                    <label for="address2" class="form-label">Billing Address 2</label>
+                    <input name="address2" type="text" id="address2" size="40">
+                    <label for="city" class="form-label">City<span class="red">*</span></label>
+                    <input name="city" type="text" id="city" size="40" required>
+                    <label for="state" class="form-label">State<span class="red">*</span></label>
+                    <input name="state" type="text" id="state" size="40" required>
+                    <label for="zipCode" class="form-label">Zip Code<span class="red">*</span></label>
+                    <input name="zipCode" type="text" id="zipCode" size="20" class ="zipcode" required>
+                    <br>
+                    <input type="submit"  value="Complete Booking">
+                </div>
+        </form>
     </div>
-</section>
-
+</div>
 <footer>
     <div class="footer">
         <nav>
@@ -110,5 +108,6 @@
         <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
+<script src="js/payment.js"></script>
 </body>
 </html>
