@@ -279,6 +279,12 @@ public class Application extends Controller
     public Result preFlight(final String all)
     {
         response().setHeader("Access-Control-Allow-Origin", "*");
+        response().setHeader("Allow", "*");
+        response().setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+        response().setHeader(
+                "Access-Control-Allow-Headers",
+                "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, " +
+                        "Accept-Language, Content-Length, Host, Referer, User-Agent");
         return ok();
     }
 }

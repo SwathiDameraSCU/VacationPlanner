@@ -13,7 +13,10 @@ object Global extends GlobalSettings {
     */
   override def doFilter(action: EssentialAction): EssentialAction = EssentialAction { request =>
     action.apply(request).map(_.withHeaders(
-      ACCESS_CONTROL_ALLOW_ORIGIN -> "*"
+      ACCESS_CONTROL_ALLOW_ORIGIN -> "*",
+      ALLOW->"*",
+      ACCESS_CONTROL_ALLOW_METHODS -> "POST, GET, PUT, DELETE, OPTIONS",
+      ACCESS_CONTROL_ALLOW_HEADERS -> "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, Accept-Language, Content-Length, Host, Referer, User-Agent"
     ))
   }
 }
