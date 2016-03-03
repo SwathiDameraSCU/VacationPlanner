@@ -72,13 +72,12 @@ function getTravellerInfo(){
 	
 			for(var i=1;i<=totalPassengers;i++){
 				for(var i=1;i<=adults;i++){
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
-					//$('#showOntoggleTraveller_'+i).hide();
-					//$("#showOntoggleTraveller_"+i).css('visibility', 'hidden');
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+"$"+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+"$"+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+taxInfoPerPerson+" </span></li></ul></div>");
+					
 				}
 				for(var i=adults+1;i<=totalPassengers;i++){																																																					
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
-					//$('#showOntoggleTraveller_'+i).hide();
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+"$"+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+taxInfoPerPerson+" </span></li></ul></div>");
+					
 				}
 			}
 			
@@ -134,15 +133,30 @@ function getFlightInfo(value){
 			for(var a=0;a<len-1;a++){ // to determine the stops  
 				stops +=opt.legs[a].destination+',';
 			}
-			price = fli.totalSales;
 			
+			price = fli.totalSales;
+
 		$('.ulStyle').append("<li><div></div> <span class='separator'></span></li>"); 
-		$('.ulStyle').append("<li><article class='articleStyle'><div class='firstDiv'><div class='depDate'><h3 id='departureDate'><p id='depatureDateFormat"+i+"'> Sat, Feb 28</p> </h3></div><div class='fromToDiv'><div class='fromToLabels'><span class='fromClass'> From </span><span class='styleFromToText'> "+opt.legs[0].origin+" </span></div><div class='fromToLabels'> <span class='toClass'> To&nbsp&nbsp </span><span class='styleFromToText'> "+opt.legs[len-1].destination+" </span></div></div>  	<div class='imageDiv'><div><img src=\"images/airlines/AA.jpg\" alt='United'> </div></div>                <div class='flightDetails'><div class='deptDetails'><div class='deptArrDurStyle' id='departtime'> "+getTime(opt.legs[0].departureTime)+"</div><div class='orgDestVia' id='departArpt'> "+opt.legs[0].origin+" </div></div><div class='toImageStyle' id='arrowImg'><span><img src=\"images/arrow.png\" alt='United'></span></div><div class='arrDetails'><div class='deptArrDurStyle' id='arrtime'> "+getTime(opt.legs[len-1].arrivalTime)+" </div><div class='orgDestVia' id='aarArpt'> "+opt.legs[len-1].destination+"</div></div><div class='durDtls'><div id='durTime' class='deptArrDurStyle'> "+calDuration(totalTime)+", "+(len-1)+" Stops </div><div class='orgDestVia' id='secCode'> "+stops.slice(',',-1)+" </div> <div class='separator'></div></div>" ); 
+		$('.ulStyle').append("<li><article class='articleStyle'><div class='firstDiv'><div class='depDate'><h3 id='departureDate'><p id='depatureDateFormat"+i+"'> Sat, Feb 28</p> </h3></div><div class='fromToDiv'><div class='fromToLabels'><span class='fromClass'> From </span><span class='styleFromToText'> "+opt.legs[0].origin+" </span></div><div class='fromToLabels'> <span class='toClass'> To&nbsp&nbsp </span><span class='styleFromToText'> "+opt.legs[len-1].destination+" </span></div></div>  	<div class='imageDiv'><div><img src='' alt='United' id='airlineImg"+i+"'> </div></div>                <div class='flightDetails'><div class='deptDetails'><div class='deptArrDurStyle' id='departtime'> "+getTime(opt.legs[0].departureTime)+"</div><div class='orgDestVia' id='departArpt'> "+opt.legs[0].origin+" </div></div><div class='toImageStyle' id='arrowImg'><span><img src=\"images/arrow.png\" alt='ArrowImage'></span></div><div class='arrDetails'><div class='deptArrDurStyle' id='arrtime'> "+getTime(opt.legs[len-1].arrivalTime)+" </div><div class='orgDestVia' id='aarArpt'> "+opt.legs[len-1].destination+"</div></div><div class='durDtls'><div id='durTime' class='deptArrDurStyle'> "+calDuration(totalTime)+", "+(len-1)+" Stops </div><div class='orgDestVia' id='secCode'> "+stops.slice(',',-1)+" </div> <div class='separator'></div></div>" ); 
 		
+		if(opt.legs[0].carrier=='UA'){
+			$('#airlineImg'+i).attr("src", "images/airlineImages/united.gif");			
+		}else if(opt.legs[0].carrier=='AA'){
+			$('#airlineImg'+i).attr("src", "images/airlineImages/AA.gif");
+		}else if(opt.legs[0].carrier=='AS'){
+			$('#airlineImg'+i).attr("src", "images/airlineImages/AS.gif");
+		}else if(opt.legs[0].carrier=='DL'){
+			$('#airlineImg'+i).attr("src", "images/airlineImages/DL.gif");
+		}else{
+			$('#airlineImg'+i).attr("src", "images/airlines/default.png");
+			$('#airlineImg'+i).css('width', '13%');
+			$('#airlineImg'+i).css('height', '11px');
+		}
+
 		$('.ulStyle').append("<li class='ulStyleBag'> <a id='toggle' onclick='showBagToggle"+i+"()' class='styleAnch'> Flight Details </a>   <div class='testdiv' id='showBagToggle"+i+"'><ul class='ulStyleBagCl'>");
 		for(var j=0;j<len;j++){
 		//alert(opt.legs[j].origin);
-			$('#showBagToggle'+i+'').append("<div class='separator'></div> <li><article class='articleStyle'><div class='flightDetails'><div class='deptDetails'><div class='deptArrDurStyle' id='departtime'>"+getTime(opt.legs[j].departureTime)+"</div></div><div class='toImageStyle' id='arrowImg'><span><img src=\"images/arrow.png\" alt='United'></span></div><div class='arrDetails'><div id='arrtime' class='deptArrDurStyle' >"+getTime(opt.legs[j].arrivalTime)+"</div></div><div class='durDtls'><div id='durTime' class='deptArrDurStyle'>"+calDuration(opt.legs[j].duration)+"</div></div><div class='firstDiv'></div><div class='fromToDiv'><div class='paddingLeft47'><span class='fromClass'> From </span><span class='fromClass'> "+opt.legs[j].origin+" </span></div><div class='paddingLeft47'><span class='toClass'> To&nbsp&nbsp&nbsp </span><span class='toClass'>"+opt.legs[j].destination+"</span></div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='carrier'>"+opt.legs[j].carrier+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'><span class='flghtNumber'>"+opt.legs[j].number+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='stopStyle'>"+calDuration(opt.legs[j].connectionDuration)+" &nbsp Stop</span><span class='stopDestnStyle'> &nbsp in &nbsp"+opt.legs[j].destination+" </span> </div></div> " );  
+			$('#showBagToggle'+i+'').append("<div class='separator'></div> <li><article class='articleStyle'><div class='flightDetails'><div class='deptDetails'><div class='deptArrDurStyle' id='departtime'>"+getTime(opt.legs[j].departureTime)+"</div></div><div class='toImageStyle' id='arrowImg'><span><img src=\"images/arrow.png\" alt='ArrowImage'></span></div><div class='arrDetails'><div id='arrtime' class='deptArrDurStyle' >"+getTime(opt.legs[j].arrivalTime)+"</div></div><div class='durDtls'><div id='durTime' class='deptArrDurStyle'>"+calDuration(opt.legs[j].duration)+"</div></div><div class='firstDiv'></div><div class='fromToDiv'><div class='paddingLeft47'><span class='fromClass'> From </span><span class='fromClass'> "+opt.legs[j].origin+" </span></div><div class='paddingLeft47'><span class='toClass'> To&nbsp&nbsp&nbsp </span><span class='toClass'>"+opt.legs[j].destination+"</span></div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='carrier'>"+opt.legs[j].carrier+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'><span class='flghtNumber'>"+opt.legs[j].number+"</span> </div></div><div class='imageDiv'><div class='paddingLeft38'> <span class='stopStyle'>"+calDuration(opt.legs[j].connectionDuration)+" &nbsp Stop</span><span class='stopDestnStyle'> &nbsp in &nbsp"+opt.legs[j].destination+" </span> </div></div> " );  
 			
 			$('#showBagToggle'+i+'').append("<li><span class='separator'></span></li> </article></li>");
 
@@ -151,6 +165,7 @@ function getFlightInfo(value){
 		$('.ulStyle').append("    </ul>");
 		
 		$('.ulStyle').append("      <li><span class='separator'></span></li>");
+		
 	
 	}
 	$('.ulStyle').append("<li><div class='borderTop'></li>");

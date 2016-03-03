@@ -200,7 +200,9 @@ div#tickDiv{
 
 .totalClass{
 	float : right;
-	margin: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 5%;
 }
 
 .stylePrice{
@@ -472,3 +474,14 @@ font-weight: bold;
 text-align: right;
 }
 
+#colRight{
+float: right;
+}
+
+.bookingFeeStyle{
+margin-left: 10%;
+}
+
+.styleImportantInfo{
+	text-align: justify;
+}
