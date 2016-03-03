@@ -20,27 +20,20 @@ $(document).ready(function() {
             flightJSONData.flights.push(fli.flightSlices[i].legs[0]);
         }
 
-        //flightJSONData.flights = fli.flightSlices;
         flightJSONData.passengers = localStorage.getItem("passengers");
         var contacts = JSON.parse(localStorage.getItem("contacts"));
-
         flightJSONData.emailId = localStorage.getItem("emailId");
         flightJSONData.phonenumber = localStorage.getItem("phonenumber");
-        //dataString = [];
-        //dataString.push({"flights": flightJSONData.flights,"passengers":JSON.parse(flightJSONData.passengers)});
         dataString = '{"flights": flightJSONData.flights,"passengers":JSON.parse(flightJSONData.passengers)}';
-//var d = JSON.stringify(dataString);
 
-var text = '{"flights":' + JSON.stringify(flightJSONData.flights) + "," +
-            '"passengers":' + flightJSONData.passengers + "," +
-            '"emailId":' + flightJSONData.emailId + "," +
-            '"phonenumber":' + flightJSONData.phonenumber  +
-            '}';
+        var text = '{"flights":' + JSON.stringify(flightJSONData.flights) + "," +
+                    '"passengers":' + flightJSONData.passengers + "," +
+                    '"emailId":' + flightJSONData.emailId + "," +
+                    '"phonenumber":' + flightJSONData.phonenumber  +
+                    '}';
 
-var obj = JSON.parse(text);
-var d = JSON.stringify(obj);
-        //dataString = JSON.stringify(flightJSONData);
-        //flightJSONData = JSON.stringify({ skusAsJSON});
+        var obj = JSON.parse(text);
+        var d = JSON.stringify(obj);
          $.ajax({
                   url: "http://localhost:9000/bookings",
                   type: 'POST',
@@ -51,15 +44,15 @@ var d = JSON.stringify(obj);
                   contentType: "application/json; charset=utf-8",
 
                   dataType : 'json',
-                  success: function(got) {
-                    return alert("shortened url: " + got.id);
+                  success: function(result) {
+                    localStorage.setItem("booking_id", result.booking_id);
+                    location.href = "confirmation.html";
+                   // booking_id" : "56d7d64f91d5d493c193cbe0
+                  },
+                  error: function(result) {
+                    localStorage.setItem("booking_id","");
+                    location.href = "confirmation.html";
                   }
             });
-
-//        $.post("http://localhost:9000/bookings", { d
-//            }, function (data) {
-//            console.log("booking done " + data);
-//            });
       });
-
 });
