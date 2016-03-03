@@ -1,0 +1,57 @@
+.ulStyle
+{
+    list-style-type: none;
+
+}
+.ulStyleTr
+{
+    list-style-type: none;
+}
+.ulStyleBag
+{
+    list-style-type: none;
+}
+.ulStyleTrCl
+{
+    list-style-type: none;
+}
+
+.styleAnch{
+    color: blue;
+    text-decoration: none;
+    border-bottom: 1px solid green;
+}
+.floatRight{
+     float : right;
+}
+#passPerPerson{
+color: #6b6b6b;
+}
+
+#itemPriceSummary{
+color: #6b6b6b;
+}
+
+#lbltotals{
+color: #6b6b6b;
+}
+
+.ratesStyle{
+color: #6b6b6b;
+}
+
+.styleImpInfo{
+color: #323232;
+}
+#displayPrice{
+text-align: right;
+}
+.stylePrice{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.totalClass{
+	float : right;
+	margin: 5%;
+}
+

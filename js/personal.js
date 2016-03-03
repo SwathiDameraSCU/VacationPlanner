@@ -1,5 +1,6 @@
 window.onload = function() {
   createTravellersForm();
+  getTravellerInfo();
   //yourFunction(param1, param2);
 };
 var submitButton = document.getElementById("submit-info");
