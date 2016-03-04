@@ -164,7 +164,7 @@ public class Application extends Controller
 
                     BasicDBObject doc =
                             new BasicDBObject("_id", username).append("password", null)
-                                    .append("gender", null).append("emailId", emailId).append("phoneNumber", phoneNumber)
+                                    .append("emailId", emailId).append("phoneNumber", phoneNumber)
                                     .append("firstname", null).append("lastname", null).append("middlename", null);
 
                     dbUsersCollection.insert(doc);
@@ -257,13 +257,12 @@ public class Application extends Controller
             String lastName = dynamicForm.get("lastname");
             String middleName = dynamicForm.get("middlename");
             String password = dynamicForm.get("password");
-            String gender = dynamicForm.get("gender");
             String emailId = dynamicForm.get("emailId");
             String phoneNumber = dynamicForm.get("phonenumber");
 
             BasicDBObject doc =
                     new BasicDBObject("_id", username).append("password", password)
-                            .append("gender",gender).append("emailId",emailId).append("phoneNumber", phoneNumber)
+                            .append("emailId",emailId).append("phoneNumber", phoneNumber)
                             .append("firstname", firstName).append("lastname", lastName).append("middlename", middleName);
 
             dbUsersCollection.insert(doc);
