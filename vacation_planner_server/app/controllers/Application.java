@@ -169,7 +169,7 @@ public class Application extends Controller
 
                     dbUsersCollection.insert(doc);
 
-                    ((ObjectNode) json).put("username", username);
+
                 }
                 else
                 {
@@ -177,8 +177,9 @@ public class Application extends Controller
                     DBObject object = dbUsersCollection.findOne(query);
                     ((ObjectNode) json).put("emailId", object.get("emailId").toString());
                 }
+                //((ObjectNode) json).put("username", username);
 
-                BasicDBObject doc = new BasicDBObject("details", JSON.parse(json.toString()));
+                BasicDBObject doc = new BasicDBObject("details", JSON.parse(json.toString())).append("username", username);
                 dbBookingsCollection.insert(doc);
                 String bookingId = doc.getString("_id");
                 doc.put("booking_id", bookingId);
@@ -211,6 +212,42 @@ public class Application extends Controller
         doc.removeField("_id");
 
         return ok(doc.toString());
+    }
+
+    public Result userBookingDetails()
+    {
+        String username = request().getHeader("X-User-id");
+        String basicPassword =  request().getHeader("Authorization");
+
+        if(basicPassword == null || basicPassword.isEmpty())
+        {
+            return notFound("password not entered");
+        }
+
+        String[] basicPasswordParts = basicPassword.split(" ");
+        if(basicPasswordParts.length != 2)
+        {
+            return notFound("password value is not correct ");
+        }
+
+        String password = basicPasswordParts[1];
+
+        BasicDBObject query = new BasicDBObject("_id",username).append("password", password);
+
+        long count = dbUsersCollection.count(query);
+        if(count==0)
+        {
+            return notFound("user and password does not match ");
+        }
+        else
+        {
+
+            DBObject findUserBookings = BasicDBObjectBuilder.start().add("username", username).get();
+            List<DBObject> objects =  dbBookingsCollection.find(findUserBookings).toArray();
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("bookings", objects);
+            return ok(jsonObject.toString());
+        }
     }
 
     public Result userDetails(final String username)
@@ -267,11 +304,17 @@ public class Application extends Controller
 
             dbUsersCollection.insert(doc);
 
-            return created("user created " + username);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("username", username);
+            jsonObject.put("success", 1);
+            return created(jsonObject.toString());
         }
         else
         {
-            return badRequest("already exists " + username);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("error", "already exists " + username);
+            jsonObject.put("success", 0);
+            return badRequest(jsonObject.toString());
         }
     }
 
