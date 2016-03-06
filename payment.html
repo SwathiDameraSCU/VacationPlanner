@@ -66,7 +66,7 @@
 </header>
 <!-- Login Popup starts here -->
 
-<div id="modal" class="popupContainer" style="display:none;">
+<div id="modal" class="popupContainer" style="display:none;top:80px;margin-top:-80px;">
     <header class="popupHeader">
         <span class="header_title">Login</span>
         <span class="modal_close"><i class="fa fa-times"></i></span>
@@ -128,42 +128,30 @@
             <form>
                 <div id="register-name-container">
                     <div id="register-first-name">
-                        <label class="input-label" for="from">First Name</label>
-                        <input class="home-input" id="from" type="text" name="from" value=""/>
+                        <label class="name-label" for="from">First Name</label>
+                        <input class="home-input width-80" id="first-name" type="text" name="from" value="" required/>
                     </div>
                     <div id="register-middle-name">
-                        <label class="input-label" for="to">Middle Name</label>
-                        <input class="home-input" id="to" name="to" value=""/>
+                        <label class="name-label" for="to">Middle Name</label>
+                        <input class="home-input width-80" id="middle-name" type="text" name="to" value=""/>
                     </div>
                     <div id="register-last-name">
-                        <label class="input-label" for="to">Last Name</label>
-                        <input class="home-input" id="to" name="to" value=""/>
+                        <label class="name-label" for="last-name">Last Name</label>
+                        <input class="home-input width-80" type="text" id="last-name" name="last-name" value="" required/>
                     </div>
                 </div>
 
-                <label>Middle Name</label>
-                <input type="text" />
-                <br />
-
-                <label>Last Name</label>
-                <input type="email" />
-                <br />
-
                 <label>Username</label>
-                <input type="text" />
-                <br />
+                <input class="home-input width-70" id="username" type="text" required/>
 
                 <label>Password</label>
-                <input type="password" />
-                <br />
+                <input class="home-input width-70" id="password" type="password" required />
 
                 <label>Email Id</label>
-                <input type="text" />
-                <br />
+                <input type="text" id="emailId" class="home-input width-70" required/>
 
                 <label>Phone number</label>
-                <input type="text" />
-                <br />
+                <input id="phoneNumber" type="text" class="home-input width-70"/>
 
                 <div class="checkbox">
                     <input id="send_updates" type="checkbox" />
@@ -172,7 +160,7 @@
 
                 <div class="action_btns">
                     <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                    <div class="one_half last"><a id="register-user" href="#" class="btn btn_red">Register</a></div>
                 </div>
             </form>
         </div>
