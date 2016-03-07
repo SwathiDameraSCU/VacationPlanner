@@ -105,7 +105,6 @@ label {
     justify-content: center;
     align-items: flex-start;
     align-self: center;
-    flex-wrap: wrap;
 }
 
 .home-input {
