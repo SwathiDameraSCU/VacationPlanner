@@ -217,7 +217,7 @@ public class Application extends Controller
     public Result userBookingDetails()
     {
         String username = request().getHeader("X-User-id");
-        String basicPassword =  request().getHeader("Authorization");
+        String basicPassword =  request().getHeader("X-Authorization");
 
         if(basicPassword == null || basicPassword.isEmpty())
         {
@@ -252,7 +252,7 @@ public class Application extends Controller
 
     public Result userDetails(final String username)
     {
-        String basicPassword =  request().getHeader("Authorization");
+        String basicPassword =  request().getHeader("X-Authorization");
 
         if(basicPassword == null || basicPassword.isEmpty())
         {
@@ -326,7 +326,7 @@ public class Application extends Controller
         response().setHeader(
                 "Access-Control-Allow-Headers",
                 "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, " +
-                        "Accept-Language, Content-Length, Host, Referer, User-Agent, Authorization");
+                        "Accept-Language, Content-Length, Host, Referer, User-Agent, X-Authorization, Authorization");
         return ok();
     }
 }
