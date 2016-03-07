@@ -7,24 +7,37 @@ h1, h2, h3, h4, h5, h6, a {
 }
 #form-payment {
     margin:0;
+    margin-top:20px;
 }
 .payment-form label {
-clear:left;
+/*clear:left;
   text-align:left;
   color:#3e779d;
   display:block;
   font-weight:bold;
   font-family: "trebuchet ms", Georgia,"Times New Roman";
    font-size:16px;
-   padding-left:30px;
+   padding-left:30px;*/
+   color: #3e779d;
+       display: block;
+       font-family: "trebuchet ms",Georgia,"Times New Roman";
+       font-size: 16px;
+       font-weight: bold;
+       text-align: left;
+}
+
+.payment-form label.clearLeft {
+    clear:left;
 }
 .payment-form {
-  box-sizing:border-box;
-  /*padding-top:15px;
-  margin:20px auto 20px 15px;*/
+  /*box-sizing:border-box;
   text-align:center;
   overflow: hidden;
-  float:left;
+  float:left;*/
+  align-items: flex-start;
+      align-self: center;
+      width: 100%;
+
 }
 .payment-form input[type=text] {
   width: 80%;
@@ -67,14 +80,19 @@ clear:left;
 }
 
 #payment-div {
-    clear: left;
+    /*clear: left;
 	padding: 5px;
-	width: 50%;
+	width: 50%;*/
+	float: left;
+        margin-bottom: 20px;
+        padding-left:15px;
+        margin-top:15px;
+        width: 65%;
 }
 .payment-icons {
     float: left;
     padding-bottom: 10px;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 }
 .clearLeft {
 clear:left;
@@ -94,3 +112,11 @@ clear:left;
 .fa-cc-mastercard {
     color:#ccac00;
 }
+span.red {
+    color:red;
+    padding-left:2px;
+}
+#zipCode {
+    width:20%;
+}
+
