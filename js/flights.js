@@ -60,7 +60,7 @@ function getDiv(flightSlices, sliceReducer) {
 }
 
 function onError(message) {
-  $("#error").html('No flights could be found with the requested parameters');
+  $("#error").html(message || 'No flights could be found with the requested parameters');
 }
 
 function updateFlights(flights) {
@@ -170,7 +170,7 @@ function queryFlights() {
     }, function (data) {
       flights = JSON.parse(data);
       updateFlights(flights);
-    }).fail(onError);
+    }).fail(function() { onError() });
   } else {
     setTimeout(function () {
       flights = savedResponse;
@@ -194,6 +194,24 @@ $(document).ready(function() {
   $('#children').val(getUrlParam('children') || 0);
 
   $("#datepicker1, #datepicker2").datepicker({minDate: 0});
+
+  var returnPicker = $("#datepicker2");
+  if (getUrlParam('trip-type') !== 'one-way') {
+    returnPicker.show();
+  } else {
+    returnPicker.hide();
+  }
+
+  $('input[type=radio][name=rb]').change(function() {
+    var returnPicker = $("#datepicker2");
+    if (this.value === 'round-trip') {
+      returnPicker.show();
+    } else {
+      returnPicker.hide();
+    }
+  });
+
+
 
   queryFlights();
   autoCompleteAirportInfo("#source, #dest", airports)

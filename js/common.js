@@ -5,9 +5,9 @@ function validateFlightForm (to, from, departDate, returnDate, roundTrip, airpor
   } else if (from == null || from === "") {
     return '"From" field is required';
   } else if (departDate == null || departDate === "") {
-    return '"Departure Date" is required'
+    return 'Departure Date is required'
   } else if (roundTrip && (returnDate == null  || returnDate === "")) {
-    return '"Return Date is required';
+    return 'Return Date is required';
   } else if (airports != null && !_.isEmpty(airports) && _.keys(airports).indexOf(to) === -1) {
     return '"' + to + '" is not a valid airport identifier'
   } else if (airports != null && !_.isEmpty(airports) && _.keys(airports).indexOf(from) === -1) {

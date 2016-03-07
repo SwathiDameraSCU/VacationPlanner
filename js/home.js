@@ -17,7 +17,7 @@ $(document).ready(function() {
     var from = $("#from").val();
     var departDate = $("#depart-input").val();
     var returnDate = $("#return-input").val();
-    var roundTrip = $('input[name="trip-type"]').val() === 'round-trip';
+    var roundTrip = $('input[name="trip-type"]:checked').val() === 'round-trip';
 
     var error = validateFlightForm(to, from, departDate, returnDate, roundTrip, airports);
 
