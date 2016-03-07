@@ -180,24 +180,6 @@ function queryFlights() {
 }
 
 $(document).ready(function() {
-  var tripTypePicker = $('input[type=radio][name=rb]');
-  var tripType = tripTypePicker.value;
-  var returnPicker = $("#datepicker2");
-  if (tripType == 'round-trip') {
-    returnPicker.show();
-  } else {
-    returnPicker.hide();
-  }
-
-  tripTypePicker.change(function() {
-    var returnPicker = $("#datepicker2");
-    if (this.value == 'round-trip') {
-      returnPicker.show();
-    } else {
-      returnPicker.hide();
-    }
-  });
-
   $( "#loading" ).progressbar({
     value: false
   });
@@ -212,6 +194,24 @@ $(document).ready(function() {
   $('#children').val(getUrlParam('children') || 0);
 
   $("#datepicker1, #datepicker2").datepicker({minDate: 0});
+
+  var returnPicker = $("#datepicker2");
+  if (getUrlParam('trip-type') !== 'one-way') {
+    returnPicker.show();
+  } else {
+    returnPicker.hide();
+  }
+
+  $('input[type=radio][name=rb]').change(function() {
+    var returnPicker = $("#datepicker2");
+    if (this.value === 'round-trip') {
+      returnPicker.show();
+    } else {
+      returnPicker.hide();
+    }
+  });
+
+
 
   queryFlights();
   autoCompleteAirportInfo("#source, #dest", airports)
