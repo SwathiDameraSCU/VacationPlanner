@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/personal-info.css">
+    <link rel="stylesheet" href="styles/summary.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
     <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
-
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 <header>
@@ -59,30 +60,47 @@
         </div>
     </div>
 </header>
-<div id="personal-info">
-    <form action="payment.html">
-        <span id="enter-your-info">Enter Your Personal Info:</span>
-        <div id="trip-location-container">
-            <div class="text-input">
-                <label class="input-label" for="firstName">First Name</label>
-                <input class="personal-input" type="text" id="firstName" name="firstName" value=""/>
+<div class="fullWidth">
+    <div id="personal-info">
+        <form action="payment.html" method="POST">
+            <span id="enter-your-info">Enter Your Personal Info:</span>
+            <div id="payment-form" class="trip-location-container">
             </div>
-            <div class="text-input">
-                <label class="input-label" for="lastName">Last Name</label>
-                <input class="personal-input" type="text" id="lastName" name="lastName" value=""/>
+            <input id="submit-info" type="submit" name="submitButton" value="Continue to Payment"></input>
+        </form>
+
+    </div>
+    <div class="trip-summary right">
+        <div class="rightDisplay">
+            <p> <h1 class="styleHeading"> Trip Summary</h1></p>
+            <div id="passPerPerson">
+                <span>
+                <span id="numberOfTickets">  </span>
+                <span id="roundOrOneLabel"> </span>
+                <span class="separator"></span>
+                </span>
             </div>
-            <div class="text-input">
-                <label class="input-label" for="email">Email</label>
-                <input class="personal-input" type="text" id="email" name="email" value=""/>
+            <div class="separator">
             </div>
-            <div class="text-input">
-                <label class="input-label" for="address">Address</label>
-                <input class="personal-input" type="text" id="address" name="address" value=""/>
+            <div id="productPriceSummary" class="borderTop">
+                <ul class="ulStyleTr">
+                </ul>
+                <div id="itemPriceSummary">
+                    <span id="booking"> Booking Fee </span>
+                    <span id="bookingFee" style="float:right"> $0.00 </span>
+                </div>
+            </div>
+            <div id="totalContainer" class="itemClass">
+                <div class="separator"> </div>
+                <div id="tripTotal" class="totalClass">
+                    <div id= "colRight">
+                        <span id="lbltotals"> Trip Total: </span>
+                        <span id="displayPrice" class="stylePrice">  </span>
+                    </div>
+                </div>
             </div>
         </div>
-        <button id="submit-info" type="submit" name="submitButton">Submit</button>
-    </form>
-
+    </div>
 </div>
 <footer>
     <div class="footer">
@@ -98,5 +116,7 @@
         <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
+<script src="js/personal.js"></script>
+<script src="js/summary.js"></script>
 </body>
 </html>
