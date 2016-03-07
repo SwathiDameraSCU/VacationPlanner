@@ -105,8 +105,11 @@ function getTravellerInfo(){
 function onLoad(){
  
  var data=fli.flightSlices.length; // to check whether it is roundtrip or One way
- var fromDate = '02/29/2016';//get dates from local storage of flights.html
- var toDate = '03/01/2016';
+ //var fromDate = '02/29/2016';//get dates from local storage of flights.html
+ //var toDate = '03/01/2016';
+var fromDate = localStorage.getItem("departureDate");
+var toDate = localStorage.getItem("returnDate");
+ 
 
 	for(var i=0;i<data;i++){
 		getFlightInfo(i);
