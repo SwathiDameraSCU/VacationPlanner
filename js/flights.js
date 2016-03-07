@@ -193,7 +193,7 @@ $(document).ready(function() {
   $('#adults').val(getUrlParam('adults') || 1);
   $('#children').val(getUrlParam('children') || 0);
 
-  $("#datepicker1, #datepicker2").datepicker();
+  $("#datepicker1, #datepicker2").datepicker({minDate: 0});
 
   queryFlights();
   autoCompleteAirportInfo("#source, #dest", airports)

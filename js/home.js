@@ -9,7 +9,7 @@ $(document).ready(function() {
       returnPicker.hide();
     }
   });
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({minDate: 0});
 
   $("form").submit(function(event) {
     // Validate form
