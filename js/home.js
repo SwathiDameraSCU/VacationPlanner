@@ -9,7 +9,7 @@ $(document).ready(function() {
       returnPicker.hide();
     }
   });
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({minDate: 0});
 
   $("form").submit(function(event) {
     // Validate form
@@ -30,7 +30,11 @@ $(document).ready(function() {
   autoCompleteAirportInfo("#to, #from", airports)
 });
 
-loadAirports(function (airportData) {
+loadAirports(function (err, airportData) {
+  if (err) {
+    // Swallow
+    return;
+  }
   airports = airportData;
   autoCompleteAirportInfo("#to, #from", airports)
 });

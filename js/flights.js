@@ -59,6 +59,10 @@ function getDiv(flightSlices, sliceReducer) {
   return html + '</div>'
 }
 
+function onError(message) {
+  $("#error").html('No flights could be found with the requested parameters');
+}
+
 function updateFlights(flights) {
   var table = '<table><tr>' +
     '<th></th>' + // Airline logo
@@ -77,13 +81,11 @@ function updateFlights(flights) {
     table += '<tr class="flight">' +
       '<td class="flightDtls">' +
       getDiv(option.flightSlices, function(slice) {
-        var airline = (slice.legs.length === 1)
-          ? slice.legs[0].carrier
-          : slice.legs.reduce(function (prevAirline, flight) {
-            return (flight.carrier === prevAirline && prevAirline != null)
-              ? 'Multiple'
-              : flight.carrier;
-          });
+        var airline = slice.legs.reduce(function (prevAirline, flight) {
+          return (prevAirline == null || flight.carrier === prevAirline)
+            ? flight.carrier
+            : 'Multiple';
+        }, null);
 
         var airlineLogo = (airlines[airline] == null) ? default_airline : airlines[airline];
 
@@ -138,8 +140,10 @@ function queryFlights() {
 
   var error = validateFlightForm(origin, destination, departureDate, arrivalDate, roundTrip, airports);
   if (error != null) {
-    alert(error); // TODO
+    onError(error);
     return;
+  } else {
+    $("#error").html('');
   }
 
   currentParams = {
@@ -166,7 +170,7 @@ function queryFlights() {
     }, function (data) {
       flights = JSON.parse(data);
       updateFlights(flights);
-    });
+    }).fail(onError);
   } else {
     setTimeout(function () {
       flights = savedResponse;
@@ -189,13 +193,14 @@ $(document).ready(function() {
   $('#adults').val(getUrlParam('adults') || 1);
   $('#children').val(getUrlParam('children') || 0);
 
-  $("#datepicker1, #datepicker2").datepicker();
+  $("#datepicker1, #datepicker2").datepicker({minDate: 0});
 
   queryFlights();
   autoCompleteAirportInfo("#source, #dest", airports)
 });
 
-loadAirports(function (airportData) {
+loadAirports(function (err, airportData) {
+  if (err) alert(err);
   airports = airportData;
   autoCompleteAirportInfo("#source, #dest", airports)
 });

@@ -3,7 +3,7 @@
 form {
     width: 80%;
     margin: 0 auto;
-    font-family: 'Waiting for the Sunrise', sans-serif; 
+    font-family: sans-serif;
 }
 
 table {
@@ -27,13 +27,13 @@ th {
 }
 
 td{
-font-size: 20px;
+font-size: 15px;
 }
 
 .SearchInputBox {
     border: 1px solid #C6D1AD;
     font-size: 15pt;
-    font-family: 'Waiting for the Sunrise', sans-serif; 
+    font-family: sans-serif;
     background-color: #FAFAFA;
 }
 
@@ -56,8 +56,7 @@ font-size: 20px;
 #radioDiv{
 	padding-top: 10px;
 	padding-left: 10px;
-	font-family: 'Waiting for the Sunrise', sans-serif; 
-	font-size: 25px;
+	font-family: sans-serif;
 }
 
 .button {
@@ -95,7 +94,7 @@ font-size: 20px;
 }
 
 .selectDiv {
-    font-family: 'Waiting for the Sunrise', sans-serif; 
+    font-family: sans-serif;
     padding-top: 50px;
     padding-left: 10px;
     padding-right: 10px;
@@ -125,5 +124,10 @@ td.flightDtls {
 
 #trip-passengers-container, #trip-passengers-container > label, #radioDiv {
     display: inline;
-    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-family: sans-serif;
+}
+
+#error {
+    text-align: center;
+    color: red;
 }
