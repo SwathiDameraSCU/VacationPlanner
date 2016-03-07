@@ -16,7 +16,7 @@ object Global extends GlobalSettings {
       ACCESS_CONTROL_ALLOW_ORIGIN -> "*",
       ALLOW->"*",
       ACCESS_CONTROL_ALLOW_METHODS -> "POST, GET, PUT, DELETE, OPTIONS",
-      ACCESS_CONTROL_ALLOW_HEADERS -> "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, Accept-Language, Content-Length, Host, Referer, User-Agent, X-Authorization, Authorization"
+      ACCESS_CONTROL_ALLOW_HEADERS -> "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, Accept-Language, Content-Length, Host, Referer, User-Agent, Authorization"
     ))
   }
 }
