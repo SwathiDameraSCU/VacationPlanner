@@ -127,3 +127,8 @@ td.flightDtls {
     display: inline;
     font-family: 'Waiting for the Sunrise', sans-serif;
 }
+
+#error {
+    text-align: center;
+    color: red;
+}

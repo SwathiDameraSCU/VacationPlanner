@@ -30,7 +30,11 @@ $(document).ready(function() {
   autoCompleteAirportInfo("#to, #from", airports)
 });
 
-loadAirports(function (airportData) {
+loadAirports(function (err, airportData) {
+  if (err) {
+    // Swallow
+    return;
+  }
   airports = airportData;
   autoCompleteAirportInfo("#to, #from", airports)
 });

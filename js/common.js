@@ -8,9 +8,9 @@ function validateFlightForm (to, from, departDate, returnDate, roundTrip, airpor
     return '"Departure Date" is required'
   } else if (roundTrip && (returnDate == null  || returnDate === "")) {
     return '"Return Date is required';
-  } else if (_.keys(airports).indexOf(to) == -1) {
+  } else if (airports != null && !_.isEmpty(airports) && _.keys(airports).indexOf(to) === -1) {
     return '"' + to + '" is not a valid airport identifier'
-  } else if (_.keys(airports).indexOf(from) == -1) {
+  } else if (airports != null && !_.isEmpty(airports) && _.keys(airports).indexOf(from) === -1) {
     return '"' + from + '" is not a valid airport identifier'
   } else if (new Date(departDate) - Date.now() < 0) {
     return 'Departure date "' + departDate + '" is in the past';
@@ -35,16 +35,20 @@ function loadAirports (cb) {
     var airportData = localStorage.getItem("airports");
     if (airportData != null) {
       console.log('cached');
-      cb(JSON.parse(airportData));
+      cb(null, JSON.parse(airportData));
       return;
     }
   }
 
-  $.get("http://localhost:9000/airports", function (data) {
-    if (Storage != null) {
-      localStorage.setItem("airports", data);
-    }
-    console.log('full load');
-    cb(JSON.parse(data));
-  });
+  try {
+    $.get("http://localhost:9000/airports", function (data) {
+      if (Storage != null) {
+        localStorage.setItem("airports", data);
+      }
+      console.log('full load');
+      cb(null, JSON.parse(data));
+    });
+  } catch (err) {
+    cb(err);
+  }
 }
