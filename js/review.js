@@ -232,6 +232,10 @@ function getAirLines(slice){
 			}
 
 		}
+		// assign default image if there's no common carrier
+		if(airline!='AS' &&  airline!='UA' && airline!='B6' && airline!='AA' && airline!='DL' && airline!='default'){
+			airline = "default";
+		}
 return	airline;
 }
 
