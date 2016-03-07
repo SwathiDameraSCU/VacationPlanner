@@ -113,7 +113,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
     font-size: 28px;
     font-weight: 700;
 }
-.user_register label {
+.user_login label, .user_register label {
   text-align:left;
   /*color:#3e779d;*/
   display:block;
@@ -123,7 +123,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
    /*padding-left:30px;*/
 }
 
-.user_register input[type=text], .user_register input[type=password] {
+.user_login input[type=text], .user_login input[type=password], .user_register input[type=text], .user_register input[type=password] {
   /*width: 80%;*/
   max-width:400px;
   height:30px;
