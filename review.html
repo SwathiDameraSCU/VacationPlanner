@@ -7,11 +7,20 @@
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/review.css">
     <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'> 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/review.js"></script>
+	<style>
+	.footerStyle {
+		clear: both;		
+		margin-top: -200px;
+		margin-bottom: 2px;
+		/*padding-top: 0;*/
+		position: relative;
+		width: 100%;
+	}
+	</style>
 </head>
 <body onload="onLoad();getTravellerInfo();setValues();">
 <header>
@@ -82,7 +91,11 @@
 		
 		</ul>
 	</div>
-
+	 <div class="searchBtn">
+		<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
+		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
+		</span> 
+	 </div>
 	</div>	
 
 </section>
@@ -153,21 +166,21 @@
 	</li>
 	</ul>
 	</div>
-</section>
+	</section>
 
 </section>
 	<div>
-	    <div class="searchBtn">
-		<input type="button" id="searchButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
+	<div class="searchBtnMobile">
+		<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
 		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
 		</span> 
-	    </div>
-	</div>	
+	 </div>
+	 </div>	
 </div>
 	
 </div>
 
-<footer>
+<footer class="footerStyle">
     <div class="footer">
         <nav>
             <div class="footer-nav">
