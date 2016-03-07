@@ -326,7 +326,7 @@ public class Application extends Controller
         response().setHeader(
                 "Access-Control-Allow-Headers",
                 "Authentication, Origin, X-User-Id, Content-Type, Accept, Accept-Encoding, " +
-                        "Accept-Language, Content-Length, Host, Referer, User-Agent");
+                        "Accept-Language, Content-Length, Host, Referer, User-Agent, Authorization");
         return ok();
     }
 }
