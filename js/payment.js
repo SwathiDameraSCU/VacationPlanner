@@ -36,7 +36,7 @@ $(document).ready(function() {
         var d = JSON.stringify(obj);
         headerStr = "";
         if (localStorage.getItem("logged-user-id") == undefined) {
-            headerStr = 'X-User-id': localStorage.getItem("logged-user-id");
+            headerStr = 'X-User-id:'+ localStorage.getItem("logged-user-id");
         }
 
          $.ajax({
