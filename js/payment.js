@@ -34,11 +34,17 @@ $(document).ready(function() {
 
         var obj = JSON.parse(text);
         var d = JSON.stringify(obj);
+        headerStr = "";
+        if (localStorage.getItem("logged-user-id") == undefined) {
+            headerStr = 'X-User-id': localStorage.getItem("logged-user-id");
+        }
+
          $.ajax({
                   url: "http://localhost:9000/bookings",
                   type: 'POST',
                   data: d,
                   headers: {
+                           headerStr,
                           'Content-Type':'application/json'
                       },
                   contentType: "application/json; charset=utf-8",

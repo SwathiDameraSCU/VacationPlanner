@@ -141,4 +141,14 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 .width-70 {
     width:70%
 }
-
+#li-logout.displayNone {
+    display:none;
+}
+#li-logout.displayLoggedUser {
+    display:inline;
+}
+#logged-username-value {
+    float:left;
+    display:block;
+    height:100%;
+}

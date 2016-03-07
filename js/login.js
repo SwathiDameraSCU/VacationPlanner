@@ -35,19 +35,38 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       url: "http://localhost:9000/users/" + username,
                       type: 'GET',
                       headers: {
-                              'Content-Type':'application/json',
-                              'Authorization':'password ' + password
+                        'Content-Type':'application/json',
+                        'Authorization':'password ' + password
                           },
                       contentType: "application/json; charset=utf-8",
 
                       dataType : 'json',
-                      success: function(result) {
+                      //success: function(result) {
+                      success: function(result, textStatus, request){
                       console.log(result);
-                          // set the username value -  logged-username-value
+                      console.log(request);
+                     /* _id: "sumanahariharan2"
+                      emailId: "shariharan@scu.edu"
+                      firstname: "Sumana"
+                      gender: null
+                      lastname: "Hariharan"
+                      middlename: "test"
+                      password: "1234"
+                      phoneNumber: "5109363713"*/
+                      // Check whether HTTP header is 200
+                      // set the username value -  logged-username-value
+                      if (request.status == 200) { // Username and password valid
+                         // Store the username
+                         localStorage.setItem("logged-user-id",result._id);
+                         // Display the logged in username
                           var logged_username = result.firstname;
-                          $("#logged-username-value").val("Hi! " + logged_username);
-//                        localStorage.setItem("booking_id", result.booking_id);
-//                        location.href = "confirmation.html";
+                          $("#logged-username-value").text("Hi! " + logged_username);
+                          $("#logged-username-value").css("display","inline")
+                          $("#li-logout").addClass("displayLoggedUser");
+                          $("#login-li").css("display","none");
+                          // Close the popup
+                          $("#modal").css("display","none");
+                      }
                       },
                       error: function(result) {
                       console.log(result);
