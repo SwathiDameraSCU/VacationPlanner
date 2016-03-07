@@ -180,6 +180,24 @@ function queryFlights() {
 }
 
 $(document).ready(function() {
+  var tripTypePicker = $('input[type=radio][name=rb]');
+  var tripType = tripTypePicker.value;
+  var returnPicker = $("#datepicker2");
+  if (tripType == 'round-trip') {
+    returnPicker.show();
+  } else {
+    returnPicker.hide();
+  }
+
+  tripTypePicker.change(function() {
+    var returnPicker = $("#datepicker2");
+    if (this.value == 'round-trip') {
+      returnPicker.show();
+    } else {
+      returnPicker.hide();
+    }
+  });
+
   $( "#loading" ).progressbar({
     value: false
   });
