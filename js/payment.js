@@ -39,6 +39,7 @@ $(document).ready(function() {
                   type: 'POST',
                   data: d,
                   headers: {
+                          'X-User-id': localStorage.getItem("logged-user-id"),
                           'Content-Type':'application/json'
                       },
                   contentType: "application/json; charset=utf-8",
