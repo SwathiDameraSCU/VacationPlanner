@@ -25,6 +25,38 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
 			return false;
 		});
 
+        // Click Handler for Login button
+        $("#login-user").click(function(event){
+            // Get the form fields
+            event.preventDefault();
+            var username = $(".user_login").find('#login-username').val().trim();
+            var password = $(".user_login").find('#login-password').val();
+             $.ajax({
+                      url: "http://localhost:9000/users/" + username,
+                      type: 'GET',
+                      headers: {
+                              'Content-Type':'application/json',
+                              'Authorization':'password ' + password
+                          },
+                      contentType: "application/json; charset=utf-8",
+
+                      dataType : 'json',
+                      success: function(result) {
+                      console.log(result);
+                          // set the username value -  logged-username-value
+                          var logged_username = result.firstname;
+                          $("#logged-username-value").val("Hi! " + logged_username);
+//                        localStorage.setItem("booking_id", result.booking_id);
+//                        location.href = "confirmation.html";
+                      },
+                      error: function(result) {
+                      console.log(result);
+//                        localStorage.setItem("booking_id","");
+//                        location.href = "confirmation.html";
+                      }
+                });
+        });
+
 		// Click Handler for Register button
 	    $("#register-user").click(function(event){
 	        // Get the form fields

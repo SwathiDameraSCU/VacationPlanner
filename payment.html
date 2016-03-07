@@ -50,13 +50,15 @@
         </div>
         <div class="col-2">
             <nav>
+                <span id="logged-username-value"></li>
                 <div id="right-nav" class="right-nav custom-dropdown">
                     <input type="checkbox" checked="false" id="button">
                     <label for="button"></label>
                     <ul class="right-nav-links">
                         <!--<li><a id="modal_trigger">Login</a></li>-->
                         <li><a id="modal_trigger" href="#modal" class="btn">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <li id="li-logout" class="displayNone"><a id="logout">Logout</a></li>
                         <li><a href="support.html">Support</a></li>
                     </ul>
                 </div>
@@ -102,11 +104,11 @@
         <div class="user_login">
             <form>
                 <label>Email / Username</label>
-                <input type="text" />
+                <input type="text" id="login-username" />
                 <br />
 
                 <label>Password</label>
-                <input type="password" />
+                <input type="password" id="login-password"/>
                 <br />
 
                 <div class="checkbox">
@@ -116,7 +118,7 @@
 
                 <div class="action_btns">
                     <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                    <div class="one_half last"><a href="#" id="login-user" class="btn btn_red">Login</a></div>
                 </div>
             </form>
 

@@ -340,7 +340,9 @@ div.custom-dropdown input[type=checkbox]:checked ~ ul > li a.selected {
     font-weight: 700;
     display: block;
 }
-
+#li-logout.displayNone {
+    display:none;
+}
 
 
 /* small screens */
