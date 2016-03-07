@@ -27,30 +27,47 @@ input[type=text] {
 
 #trip-time-container {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+#trip-type-container {
+    margin-bottom: 20px;
+}
+
 
 #section {
     background-color: #B2DFDB;
     margin-top: 100px;
 }
-button {
-    background-color: #00796B;
-    border: none;
-    color: white;
-    padding: 15px 32px;
+
+.button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 20px;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    outline: none;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
 }
 
-button:hover {
-    background-color: #4DB6AC;
+.button:hover {
+    background-color: #4ca197
+}
+
+.button:active {
+    background-color: #4ca197;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #plan-your-flight {
     text-align: center;
-    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-family: sans-serif;
     font-size: 40px;
     font-weight: 700;
     display: block;
@@ -59,13 +76,13 @@ button:hover {
 }
 
 label {
-    font-family: 'Waiting for the Sunrise', sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
     display: inline;
 }
 
 #title {
-    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-family: sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: white;
