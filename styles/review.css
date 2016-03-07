@@ -76,10 +76,15 @@ section {
 }
 
 .searchBtn{		
-    	margin-bottom: 2%;
+    	margin-bottom: 10%;
     	width: 100%;
     	height: 100%;
     	float: left;
+		margin-top: 6%;
+}
+
+.searchBtnMobile{		
+    	display: none;
 }
 
 .deptArrDur{
@@ -235,6 +240,7 @@ div#tickDiv{
     color: blue;
     text-decoration: none;
     border-bottom: 1px solid green;
+	cursor:pointer;
 }
 
 .ulStyle
@@ -257,7 +263,7 @@ div#tickDiv{
 
 .styleHeading{
     font-size: 1.9em;
-	font-family: 'Waiting for the Sunrise', sans-serif;
+	/*font-family: 'Waiting for the Sunrise', sans-serif;*/
 }
 
 .style{
@@ -282,6 +288,7 @@ div#tickDiv{
 	width: 100%;
 	height: 100%;
 	float: left;
+	margin-bottom: 1%;
 }
 
 .firstDiv{
@@ -316,6 +323,8 @@ float: left;
 height: 100%;
 width: 20%;
 float: left;
+margin-left: 1%;
+padding-right: 5%;
 }
 
 .toImageStyle{
@@ -323,17 +332,19 @@ height: 100%;
 width: 15%;
 float: left;
 padding-left: 4%;
+margin-top: 1%;
 }
 
 #arrowImg img{
-	width : 20%;
+	width : 28%;
 	height: 10%;
 }
 
 .durDtls{
 height: 100%;
 float: left;
-width: 40%;
+width: 30%;
+padding-left: 6%;
 }
 
 .fromToLabels{
@@ -370,6 +381,8 @@ font-weight: bold;
 width: 100%;
 height: 100%;
 float :left;
+background-color: rgba(67,115, 111,0.18);
+margin-bottom: 1%;
 }
 
 .borderTop{
@@ -403,6 +416,7 @@ font-size: 1.1em;
 .deptArrDurStyle{
 font-size: 1.2em;
 font-weight: 570;
+width: 100%;
 }
 
 .orgDestVia{
@@ -484,4 +498,69 @@ margin-left: 10%;
 
 .styleImportantInfo{
 	text-align: justify;
+}
+
+@media (max-width: 958px) {
+
+   .right {
+           width:40% !important;
+		   float:left;
+    }
+	.left {
+           width:100% ;
+		   float:left;
+		   font-size: 1em;
+	}
+
+	#freeCnl{
+		visibility: hidden;
+	}
+	
+	.arrDetails{
+		height: 100%;
+		width: 20%;
+		float: left;
+		margin-left: 1%;
+		padding-right: 10%;
+	}
+
+	.durDtls{
+		height: 100%;
+		padding-left: 1%;
+		clear:left;
+		width: 100%;
+	}
+
+	/*.searchBtn{		
+    	margin-bottom: 3%;
+    	width: 100%;
+    	height: 100%;
+    	float: left;
+		margin-top: 10%;
+	}*/
+
+	.toImageStyle{
+		height: 100%;
+		width: 30%;
+		float: left;
+		padding-left: 20%;
+		margin-top: 1%;
+	}
+
+	.searchBtn{		
+    	display: none;
+	}
+
+	.searchBtnMobile{		
+    	margin-bottom: 3%;
+    	width: 100%;
+    	height: 100%;
+    	float: left;
+		margin-top: 10%;
+	}
+
+	.searchBtnMobile{
+		display: block;
+	}
+
 }
