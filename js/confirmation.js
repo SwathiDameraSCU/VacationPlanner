@@ -3,7 +3,7 @@ $( window ).load(function() {
   if (typeof(Storage) !== "undefined") {
       var booking_id = localStorage.getItem("booking_id");
       if (booking_id == "") {
-        $("#message-div").html("Your ticket was not booked.Please try agains");
+        $("#message-div").html("Your ticket was not booked.Please try again later");
       } else {
         $("#message-div").html("Your ticket has been booked successfully and your <b> booking id is " + booking_id + "</b>");
       }
@@ -12,3 +12,10 @@ $( window ).load(function() {
     }
 
 });
+
+
+ $("#goBackButton").click(function(event){
+        event.preventDefault;
+        /* If the user is logged in, it should remain the same */
+        window.document.location.href = 'home.html';
+ });

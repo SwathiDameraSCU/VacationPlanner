@@ -64,10 +64,11 @@ body {
 .trip-location-container label {
   text-align:left;
   /*color:#3e779d;*/
-   color: #009688;
+
   display:block;
   font-weight:bold;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+  color: #009688;
+  font-family: "Calibri",sans-serif;
    font-size:16px;
    padding-top:5px;
    /*padding-left:30px;*/

@@ -18,9 +18,9 @@ h1, h2, h3, h4, h5, h6, a {
   font-family: "trebuchet ms", Georgia,"Times New Roman";
    font-size:16px;
    padding-left:30px;*/
-   color: #3e779d;
+   color: #009688;
+     font-family: "Calibri",sans-serif;
        display: block;
-         font-family: "Calibri",sans-serif;
        font-size: 16px;
        font-weight: bold;
        text-align: left;
@@ -66,17 +66,34 @@ h1, h2, h3, h4, h5, h6, a {
 }
 .payment-form input[type=submit] {
   height:30px;
-  width:120px;
-  background: #3e779d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-  background: -moz-linear-gradient(to top,  #65a9d7,  #3e779d);
-  border:1px solid #f2f2f2;
-  border-radius:20px;
-  color: white;
-  text-transform:uppercase;
-    font-family: "Calibri",sans-serif;
-  cursor:pointer;
-  margin-top: 10px;
+  width:150px;
+  background-color: #00796B;
+      border: none;
+      color: white;
+      /*padding: 15px 32px;*/
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top:30px;
+      margin-left:20px;
+      cursor: pointer;
+      outline: none;
+          color: #fff;
+          background-color: #00796b;
+          border: none;
+          border-radius: 10px;
+          box-shadow: 0 5px #999;
+}
+
+.payment-form input[type=submit]:hover {
+        background-color: #4ca197
+}
+
+.payment-form input[type=submit]:active {
+    background-color: #4ca197;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #payment-div {
@@ -86,8 +103,13 @@ h1, h2, h3, h4, h5, h6, a {
 	float: left;
         margin-bottom: 20px;
         padding-left:15px;
-        margin-top:15px;
+        margin-top:30px;
         width: 65%;
+}
+
+#payment-div h3 {
+    font-size:1.9em;
+
 }
 .payment-icons {
     float: left;
@@ -118,5 +140,14 @@ span.red {
 }
 #zipCode {
     width:20%;
+}
+.fullWidth {
+   height: 100%;
+       margin: 10px auto 0 5%;
+       width: 70%;
+}
+.personal-div {
+    width:100%;
+
 }
 

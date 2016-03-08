@@ -1,3 +1,6 @@
+window.onload = function() {
+  getTravellerInfo();
+};
 
 $(document).ready(function() {
      $("form").submit(function(event) {

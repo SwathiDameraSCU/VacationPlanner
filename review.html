@@ -1,198 +1,198 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Escapade101 - Vacation Planner</title>
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/review.css">
-    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'> 
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Escapade101 - Vacation Planner</title>
+	<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+	<!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/common.css">
+	<link rel="stylesheet" href="styles/review.css">
+	<link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/review.js"></script>
 	<style>
-	.footerStyle {
-		clear: both;		
+		.footerStyle {
+		clear: both;
 		margin-top: -200px;
 		margin-bottom: 2px;
 		/*padding-top: 0;*/
 		position: relative;
 		width: 100%;
-	}
+		}
 	</style>
 </head>
 <body onload="onLoad();getTravellerInfo();setValues();">
 <header>
-    <div id="travel-alerts" class="backWhite red alert">
-        Flights to New York are delayed due to weather conditions
-    </div>
-    <div class="bgColor">
-    <div class="header col-1">
-        <div class="nav-div">
-            <div id="logo">
-                <img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
-                <!--<img class="logo-image" alt="Escapade Logo"/>-->
-                <!--<span id="title">Vacation Planner</span>-->
-            </div>
-            <nav>
-                <div id="nav" class="nav">
-                    <ul class="nav-links">
-                        <li><a href="home.html" class="selected">
-                            <input id="tab1" type="radio" name="tabs" checked>
-                            <label for="tab1"> Flights</label>
-                        </a></li>
-                        <li><a href="rentals.html" class="selected">
-                            <input id="tab2" type="radio" name="tabs" checked>
-                            <label for="tab2"> Rentals</label>
-                        </a></li>
-                        <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
-                        <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
-                    </ul>
-                </div>
-            </nav>
-        </div>    
-    </div>
-    <div class="col-2">
-    <nav>
-        <div id="right-nav" class="right-nav custom-dropdown">
-            <input type="checkbox" checked="false" id="button">
-            <label for="button"></label>
-            <ul class="right-nav-links">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
-        </div>
-    </nav>
-    </div>
-    </div>
+	<div id="travel-alerts" class="backWhite red alert">
+		Flights to New York are delayed due to weather conditions
+	</div>
+	<div class="bgColor">
+		<div class="header col-1">
+			<div class="nav-div">
+				<div id="logo">
+					<img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
+					<!--<img class="logo-image" alt="Escapade Logo"/>-->
+					<!--<span id="title">Vacation Planner</span>-->
+				</div>
+				<nav>
+					<div id="nav" class="nav">
+						<ul class="nav-links">
+							<li><a href="home.html" class="selected">
+								<input id="tab1" type="radio" name="tabs" checked>
+								<label for="tab1"> Flights</label>
+							</a></li>
+							<li><a href="rentals.html" class="selected">
+								<input id="tab2" type="radio" name="tabs" checked>
+								<label for="tab2"> Rentals</label>
+							</a></li>
+							<!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
+							<!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="col-2">
+			<nav>
+				<div id="right-nav" class="right-nav custom-dropdown">
+					<input type="checkbox" checked="false" id="button">
+					<label for="button"></label>
+					<ul class="right-nav-links">
+						<li><a href="login.html">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="support.html">Support</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
 </header>
 <div>
-<div id="alignBody">
-<section class="left">
-	<div>
-	
- 	<div id="div1">
-		<h1 class="styleHeading"> Review your trip </h1>
-	</div>
-	<!--<div id="tripAmount">
-		<span> Trip Total:  </span><span id="displayPrice"> </span>
-	</div>-->
-	<div id="div2">
-		<div id="tickDiv"><img src="images/tick.png" alt="Tick Image"/>
-		<span id="para1">Nice Job! You picked one of our cheapest flights.</span><br>
-		<span id="para2">Book now so you don't miss out on this price!</span>
-		</div>
-		<div></div>
-	</div>
-	<div id="div3">
-		<ul class="ulStyle">
-		
-		</ul>
-	</div>
-	 <div class="searchBtn">
-		<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
-		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
-		</span> 
-	 </div>
-	</div>	
+	<div id="alignBody">
+		<section class="left">
+			<div>
 
-</section>
-	
-	<section class="right">
-	<section class="rightDisplay">
-	<p> <h1 class="styleHeading"> Trip Summary</h1></p>
-	<div id="passPerPerson"> 
+				<div id="div1">
+					<h1 class="styleHeading"> Review your trip </h1>
+				</div>
+				<!--<div id="tripAmount">
+                    <span> Trip Total:  </span><span id="displayPrice"> </span>
+                </div>-->
+				<div id="div2">
+					<div id="tickDiv"><img src="images/tick.png" alt="Tick Image"/>
+						<span id="para1">Nice Job! You picked one of our cheapest flights.</span><br>
+						<span id="para2">Book now so you don't miss out on this price!</span>
+					</div>
+					<div></div>
+				</div>
+				<div id="div3">
+					<ul class="ulStyle">
+
+					</ul>
+				</div>
+				<div class="searchBtn">
+					<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/>
+		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
+		</span>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="right">
+			<section class="rightDisplay">
+				<p> <h1 class="styleHeading"> Trip Summary</h1></p>
+				<div id="passPerPerson">
 	<span>
 	<span id="numberOfTickets">  </span>
 	<span id="roundOrOneLabel"> </span>
 	<span class="separator"></span>
 	</span>
-	</div>
-	<div class="separator">
-	</div>
-	<div id="productPriceSummary" class="borderTop"> 
-		
-		<ul class="ulStyleTr">
-		 
-		</ul>
-		<div id="itemPriceSummary">
-			<span id="booking" class="bookingFeeStyle"> Booking Fee </span>
-			<span id="bookingFee" style="float:right"> $0.00 </span>
-		</div>		
-	</div>
-	<div id="totalContainer" class="itemClass">
-	 		<div class="separator"> </div>
-	 		<div id="tripTotal" class="totalClass">
-				<div id= "colRight">
-				<span id="lbltotals"> Trip Total: </span>
-				<span id="displayPrice" class="stylePrice">  </span>
-				</div>	
-	 		</div>
-	
-	</div>
-	</section>
-	<section class="rightDisplay">
-	<span class="ratesStyle">Rates are quoted in US dollars</span>
-	</section>
-	<section class="rightDisplay">
-	<h3 class="styleHeading"> <span><img src="images/imp1.png" alt="Mountain View" style="width:5%;height:5%;"></span> 
-	<span> Important Flight Information </span> </h3>
-	<div class="styleImportantInfo">
-	<ul>
-	<li>
-	Tickets are <strong>non-refundable</strong> and <strong>non transferable</strong>. A fee of $125.00 per ticket is charged for itinerary changes. Name changes are not allowed.
-	</li>
-	<li> 
-	<div>
-	<strong>All Airlines fares are non-refundable</strong> 
-		<div>
-			<strong>Bare Fares</strong>
- 			Airline's low 
- 			get you from A to B with one personal item such as a small backpack or purse
-			(Maximum dimensions: 16"x14"x12")    
-		</div>
-		<div>
-		<strong>Additional purchase will be required for the following:</strong>
-		<ul>
-			<li> One Carry-on bag per passenger </li>
-			<li> All checked bags (overweight bag charges start at 41 lbs.) </li>
-			<li> Advance Seat Assignments </li>
-			<li> All onboard drinks and snacks </li>
-		</ul>
-		</div>
-	</div>
-	</li>
-	</ul>
-	</div>
-	</section>
+				</div>
+				<div class="separator">
+				</div>
+				<div id="productPriceSummary" class="borderTop">
 
-</section>
-	<div>
-	<div class="searchBtnMobile">
-		<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/> 
+					<ul class="ulStyleTr">
+
+					</ul>
+					<div id="itemPriceSummary">
+						<span id="booking" class="bookingFeeStyle"> Booking Fee </span>
+						<span id="bookingFee" style="float:right"> $0.00 </span>
+					</div>
+				</div>
+				<div id="totalContainer" class="itemClass">
+					<div class="separator"> </div>
+					<div id="tripTotal" class="totalClass">
+						<div id= "colRight">
+							<span id="lbltotals"> Trip Total: </span>
+							<span id="displayPrice" class="stylePrice">  </span>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<section class="rightDisplay">
+				<span class="ratesStyle">Rates are quoted in US dollars</span>
+			</section>
+			<section class="rightDisplay">
+				<h3 class="styleHeading"> <span><img src="images/imp1.png" alt="Mountain View" style="width:5%;height:5%;"></span>
+					<span> Important Flight Information </span> </h3>
+				<div class="styleImportantInfo">
+					<ul>
+						<li>
+							Tickets are <strong>non-refundable</strong> and <strong>non transferable</strong>. A fee of $125.00 per ticket is charged for itinerary changes. Name changes are not allowed.
+						</li>
+						<li>
+							<div>
+								<strong>All Airlines fares are non-refundable</strong>
+								<div>
+									<strong>Bare Fares</strong>
+									Airline's low
+									get you from A to B with one personal item such as a small backpack or purse
+									(Maximum dimensions: 16"x14"x12")
+								</div>
+								<div>
+									<strong>Additional purchase will be required for the following:</strong>
+									<ul>
+										<li> One Carry-on bag per passenger </li>
+										<li> All checked bags (overweight bag charges start at 41 lbs.) </li>
+										<li> Advance Seat Assignments </li>
+										<li> All onboard drinks and snacks </li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		</section>
+		<div>
+			<div class="searchBtnMobile">
+				<input type="button" id="cntButton" value="Continue Booking" class="button" onclick="nextPage();"/>
 		<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! 
-		</span> 
-	 </div>
-	 </div>	
-</div>
-	
+		</span>
+			</div>
+		</div>
+	</div>
+
 </div>
 
 <footer class="footerStyle">
-    <div class="footer">
-        <nav>
-            <div class="footer-nav">
-                <ul class="footer-nav-links">
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li class="marginLeft"><a href="contactUs.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
-        </br></br>
-        <span class="grey">© 2016 All Rights Reserved</span>
-    </div>
+	<div class="footer">
+		<nav>
+			<div class="footer-nav">
+				<ul class="footer-nav-links">
+					<li><a href="aboutUs.html">About Us</a></li>
+					<li class="marginLeft"><a href="contactUs.html">Contact Us</a></li>
+				</ul>
+			</div>
+		</nav>
+		</br></br>
+		<span class="grey">Â© 2016 All Rights Reserved</span>
+	</div>
 </footer>
 
 </body>

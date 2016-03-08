@@ -14,12 +14,11 @@ form {
 }
 .login-form label {
   text-align:left;
-  color:#3e779d;
+  color: #009688;
   display:block;
   font-weight:bold;
     font-family: "Calibri",sans-serif;
    font-size:16px;
-   padding-left:30px;
 }
 .login-form {
   box-sizing:border-box;
@@ -30,9 +29,8 @@ form {
 }
 .login-form h4 {
       font-family: "Calibri",sans-serif;
-    color:#3e779d;
     font-weight:bold;
-    font-size:16px;
+    font-size:1.5em;
 }
 .login input[type=text] {
   width: 80%;
@@ -60,19 +58,40 @@ form {
   font-size:14px;
 }
 .login-form input[type=submit] {
-  height:30px;
+  height:40px;
   width:100px;
-  background: #3e779d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-  background: -moz-linear-gradient(to top,  #65a9d7,  #3e779d);
-  border:1px solid #f2f2f2;
-  border-radius:20px;
-  color: white;
-  text-transform:uppercase;
-    font-family: "Calibri",sans-serif;
-  cursor:pointer;
-  margin-top: 10px;
+  background-color: #00796B;
+        border: none;
+        color: white;
+        /*padding: 15px 32px;*/
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top:30px;
+        margin-left:20px;
+        cursor: pointer;
+        outline: none;
+            color: #fff;
+            background-color: #00796b;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
 }
+
+}
+
+
+.login-form input[type=submit]:hover {
+        background-color: #4ca197
+}
+
+.login-form input[type=submit]:active {
+    background-color: #4ca197;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 /*Media Querie*/
 /*@media only screen and (min-width : 150px) and (max-width : 530px){
   .login-form h3 {
@@ -100,8 +119,7 @@ form {
 }
 #other-support-content {
     float: left;
-    margin-top: 20px;
-    color:#3e779d;
+    margin-top: 40px;
     padding-left: 20px;
     padding-top: 30px;
 
@@ -112,6 +130,10 @@ form {
     margin:0;
       font-family: "Calibri",sans-serif;
 }
+#other-support-content li {
+    padding-top:5px;
+}
+
 li.noSquare {
     list-style: none;
     content: " ";

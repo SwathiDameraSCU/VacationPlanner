@@ -1,6 +1,7 @@
 .confirmation-div {
     margin-top:10px;
     margin-left:10px;
+    text-align:center;
 }
 .confirmation-div input[type=text] {
   width: 40%;
@@ -16,18 +17,25 @@
   float:left;
 }
 .confirmation-div button {
-  height:30px;
-  width:150px;
-  background: #3e779d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-  background: -moz-linear-gradient(to top,  #65a9d7,  #3e779d);
-  border:1px solid #f2f2f2;
-  border-radius:20px;
-  color: white;
-  font-family: "Calibri",sans-serif;
-  cursor:pointer;
-  margin-top: 10px;
-  padding:0;
+  height:50px;
+  width:250px;
+  background-color: #00796B;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top:30px;
+        margin-left:20px;
+        cursor: pointer;
+        outline: none;
+            color: #fff;
+            background-color: #00796b;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
 }
 #sendEmail {
     margin-left:10px;

@@ -1,18 +1,20 @@
 #contactUs {
-    font-family: "trebuchet ms", Georgia,"Times New Roman";
+      font-family: "Calibri",sans-serif;
+      margin-left:15px;
 }
 #contactUs h4 {
     padding-left:15px;
+    font-size:1.5em;
 
 }#other-contact-content ul {
     list-style: none;
     padding-left:10px;
     margin:0;
-    font-family: "trebuchet ms", Georgia,"Times New Roman";
+     font-family: "Calibri",sans-serif;
 }
-ul.square li:before {
+/*ul.square li:before {
     content: "\2022";
-}
+}*/
 ul.noSquare li:before {
     list-style: none;
     content: " ";
@@ -22,4 +24,7 @@ ul.square li.noSquare:before {
     list-style: none;
     content: " ";
     padding-left: 10px;
+}
+.square > li {
+    padding-bottom: 10px;
 }

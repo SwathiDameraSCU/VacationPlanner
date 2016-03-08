@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/payment.css">
     <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/summary.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
     <script src="js/login.js"></script>
 
 </head>
-<div>
 <div id="wrap">
 <header>
     <div id="travel-alerts" class="backWhite red alert">
@@ -168,44 +168,75 @@
         </div>
     </section>
 </div>
-<!-- Login popup ends here */
-
+<!-- Login popup ends here -->
+<div class="fullWidth">
 <!-- Payment section starts here -->
-<div id="payment-div">
-    <h3>Payment details</h3>
-        <form id="form-payment" method="post">
-                <div class="payment-form">
-                    <div class="payment-icons">
-                        <i class="fa fa-cc-visa fa-2x"></i>
-                        <i class="fa fa-cc-amex fa-2x"></i>
-                        <i class="fa fa-cc-discover fa-2x"></i>
-                        <i class="fa fa-cc-mastercard fa-2x"></i>
-                        <i class="fa fa-cc-diners-club fa-2x"></i>
+    <div id="payment-div">
+        <h3>Payment details</h3>
+            <form id="form-payment" method="post">
+                    <div class="payment-form">
+                        <div class="payment-icons">
+                            <i class="fa fa-cc-visa fa-2x"></i>
+                            <i class="fa fa-cc-amex fa-2x"></i>
+                            <i class="fa fa-cc-discover fa-2x"></i>
+                            <i class="fa fa-cc-mastercard fa-2x"></i>
+                            <i class="fa fa-cc-diners-club fa-2x"></i>
+                        </div>
+                        <label for="cardNumber" class="form-label clearLeft">Debit/Credit card number<span class="red">*</span></label>
+                        <input name="cardNumber" type="text" id="cardNumber" size="40" required>
+                        <label for="expDate" class="form-label">Expiration date<span class="red">*</span></label>
+                        <input name="expDate" type="text" id="expDate" size="40" required>
+                        <label for="secCode" class="form-label">Security code<span class="red">*</span></label>
+                        <input name="secCode" type="text" id="secCode" size="40" required>
+                        <label for="name" class="form-label">Cardholder name<span class="red">*</span></label>
+                        <input name="name" type="text" id="name" size="40" required>
+                        <label for="address1" class="form-label">Billing Address 1<span class="red">*</span></label>
+                        <input name="address1" type="text" id="address1" size="40" required>
+                        <label for="address2" class="form-label">Billing Address 2</label>
+                        <input name="address2" type="text" id="address2" size="40">
+                        <label for="city" class="form-label">City<span class="red">*</span></label>
+                        <input name="city" type="text" id="city" size="40" required>
+                        <label for="state" class="form-label">State<span class="red">*</span></label>
+                        <input name="state" type="text" id="state" size="40" required>
+                        <label for="zipCode" class="form-label">Zip Code<span class="red">*</span></label>
+                        <input name="zipCode" type="number" id="zipCode" size="20" class ="zipcode" required>
+                        <br>
+                        <input type="submit"  value="Complete Booking">
                     </div>
-                    <label for="cardNumber" class="form-label clearLeft">Debit/Credit card number<span class="red">*</span></label>
-                    <input name="cardNumber" type="text" id="cardNumber" size="40" required>
-                    <label for="expDate" class="form-label">Expiration date<span class="red">*</span></label>
-                    <input name="expDate" type="text" id="expDate" size="40" required>
-                    <label for="secCode" class="form-label">Security code<span class="red">*</span></label>
-                    <input name="secCode" type="text" id="secCode" size="40" required>
-                    <label for="name" class="form-label">Cardholder name<span class="red">*</span></label>
-                    <input name="name" type="text" id="name" size="40" required>
-                    <label for="address1" class="form-label">Billing Address 1<span class="red">*</span></label>
-                    <input name="address1" type="text" id="address1" size="40" required>
-                    <label for="address2" class="form-label">Billing Address 2</label>
-                    <input name="address2" type="text" id="address2" size="40">
-                    <label for="city" class="form-label">City<span class="red">*</span></label>
-                    <input name="city" type="text" id="city" size="40" required>
-                    <label for="state" class="form-label">State<span class="red">*</span></label>
-                    <input name="state" type="text" id="state" size="40" required>
-                    <label for="zipCode" class="form-label">Zip Code<span class="red">*</span></label>
-                    <input name="zipCode" type="number" id="zipCode" size="20" class ="zipcode" required>
-                    <br>
-                    <input type="submit"  value="Complete Booking">
+            </form>
+        </div>
+
+    <div class="trip-summary right">
+        <div class="rightDisplay">
+            <p> <h1 class="styleHeading"> Trip Summary</h1></p>
+            <div id="passPerPerson">
+                <span>
+                <span id="numberOfTickets">  </span>
+                <span id="roundOrOneLabel"> </span>
+                <span class="separator"></span>
+                </span>
+            </div>
+            <div class="separator">
+            </div>
+            <div id="productPriceSummary" class="borderTop">
+                <ul class="ulStyleTr">
+                </ul>
+                <div id="itemPriceSummary">
+                    <span id="booking"> Booking Fee </span>
+                    <span id="bookingFee" style="float:right"> $0.00 </span>
                 </div>
-        </form>
+            </div>
+            <div id="totalContainer" class="itemClass">
+                <div class="separator"> </div>
+                <div id="tripTotal" class="totalClass">
+                    <div id= "colRight">
+                        <span id="lbltotals"> Trip Total: </span>
+                        <span id="displayPrice" class="stylePrice">  </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </div>
 <footer>
     <div class="footer">
@@ -222,6 +253,7 @@
     </div>
 </footer>
 <script src="js/payment.js"></script>
+    <script src="js/summary.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript">
 	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
@@ -253,5 +285,6 @@
 
 	})
 </script>
+</div>
 </body>
 </html>
