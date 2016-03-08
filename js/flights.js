@@ -60,7 +60,9 @@ function getDiv(flightSlices, sliceReducer) {
 }
 
 function onError(message) {
-  $("#error").html(message || 'No flights could be found with the requested parameters');
+  $("#error").html(message || 'An internal error occured. Please try again.');
+  $('#loading, #selectFlight').hide();
+  $('#data').html("");
 }
 
 function updateFlights(flights) {
@@ -123,6 +125,7 @@ function updateFlights(flights) {
 
   table+="</table>";
   $('#loading').hide();
+  $('#selectFlight').show();
   var data = $('#data');
   data.html(table);
   data.show();
@@ -157,6 +160,7 @@ function queryFlights() {
   };
 
   $('#loading').show();
+  $('#selectFlight').hide();
   $('#data').hide();
   if (shouldLoadFlights) {
     $.get("http://localhost:9000/flights", {
