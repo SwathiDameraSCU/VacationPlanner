@@ -82,18 +82,18 @@ function getTravellerInfo(){
 	
 			for(var i=1;i<=totalPassengers;i++){
 				for(var i=1;i<=adults;i++){
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+"$"+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+"$"+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+taxInfoPerPerson+" </span></li></ul></div>");
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+"$"+displZeroForDecimal(totalPricePerPassgnr)+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+"$"+displZeroForDecimal(passengerPerPersonCharge)+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+displZeroForDecimal(taxInfoPerPerson)+" </span></li></ul></div>");
 					
 				}
 				for(var i=adults+1;i<=totalPassengers;i++){																																																					
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+"$"+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+taxInfoPerPerson+" </span></li></ul></div>");
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+"$"+displZeroForDecimal(totalPricePerPassgnr)+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+"$"+displZeroForDecimal(passengerPerPersonCharge)+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+"$"+displZeroForDecimal(taxInfoPerPerson)+" </span></li></ul></div>");
 					
 				}
 			}
 			
 		//tripTotal =(((adultPrice+adultTax)*adults)+((childrenPrice+childrenTax)*children));		
 
-		document.getElementById('displayPrice').innerHTML = "$"+priceForCal;
+		document.getElementById('displayPrice').innerHTML = "$"+displZeroForDecimal(priceForCal);
 		
 	}
 
@@ -105,11 +105,8 @@ function getTravellerInfo(){
 function onLoad(){
  
  var data=fli.flightSlices.length; // to check whether it is roundtrip or One way
- //var fromDate = '02/29/2016';//get dates from local storage of flights.html
- //var toDate = '03/01/2016';
-var fromDate = localStorage.getItem("departureDate");
-var toDate = localStorage.getItem("returnDate");
- 
+ var fromDate = '02/29/2016';//get dates from local storage of flights.html
+ var toDate = '03/01/2016';
 
 	for(var i=0;i<data;i++){
 		getFlightInfo(i);
@@ -239,3 +236,17 @@ function getAirLines(slice){
 return	airline;
 }
 
+//logic to display zero
+function displZeroForDecimal(num){
+
+	var number = num.toString();
+	var numSplit = number.split(".");
+	var decimalValue;
+	if(numSplit[1].length==1){
+		decimalValue = numSplit[1]+"0";
+		number = numSplit[0]+'.'+decimalValue;
+	}else{
+		number = num;
+	}	
+	return number;
+}
