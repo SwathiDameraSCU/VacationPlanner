@@ -60,7 +60,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                          localStorage.setItem("logged-user-id",result._id);
                          // Display the logged in username
                           var logged_username = result.firstname;
-                          $("#logged-username-value").text("Hi! " + logged_username);
+                          $("#logged-username-value").html("Hi! " + logged_username);
                           $("#logged-username-value").css("display","inline")
                           $("#li-logout").addClass("displayLoggedUser");
                           $("#login-li").css("display","none");
@@ -77,8 +77,6 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                             $("#error-div").val(result.responseText);
                             $("#error-div").html(result.responseText);
                         }
-//                        localStorage.setItem("booking_id","");
-//                        location.href = "confirmation.html";
                       }
                 });
         });
@@ -88,14 +86,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
 	        // Get the form fields
 	        event.preventDefault();
 	        var first_name = $(".user_register").find('#first-name').val().trim();
-            var first_name = $(".user_register").find('#middle-name').val();
-            var first_name = $(".user_register").find('#last-name').val();
-            var first_name = $(".user_register").find('#username').val();
-            var first_name = $(".user_register").find('#password').val();
-            var first_name = $(".user_register").find('#emailId').val();
-            var first_name = $(".user_register").find('#phoneNumber').val();
-            var middle_name = $(".user_register").find('#middle-name').val().trim();
-            //if (middle_name == "")
+            var user_name = $(".user_register").find('#username').val();
 
             var text = '{"firstname":' + JSON.stringify($(".user_register").find('#first-name').val().trim()) + "," +
                         '"middlename":' + JSON.stringify($(".user_register").find('#middle-name').val().trim()) + "," +
@@ -118,15 +109,42 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       contentType: "application/json; charset=utf-8",
 
                       dataType : 'json',
-                      success: function(result) {
-//                        localStorage.setItem("booking_id", result.booking_id);
+                      success: function(result, textStatus, request){
+                       if (request.status == 201) { // NEW USER CREATED
+                             localStorage.setItem("logged-user-id",user_name);
+                             // Display the logged in username
+                              $("#logged-username-value").text("Hi! " + first_name);
+                              $("#logged-username-value").css("display","inline");
+                              $("#li-logout").addClass("displayLoggedUser");
+                              $("#login-li").css("display","none");
+                              // Close the popup
+                              $("#modal").css("display","none");
+                        }
 //                        location.href = "confirmation.html";
                       },
                       error: function(result) {
-//                        localStorage.setItem("booking_id","");
-//                        location.href = "confirmation.html";
+                        if (result.status == 400 ) {
+                             // User already exists
+                              $("#register-error").html("Username already exists");
+                          }
                       }
                 });
 	    });
+
+	    // Click Handler for Log out button
+        $("#logout").click(function(event){
+            event.preventDefault;
+            // Clear the username in localstorage
+            localStorage.setItem("logged-user-id","");
+            // Hide the Welcome user message
+            $("#logged-username-value").text("");
+            $("#logged-username-value").css("display","none");
+            // Hide Logout
+            $("#li-logout").removeClass("displayLoggedUser");
+            // Show login
+            $("#login-li").css("display","inline");
+            // Navigate to home.html
+             window.document.location.href = 'home.html';
+        });
 
 	})
