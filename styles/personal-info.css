@@ -1,16 +1,24 @@
+body {
+    font-family: "Calibri",sans-serif;
+}
 #enter-your-info {
-    text-align: center;
-    font-family: 'Love Ya Like A Sister', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
+    padding-left:15px;
+      font-family: "Calibri",sans-serif;
+    font-size: 1.9em;
+    font-weight:700;
     display: block;
     margin-bottom: 50px;
 }
 
 #personal-info {
-    float:left;
+    /*float:left;
     width:65%;
-    margin-bottom:20px;
+    margin-bottom:20px;*/
+    float: left;
+    padding: 2%;
+    width: 75%;
+    margin-top:20px;
+
     /*text-align: center;
 
     display: -webkit-box;
@@ -51,22 +59,25 @@
     align-self: center;
     flex-wrap: wrap;
     width: 100%;
-    padding-left:15px;
+    /*padding-left:15px;*/
 }
 .trip-location-container label {
   text-align:left;
-  color:#3e779d;
+  /*color:#3e779d;*/
+   color: #009688;
   display:block;
   font-weight:bold;
   font-family: "trebuchet ms", Georgia,"Times New Roman";
    font-size:16px;
+   padding-top:5px;
    /*padding-left:30px;*/
 }
-.trip-location-container input[type=text] {
+.trip-location-container input[type=text], .trip-location-container input[type=email],
+ .trip-location-container input[type=tel] {
   width: 80%;
   max-width:400px;
   height:30px;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
   margin:10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
@@ -81,7 +92,6 @@
     flex-flow: row wrap;
     width: 100%;
 }
-
 .first-name-container, .middle-name-container, .last-name-container {
     align-items: flex-start;
     align-self: center;
@@ -102,11 +112,11 @@
 }
 .personal-gender-container label {
   text-align:left;
-  color:#3e779d;
+  color: #009688;
   display:inline;
   /*display:block;*/
   font-weight:bold;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
    font-size:16px;
    padding-left:0;
 }
@@ -156,8 +166,35 @@
     font-size: 16px;
     margin-top:30px;
     margin-left:20px;
+    cursor: pointer;
+    outline: none;
+        color: #fff;
+        background-color: #00796b;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px #999;
 }
 
 #submit-info:hover {
-    background-color: #4DB6AC;
+        background-color: #4ca197
 }
+
+#submit-info:active {
+    background-color: #4ca197;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.fullWidth {
+   height: 100%;
+       margin: 10px auto 0 5%;
+       width: 70%;
+}
+.personal-div {
+    width:100%;
+
+}
+
+
+
+

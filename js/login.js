@@ -39,7 +39,6 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                         'Authorization':'password ' + password
                           },
                       contentType: "application/json; charset=utf-8",
-
                       dataType : 'json',
                       //success: function(result) {
                       success: function(result, textStatus, request){

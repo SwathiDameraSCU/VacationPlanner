@@ -1,6 +1,6 @@
 body {
   margin:0px;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
 }
 h1, h2, h3, h4, h5, h6, a {
   margin:0; padding:0;
@@ -17,7 +17,7 @@ form {
   color:#3e779d;
   display:block;
   font-weight:bold;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
    font-size:16px;
    padding-left:30px;
 }
@@ -29,7 +29,7 @@ form {
   overflow: hidden;
 }
 .login-form h4 {
-    font-family: "trebuchet ms", Georgia,"Times New Roman";
+      font-family: "Calibri",sans-serif;
     color:#3e779d;
     font-weight:bold;
     font-size:16px;
@@ -38,7 +38,7 @@ form {
   width: 80%;
   max-width:400px;
   height:30px;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
   margin:10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
@@ -51,7 +51,7 @@ form {
   max-width:400px;
   height:60px;
   /*font-family: 'Ubuntu', sans-serif;*/
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
   margin:10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
@@ -69,7 +69,7 @@ form {
   border-radius:20px;
   color: white;
   text-transform:uppercase;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
   cursor:pointer;
   margin-top: 10px;
 }
@@ -110,7 +110,7 @@ form {
     list-style: none;
     padding-left:10px;
     margin:0;
-    font-family: "trebuchet ms", Georgia,"Times New Roman";
+      font-family: "Calibri",sans-serif;
 }
 li.noSquare {
     list-style: none;

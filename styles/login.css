@@ -118,7 +118,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
   /*color:#3e779d;*/
   display:block;
   font-weight:bold;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
    font-size:14px;
    /*padding-left:30px;*/
 }
@@ -127,7 +127,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
   /*width: 80%;*/
   max-width:400px;
   height:30px;
-  font-family: "trebuchet ms", Georgia,"Times New Roman";
+    font-family: "Calibri",sans-serif;
   margin:5px 0 10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
