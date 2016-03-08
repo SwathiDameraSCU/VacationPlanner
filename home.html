@@ -16,112 +16,114 @@
     <script src="js/home.js"></script>
 </head>
 <body>
-<header>
-    <div id="travel-alerts" class="backWhite red alert">
-        Flights to New York are delayed due to weather conditions
-    </div>
-    <div class="bgColor">
-        <div class="header col-1">
-            <div class="nav-div">
-                <div id="logo">
-                    <img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
-                    <!--<img class="logo-image" alt="Escapade Logo"/>-->
-                    <!--<span id="title">Vacation Planner</span>-->
+<div id="wrap">
+    <header>
+        <div id="travel-alerts" class="backWhite red alert">
+            Flights to New York are delayed due to weather conditions
+        </div>
+        <div class="bgColor">
+            <div class="header col-1">
+                <div class="nav-div">
+                    <div id="logo">
+                        <img class="logo-image" src="images/Picture2.png" alt="Escapade Logo"/>
+                        <!--<img class="logo-image" alt="Escapade Logo"/>-->
+                        <!--<span id="title">Vacation Planner</span>-->
+                    </div>
+                    <nav>
+                        <div id="nav" class="nav">
+                            <ul class="nav-links">
+                                <li><a href="home.html" class="selected">
+                                    <input id="tab1" type="radio" name="tabs" checked>
+                                    <label for="tab1"> Flights</label>
+                                </a></li>
+                                <li><a href="rentals.html" class="selected">
+                                    <input id="tab2" type="radio" name="tabs" checked>
+                                    <label for="tab2"> Rentals</label>
+                                </a></li>
+                                <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
+                                <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
+            </div>
+            <div class="col-2">
                 <nav>
-                    <div id="nav" class="nav">
-                        <ul class="nav-links">
-                            <li><a href="home.html" class="selected">
-                                <input id="tab1" type="radio" name="tabs" checked>
-                                <label for="tab1"> Flights</label>
-                            </a></li>
-                            <li><a href="rentals.html" class="selected">
-                                <input id="tab2" type="radio" name="tabs" checked>
-                                <label for="tab2"> Rentals</label>
-                            </a></li>
-                            <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
-                            <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
+                    <div id="right-nav" class="right-nav custom-dropdown">
+                        <input type="checkbox" checked="false" id="button">
+                        <label for="button"></label>
+                        <ul class="right-nav-links">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="support.html">Support</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="col-2">
-            <nav>
-                <div id="right-nav" class="right-nav custom-dropdown">
-                    <input type="checkbox" checked="false" id="button">
-                    <label for="button"></label>
-                    <ul class="right-nav-links">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
+    </header>
+    <div id="section">
+        <form action="flights.html">
+            <div class="flex-container">
+                <span id="plan-your-flight">Plan Your Flight!</span>
+                <span id="error"></span>
+                <div id="trip-type-container">
+                    <label class="radio-label input-label" for="round-trip">Round Trip</label>
+                    <input class="radio-input" id="round-trip" type="radio" name="trip-type" value="round-trip" checked/>
+                    <label class="radio-label input-label" for="one-way">One Way</label>
+                    <input class="radio-input" id="one-way" type="radio" name="trip-type" value="one-way"/>
                 </div>
-            </nav>
-        </div>
+
+                <br style="clear:both;"/>
+
+                <div id="trip-location-container">
+                    <div id="from-container">
+                        <label class="input-label" for="from">From</label>
+                        <input class="home-input" id="from" type="text" name="from" value=""/>
+                    </div>
+                    <div id="to-container">
+                        <label class="input-label" for="to">To</label>
+                        <input class="home-input" id="to" name="to" value=""/>
+                    </div>
+                </div>
+
+                <br style="clear:both;"/>
+
+                <div id="trip-time-container">
+                    <div id="depart-container">
+                        <label class="input-label" for="depart-input">Depart:</label>
+                        <input class="home-input datepicker" id="depart-input" type="text" name="depart">
+                    </div>
+                    <div id="return-container">
+                        <label class="input-label" for="return-input">Return:</label>
+                        <input class="home-input datepicker" id="return-input" type="text" name="arrive">
+                    </div>
+                </div>
+
+                <br style="clear:both;"/>
+
+                <div id="trip-passengers-container">
+                    <label id="adult-label" class="input-label" for="adults">Adults</label>
+                    <select id="adults" name="adults">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <label id="children-label" class="input-label" for="children">Children</label>
+                    <select id="children" name="children">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <button id="search-flights" class="button" type="submit" name="submitButton" value="search-flights">Search Flights</button>
+            </div>
+        </form>
     </div>
-</header>
-<div id="section">
-    <form action="flights.html">
-        <div class="flex-container">
-            <span id="plan-your-flight">Plan Your Flight!</span>
-            <span id="error"></span>
-            <div id="trip-type-container">
-                <label class="radio-label input-label" for="round-trip">Round Trip</label>
-                <input class="radio-input" id="round-trip" type="radio" name="trip-type" value="round-trip" checked/>
-                <label class="radio-label input-label" for="one-way">One Way</label>
-                <input class="radio-input" id="one-way" type="radio" name="trip-type" value="one-way"/>
-            </div>
-
-            <br style="clear:both;"/>
-
-            <div id="trip-location-container">
-                <div id="from-container">
-                    <label class="input-label" for="from">From</label>
-                    <input class="home-input" id="from" type="text" name="from" value=""/>
-                </div>
-                <div id="to-container">
-                    <label class="input-label" for="to">To</label>
-                    <input class="home-input" id="to" name="to" value=""/>
-                </div>
-            </div>
-
-            <br style="clear:both;"/>
-
-            <div id="trip-time-container">
-                <div id="depart-container">
-                    <label class="input-label" for="depart-input">Depart:</label>
-                    <input class="home-input datepicker" id="depart-input" type="text" name="depart">
-                </div>
-                <div id="return-container">
-                    <label class="input-label" for="return-input">Return:</label>
-                    <input class="home-input datepicker" id="return-input" type="text" name="arrive">
-                </div>
-            </div>
-
-            <br style="clear:both;"/>
-
-            <div id="trip-passengers-container">
-                <label id="adult-label" class="input-label" for="adults">Adults</label>
-                <select id="adults" name="adults">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <label id="children-label" class="input-label" for="children">Children</label>
-                <select id="children" name="children">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-
-            <button id="search-flights" class="button" type="submit" name="submitButton" value="search-flights">Search Flights</button>
-        </div>
-    </form>
 </div>
 <footer>
     <div class="footer">
@@ -134,7 +136,7 @@
             </div>
         </nav>
         </br></br>
-        <span class="grey">© 2016 All Rights Reserved</span>
+        <span class="grey">Â© 2016 All Rights Reserved</span>
     </div>
 </footer>
 </body>
