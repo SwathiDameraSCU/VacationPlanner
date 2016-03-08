@@ -68,8 +68,15 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                           $("#modal").css("display","none");
                       }
                       },
-                      error: function(result) {
+                      error: function(result, textStatus, request){
                       console.log(result);
+                      console.log("inside error");
+                      if (result.status == 404 ) {
+                           // username and password did not match
+                            $("#error-div").text(result.responseText);
+                            $("#error-div").val(result.responseText);
+                            $("#error-div").html(result.responseText);
+                        }
 //                        localStorage.setItem("booking_id","");
 //                        location.href = "confirmation.html";
                       }

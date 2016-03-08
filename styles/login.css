@@ -151,4 +151,8 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
     float:left;
     display:block;
     height:100%;
+
+}
+#error-div {
+    color:red;
 }
