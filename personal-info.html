@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/personal-info.css">
     <link rel="stylesheet" href="styles/summary.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
     <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <script src="js/login.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -47,13 +51,16 @@
             </div>
         </div>
         <div class="col-2">
+            <div id="logged-username-value"></div>
             <nav>
                 <div id="right-nav" class="right-nav custom-dropdown">
                     <input type="checkbox" checked="false" id="button">
                     <label for="button"></label>
                     <ul class="right-nav-links">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <!--<li><a id="modal_trigger">Login</a></li>-->
+                        <li id="login-li"><a id="modal_trigger" href="#modal" class="btn">Login</a></li>
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <li id="li-logout" class="displayNone"><a id="logout">Logout</a></li>
                         <li><a href="support.html">Support</a></li>
                     </ul>
                 </div>
@@ -61,6 +68,108 @@
         </div>
     </div>
 </header>
+    <!-- Login Popup starts here -->
+
+    <div id="modal" class="popupContainer" style="display:none;top:80px;margin-top:-80px;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <section class="popupBody">
+            <!-- Social Login -->
+            <div class="social_login">
+                <div class="">
+                    <a href="#" class="social_box fb">
+                        <span class="icon"><i class="fa fa-facebook"></i></span>
+                        <span class="icon_title">Connect with Facebook</span>
+
+                    </a>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <!--<a href="#" class="social_box google">
+                        <span class="icon"><i class="fa fa-google-plus"></i></span>
+                        <span class="icon_title">Connect with Google</span>
+                    </a>-->
+                </div>
+
+                <!--<div class="centeredText">
+                    <span>Or use your Email address</span>
+                </div>-->
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                    <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+                </div>
+            </div>
+
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+                <form>
+                    <label>Username</label>
+                    <input type="text" id="login-username" />
+                    <br />
+
+                    <label>Password</label>
+                    <input type="password" id="login-password"/>
+                    <br />
+
+                    <!--<div class="checkbox">
+                        <input id="remember" type="checkbox" />
+                        <label for="remember">Remember me on this computer</label>
+                    </div>-->
+                    <div id="error-div"></div>
+
+                    <div class="action_btns">
+                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                        <div class="one_half last"><a href="#" id="login-user" class="btn btn_red">Login</a></div>
+                    </div>
+                </form>
+
+                <!--<a href="#" class="forgot_password">Forgot password?</a>-->
+            </div>
+
+            <!-- Register Form -->
+            <div class="user_register">
+                <form>
+                    <div id="register-name-container">
+                        <div id="register-first-name">
+                            <label class="name-label" for="from">First Name</label>
+                            <input class="home-input width-80" id="first-name" type="text" name="from" value="" required/>
+                        </div>
+                        <div id="register-middle-name">
+                            <label class="name-label" for="to">Middle Name</label>
+                            <input class="home-input width-80" id="middle-name" type="text" name="to" value=""/>
+                        </div>
+                        <div id="register-last-name">
+                            <label class="name-label" for="last-name">Last Name</label>
+                            <input class="home-input width-80" type="text" id="last-name" name="last-name" value="" required/>
+                        </div>
+                    </div>
+
+                    <label>Username</label>
+                    <input class="home-input width-70" id="username" type="text" required/>
+
+                    <label>Password</label>
+                    <input class="home-input width-70" id="password" type="password" required />
+
+                    <label>Email Id</label>
+                    <input type="text" id="emailId" class="home-input width-70" required/>
+
+                    <label>Phone number</label>
+                    <input id="phoneNumber" type="text" class="home-input width-70"/>
+
+                    <div id="register-error">
+                    </div>
+
+                    <div class="action_btns">
+                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                        <div class="one_half last"><a id="register-user" href="#" class="btn btn_red">Register</a></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- Login popup ends here -->
 <div class="fullWidth">
     <div id="personal-info">
         <form action="payment.html" method="POST">
