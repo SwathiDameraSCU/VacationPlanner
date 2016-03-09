@@ -57,6 +57,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       if (request.status == 200) { // Username and password valid
                          // Store the username
                          localStorage.setItem("logged-user-id",result._id);
+                         localStorage.setItem("logged-firstname",result.firstname);
                          // Display the logged in username
                           var logged_username = result.firstname;
                           $("#logged-username-value").html("Hi! " + logged_username);
@@ -111,9 +112,11 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       success: function(result, textStatus, request){
                        if (request.status == 201) { // NEW USER CREATED
                              localStorage.setItem("logged-user-id",user_name);
+                              localStorage.setItem("logged-firstname",result.first_name);
                              // Display the logged in username
                               $("#logged-username-value").text("Hi! " + first_name);
                               $("#logged-username-value").css("display","inline");
+
                               $("#li-logout").addClass("displayLoggedUser");
                               $("#login-li").css("display","none");
                               // Close the popup
@@ -135,6 +138,8 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             event.preventDefault;
             // Clear the username in localstorage
             localStorage.setItem("logged-user-id","");
+            localStorage.setItem("logged-firstname","");
+
             // Hide the Welcome user message
             $("#logged-username-value").text("");
             $("#logged-username-value").css("display","none");
@@ -147,3 +152,19 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
         });
 
 	})
+
+	$( window ).load(function() {
+      // call to update logged in username function
+        updateLoggedUsername();
+    });
+
+    function updateLoggedUsername() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem("logged-firstname") != "") {
+                $("#logged-username-value").text("Hi! " + localStorage.getItem("logged-firstname"));
+                  $("#logged-username-value").css("display","inline");
+                  $("#li-logout").addClass("displayLoggedUser");
+                  $("#login-li").css("display","none");
+            }
+        }
+    }
