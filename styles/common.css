@@ -125,7 +125,8 @@ body {
 }
 
 #nav li a label:before {
-  color: white;
+    font-family: fontawesome;
+    color: white;
   font-weight: normal;
 }
 
