@@ -6,11 +6,16 @@
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="./styles/home.css">
+    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
     <script src="js/underscore.js"></script>
     <script src="js/common.js"></script>
     <script src="js/home.js"></script>
@@ -21,7 +26,7 @@
 <div id="wrap">
     <header>
         <div id="travel-alerts" class="backWhite red alert">
-            Flights to New York are delayed due to weather conditions
+            <marquee behavior="scroll" direction="left">Flights to New York are delayed due to weather conditions</marquee>
         </div>
         <div class="bgColor">
             <div class="header col-1">
@@ -186,11 +191,11 @@
                 <div id="trip-location-container">
                     <div id="from-container">
                         <label class="input-label" for="from">From</label>
-                        <input class="home-input" id="from" type="text" name="from" value=""/>
+                        <input class="simple-text-input home-input" id="from" type="text" name="from" value=""/>
                     </div>
                     <div id="to-container">
                         <label class="input-label" for="to">To</label>
-                        <input class="home-input" id="to" name="to" value=""/>
+                        <input class="simple-text-input home-input" id="to" type="text" name="to" value=""/>
                     </div>
                 </div>
 
@@ -199,11 +204,11 @@
                 <div id="trip-time-container">
                     <div id="depart-container">
                         <label class="input-label" for="depart-input">Depart:</label>
-                        <input class="home-input datepicker" id="depart-input" type="text" name="depart">
+                        <input class="simple-text-input home-input datepicker" id="depart-input" type="text" name="depart">
                     </div>
                     <div id="return-container">
                         <label class="input-label" for="return-input">Return:</label>
-                        <input class="home-input datepicker" id="return-input" type="text" name="arrive">
+                        <input class="simple-text-input home-input datepicker" id="return-input" type="text" name="arrive">
                     </div>
                 </div>
 
@@ -227,7 +232,7 @@
                     </select>
                 </div>
 
-                <button id="search-flights" class="button" type="submit" name="submitButton" value="search-flights">Search Flights</button>
+                <button id="search-flights" class="flat-button" type="submit" name="submitButton" value="search-flights">Search Flights</button>
             </div>
         </form>
     </div>
@@ -243,7 +248,7 @@
             </div>
         </nav>
         </br></br>
-        <span class="grey">Â© 2016 All Rights Reserved</span>
+        <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
 <script src="js/login.js"></script>

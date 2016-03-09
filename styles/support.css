@@ -1,6 +1,5 @@
 body {
   margin:0px;
-    font-family: "Calibri",sans-serif;
 }
 h1, h2, h3, h4, h5, h6, a {
   margin:0; padding:0;
@@ -17,7 +16,6 @@ form {
   color: #009688;
   display:block;
   font-weight:bold;
-    font-family: "Calibri",sans-serif;
    font-size:16px;
 }
 .login-form {
@@ -28,7 +26,6 @@ form {
   overflow: hidden;
 }
 .login-form h4 {
-      font-family: "Calibri",sans-serif;
     font-weight:bold;
     font-size:1.5em;
 }
@@ -36,7 +33,6 @@ form {
   width: 80%;
   max-width:400px;
   height:30px;
-    font-family: "Calibri",sans-serif;
   margin:10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
@@ -48,8 +44,6 @@ form {
   width: 80%;
   max-width:400px;
   height:60px;
-  /*font-family: 'Ubuntu', sans-serif;*/
-    font-family: "Calibri",sans-serif;
   margin:10px 0;
   border-radius:5px;
   border:2px solid #f2f2f2;
@@ -57,54 +51,7 @@ form {
   padding-left:10px;
   font-size:14px;
 }
-.login-form input[type=submit] {
-  height:40px;
-  width:100px;
-  background-color: #00796B;
-        border: none;
-        color: white;
-        /*padding: 15px 32px;*/
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top:30px;
-        margin-left:20px;
-        cursor: pointer;
-        outline: none;
-            color: #fff;
-            background-color: #00796b;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px #999;
-}
 
-}
-
-
-.login-form input[type=submit]:hover {
-        background-color: #4ca197
-}
-
-.login-form input[type=submit]:active {
-    background-color: #4ca197;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
-/*Media Querie*/
-/*@media only screen and (min-width : 150px) and (max-width : 530px){
-  .login-form h3 {
-    text-align:center;
-    margin:0;
-  }
-  .sign-up, .no-access {
-    margin:10px 0;
-  }
-  .login-button {
-    margin-bottom:10px;
-  }
-}*/
 #support-div {
     clear: left;
 	padding: 5px;
@@ -128,7 +75,6 @@ form {
     list-style: none;
     padding-left:10px;
     margin:0;
-      font-family: "Calibri",sans-serif;
 }
 #other-support-content li {
     padding-top:5px;

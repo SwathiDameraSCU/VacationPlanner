@@ -1,15 +1,14 @@
-
-
 form {
     width: 80%;
     margin: 0 auto;
-    font-family: sans-serif;
     display: block;
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
     width: 100%;
+    -webkit-border-vertical-spacing: 5px;
+    -webkit-border-horizontal-spacing: 0;
 }
 
 th, td {
@@ -31,12 +30,11 @@ td{
 font-size: 15px;
 }
 
-.SearchInputBox {
+/*.SearchInputBox {
     border: 1px solid #C6D1AD;
     font-size: 15pt;
-    font-family: sans-serif;
     background-color: #FAFAFA;
-}
+}*/
 
 .searchDiv {
    padding-top: 10px;
@@ -48,54 +46,18 @@ font-size: 15px;
   display:table-cell;
 }
 
-.searchDiv input[type="text"] {
-    background-color: #f3f3e9;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
 
 #radioDiv{
 	padding-top: 10px;
 	padding-left: 10px;
-	font-family: sans-serif;
+    margin-right: 40px;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 10px;
-  font-size: 20px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #00796b;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px #999;
-}
-
-.button:hover {
-  background-color: #4ca197
-}
-
-.button:active {
-  background-color: #4ca197;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.gridButton{
-    background-color: #00796b;
-    color: white;
-    border-radius: 10px;
-    font-size: 15px;
-    height : 40px;
-    width : 65px;
+#trip-passengers-container {
+    margin-left: 40px;
 }
 
 .selectDiv {
-    font-family: sans-serif;
     padding-top: 50px;
     padding-left: 10px;
     padding-right: 10px;
@@ -125,10 +87,59 @@ td.flightDtls {
 
 #trip-passengers-container, #trip-passengers-container > label, #radioDiv {
     display: inline;
-    font-family: sans-serif;
 }
 
 #error {
     text-align: center;
     color: red;
+}
+
+.flight {
+    background-color: aliceblue;
+}
+
+.flight:hover {
+    background-color: antiquewhite;
+}
+
+#trip-location-container, #trip-time-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+#from-container, #to-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+}
+
+input[type=text] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.SearchBox {
+    background-color: aliceblue;
+    padding: 25px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
 }

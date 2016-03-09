@@ -74,7 +74,8 @@ function updateFlights(flights) {
     '<th>Arrival Time</th>' +
     '<th>Duration</th>' +
     '<th>Price</th>' +
-    '<th>Select</th></tr>';
+    '<th></th>' + // Select Button
+    '</tr>';
 
   flights.options.forEach(function (option, index) {
     var getFirstLeg = function (flightSlice) { return flightSlice.legs[0] };
@@ -120,7 +121,7 @@ function updateFlights(flights) {
           }) +
       '</td>';
     table += '<td class="flightDtls">' + option.totalSales.replace("USD".toUpperCase(),"$ ") + '</td>';
-    table += '<td class="flightDtls"><input type="button" class="gridButton" value="select" onclick="selectFlight('+ index +')" /></td></tr>';
+    table += '<td class="flightDtls"><input type="button" class="flat-button" value="select" onclick="selectFlight('+ index +')" /></td></tr>';
   });
 
   table+="</table>";

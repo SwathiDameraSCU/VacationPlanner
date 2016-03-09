@@ -7,19 +7,19 @@
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/confirmation.css">
     <link rel="stylesheet" href="styles/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="js/login.js"></script>
 </head>
 <body>
 <div id="wrap">
 <header>
     <div id="travel-alerts" class="backWhite red alert">
-        Flights to New York are delayed due to weather conditions
+        <marquee behavior="scroll" direction="left">Flights to New York are delayed due to weather conditions</marquee>
     </div>
     <div class="bgColor">
         <div class="header col-1">
@@ -32,7 +32,7 @@
                 <nav>
                     <div id="nav" class="nav">
                         <ul class="nav-links">
-                            <li><a href="home.html" class="selected">
+                            <li onclick="window.location='home.html';"><a href="home.html" class="selected">
                                 <input id="tab1" type="radio" name="tabs" checked>
                                 <label for="tab1"> Flights</label>
                             </a></li>
@@ -40,8 +40,6 @@
                                 <input id="tab2" type="radio" name="tabs" checked>
                                 <label for="tab2"> Rentals</label>
                             </a></li>
-                            <!--<li><a href="rentals.html"><span class="rentals">Rentals</span></a></li>-->
-                            <!--<li><i class="fa fa-car"></i>&nbsp;<a href="rentals.html">Rentals</a></li>-->
                         </ul>
                     </div>
                 </nav>
@@ -174,7 +172,7 @@
         </div>
         <div id="goBack-div">
             <!--<label>Want to book more tickets - </label>-->
-            <button id="goBackButton" class="button" type="submit" name="goBackButton" value="book-more">Book More Tickets</button>
+            <button id="goBackButton" class="flat-button" type="submit" name="goBackButton" value="book-more">Book More Tickets</button>
         </div>
     </div>
 

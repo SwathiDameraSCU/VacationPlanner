@@ -3,13 +3,11 @@
     margin: 0 auto;
     margin-top: 10px;
     margin-left: 10%;
-    /*font-family: 'Waiting for the Sunrise', sans-serif;*/
-    font-family: 'Calibri', sans-serif;
     height: 100%;
 }
 
 #p1{
-	float: left;	
+	float: left;
 }
 
 #tripAmount{
@@ -70,12 +68,12 @@ width: 100%;
 	height: 1%;
 }
 
-section { 
+section {
     float:left;
     height: 100%;
 }
 
-.searchBtn{		
+.searchBtn{
     	margin-bottom: 10%;
     	width: 100%;
     	height: 100%;
@@ -83,12 +81,12 @@ section {
 		margin-top: 6%;
 }
 
-.searchBtnMobile{		
+.searchBtnMobile{
     	display: none;
 }
 
 .deptArrDur{
-	font-family: 'Papyrus', sans-serif; 
+	/*font-family: 'Papyrus', sans-serif;*/
 }
 
 #arr{
@@ -152,7 +150,7 @@ section {
   padding: 10px 20px;
   font-size: 20px;
   cursor: pointer;
-  text-align: center;	
+  text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
@@ -246,7 +244,7 @@ div#tickDiv{
 .ulStyle
 {
     list-style-type: none;
-	   
+
 }
 .ulStyleTr
 {
@@ -255,7 +253,10 @@ div#tickDiv{
 .ulStyleBag
 {
     list-style-type: none;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+	background-color: rgba(0, 0, 0, 0.04);
 }
+
 .ulStyleTrCl
 {
     list-style-type: none;
@@ -267,7 +268,7 @@ div#tickDiv{
 }
 
 .style{
-	margin: 0%;	
+	margin: 0%;
 }
 
 #freeCnl img{
@@ -364,16 +365,14 @@ padding-left: 10%;
 .fromClass{
 width: 100%;
 padding-right: 12%;
-color: #6b6b6b;
-font-size: 1.1em; 
+font-size: 1.1em;
 font-weight: bold;
 }
 
 .toClass{
 width:100%;
 padding-right: 14%;
-color: #6b6b6b;
-font-size: 1.1em; 
+font-size: 1.1em;
 font-weight: bold;
 }
 
@@ -381,7 +380,6 @@ font-weight: bold;
 width: 100%;
 height: 100%;
 float :left;
-background-color: rgba(67,115, 111,0.18);
 margin-bottom: 1%;
 }
 
@@ -390,23 +388,18 @@ border-top: 1px solid grey;
 }
 
 #passPerPerson{
-color: #6b6b6b;
 }
 
 #itemPriceSummary{
-color: #6b6b6b;
 }
 
 #lbltotals{
-color: #6b6b6b;
 }
 
 .ratesStyle{
-color: #6b6b6b;
 }
 
 .styleImpInfo{
-color: #323232;
 }
 
 .fromToStyle{
@@ -421,7 +414,6 @@ width: 100%;
 
 .orgDestVia{
 font-size: 1em;
-color: #6b6b6b;
 }
 
 .borderBottom{
@@ -460,12 +452,10 @@ font-size: 0.8em;
 }
 
 .flghtNumber{
-color: #6b6b6b;
 font-size: 1.1em;
 }
 
 .carrier{
-color: #6b6b6b;
 font-size: 1.1em;
 }
 
@@ -476,7 +466,6 @@ font-weight: bold;
 
 .stopDestnStyle{
 font-size: 1.5em;
-color: #6b6b6b;
 }
 
 .styleFromToText{
@@ -500,6 +489,11 @@ margin-left: 10%;
 	text-align: justify;
 }
 
+.left {
+	background-color: aliceblue;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+
 @media (max-width: 958px) {
 
    .right {
@@ -515,7 +509,7 @@ margin-left: 10%;
 	#freeCnl{
 		visibility: hidden;
 	}
-	
+
 	.arrDetails{
 		height: 100%;
 		width: 20%;
@@ -547,11 +541,11 @@ margin-left: 10%;
 		margin-top: 1%;
 	}
 
-	.searchBtn{		
+	.searchBtn{
     	display: none;
 	}
 
-	.searchBtnMobile{		
+	.searchBtnMobile{
     	margin-bottom: 3%;
     	width: 100%;
     	height: 100%;
