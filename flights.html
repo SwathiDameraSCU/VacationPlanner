@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles/common.css">
      
     <link rel="stylesheet" href="styles/flights.css">       
-    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>  
-
+    <link href='https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -67,36 +67,43 @@
     </div>
 </header>
 
-<div id="radioDiv"> 
-	<input type="radio" id="rb1" name="rb" value="round-trip" checked>Round Trip
-	<input type="radio" id="rb2" name="rb" value="one-way" >One Way
-</div>
-
-<div id="trip-passengers-container">
-    <label id="adult-label" style="display: inline" class="input-label" for="adults">Adults</label>
-    <select id="adults" name="adults">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-    <label id="children-label" class="input-label" for="children">Children</label>
-    <select id="children" name="children">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-</div>
-
 <div class="SearchBox">
-     <div class="searchDiv">
-         <input type="text" class="SearchInputBox" id="source" value="Source"/>
-	     <input type="text" class="SearchInputBox" id="dest" value="Destination"/>
-	     <input type="text" class="SearchInputBox" id="datepicker1"/>
-	     <input type="text" class="SearchInputBox" id="datepicker2"/>
-         <input type="button" id="searchButton" value="Search" class="button" onclick="queryFlights()"/>
+    <div class="searchDiv flex-container">
+        <div class="flex-item">
+
+
+        <div id="radioDiv" >
+            <input type="radio" id="rb1" name="rb" value="round-trip" checked>Round Trip
+            <input type="radio" id="rb2" name="rb" value="one-way" >One Way
+        </div>
+
+        <div id="trip-passengers-container" >
+            <label id="adult-label" style="display: inline" class="input-label" for="adults">Adults</label>
+            <select id="adults" name="adults">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <label id="children-label" class="input-label" for="children">Children</label>
+            <select id="children" name="children">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        </div>
+         <div id="trip-location-container">
+             <input type="text" class="flex-item simple-text-input SearchInputBox" id="source" value="Source"/>
+             <input type="text" class="flex-item simple-text-input SearchInputBox" id="dest" value="Destination"/>
+         </div>
+         <div id="trip-time-container">
+    	     <input type="text" class="flex-item simple-text-input SearchInputBox" id="datepicker1"/>
+    	     <input type="text" class="flex-item simple-text-input SearchInputBox" id="datepicker2"/>
+         </div>
+         <input type="button" class="flex-item flat-button" id="searchButton" value="Search" onclick="queryFlights()"/>
     </div>
 
 </div>
