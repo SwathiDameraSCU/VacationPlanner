@@ -95,7 +95,8 @@
     display: flex;
     flex-flow: column wrap;
     /*justify-content: center;*/
-    width: 33%;
+    padding-right: 5px;
+    width: 30%;
 }
 #personal-form {
     width:100%;

@@ -14,7 +14,7 @@
 <div id="wrap">
 <header>
     <div id="travel-alerts" class="backWhite red alert">
-        Flights to New York are delayed due to weather conditions
+		<marquee behavior="scroll" direction="left">Flights to New York are delayed due to weather conditions</marquee>     
     </div>
     <div class="bgColor">
     <div class="header col-1">
@@ -70,10 +70,12 @@
                         <input name="E-mail" type="text" id="email" size="40">
                         <label for="number" class="form-label">Mobile Number:</label>
                         <input name="Mobile Number" type="text" id="number" size="40">
-                        <label for="message" class="form-label">Message:</label>
-                        <textarea name="Message" cols="55" rows="5" id="message"></textarea>
+                        <p class="messageStyle">
+							<label for="message" class="form-label">Message to be sent:</label>
+							<textarea name="Message" id="message" cols="55" rows="5"></textarea>
+						</p>
                         <br>
-                        <input type="submit" class="flat-button" value="Submit">
+						<button id="submitBtn" class="flat-button" type="submit" name="submitButton">Submit</button>
                     </div>
                 </div>
             </form>

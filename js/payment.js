@@ -38,7 +38,6 @@ $(document).ready(function() {
         var obj = JSON.parse(text);
         var d = JSON.stringify(obj);
         headerStr = "";
-        if (typeof (localStorage.getItem("logged-user-id")) != 'undefined') {
          $.ajax({
                   url: "http://localhost:9000/bookings",
                   type: 'POST',
@@ -60,28 +59,7 @@ $(document).ready(function() {
                     location.href = "confirmation.html";
                   }
             });
-         } else {
-            $.ajax({
-                      url: "http://localhost:9000/bookings",
-                      type: 'POST',
-                      data: d,
-                      headers: {
-                              'Content-Type':'application/json'
-                          },
-                      contentType: "application/json; charset=utf-8",
 
-                      dataType : 'json',
-                      success: function(result) {
-                        localStorage.setItem("booking_id", result.booking_id);
-                        location.href = "confirmation.html";
-                       // booking_id" : "56d7d64f91d5d493c193cbe0
-                      },
-                      error: function(result) {
-                        localStorage.setItem("booking_id","");
-                        location.href = "confirmation.html";
-                      }
-                });
-         }
 
       });
 });

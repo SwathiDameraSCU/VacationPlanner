@@ -73,9 +73,9 @@ function createTravellersForm() {
         firstName.setAttribute('type',"text");
         firstName.setAttribute('name',"firstName");
         firstName.setAttribute('class',"firstName");
-//$('#firstName').prop('required',true);
-        //firstName.setAttribute("required","");
-        //firstName.required = true;
+        $('#firstName').prop('required',true);
+        firstName.setAttribute("required","");
+        firstName.required = true;
 
         firstNameDiv.appendChild(firstNameLbl);
         firstNameDiv.appendChild(firstName);
@@ -256,7 +256,7 @@ function createTravellersForm() {
     }
     //document.getElementById('payment-form').appendChild(f);
 //    if (i == totalNo) {
-//        //$("input").prop('required',true);
+//        $("input").prop('required',true);
 //        $(".firstName").prop('required',true);
 //        $(".lastName").prop('required',true);
 //    }
@@ -271,10 +271,10 @@ $( window ).load(function() {
   // Run code
   console.log("inside load");
   //$("input").prop('required',true);
-   $(".firstName").prop('required',true);
-   $(".lastName").prop('required',true);
-   $(".gender").prop('required',true);
-
+//   $(".firstName").attr('required',true);
+//   $(".firstName").prop('required',true);
+//   $(".lastName").prop('required',true);
+//   $(".gender").prop('required',true);
 
 });
 function getDaysForMonth(selectedMonth) {
