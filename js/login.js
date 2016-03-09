@@ -134,7 +134,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
         $("#logout").click(function(event){
             event.preventDefault;
             // Clear the username in localstorage
-            localStorage.setItem("logged-user-id","");
+            localStorage.removeItem("logged-user-id");
             // Hide the Welcome user message
             $("#logged-username-value").text("");
             $("#logged-username-value").css("display","none");
