@@ -201,26 +201,13 @@ div.custom-dropdown ul li a:hover {
      /* Newer Browsers */
      background: linear-gradient(to top,#66aea6,  #00796b);
      clear:left;
-     margin-top: 160px;
      font-size: 13px;
      text-align: left;
      font-family: "Calibri",sans-serif;
      padding-top: 15px;
      padding-left:15px;
      color: white;
-
-
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /*height: 50px;
-    background-color: #4DB6AC;
-    text-align: center;
-    color: white;
-    font-size: 12px;*/
-
-
+     width: 100%;
 }
 .footer ul.footer-nav-links {
     padding-left: 0;
@@ -358,15 +345,15 @@ html, body {height: 100%;}
 
 #wrap {
     min-height: 100%;
-    overflow:auto;
-    padding-bottom: 58px;
+    /* equal to footer height */
+    margin-bottom: -88px;
 }
-
-.footer {
-    position: relative;
-    margin-top: -58px; /* negative value of footer height */
-    height: 58px;
-    clear:both;
+#wrap:after {
+    content: "";
+    display: block;
+}
+.footer, #wrap:after {
+    height: 73px;
 }
 
 
