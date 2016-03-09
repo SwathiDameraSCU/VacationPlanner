@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/support.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -40,19 +43,22 @@
             </nav>
         </div>    
     </div>
-    <div class="col-2">
-    <nav>
-        <div id="right-nav" class="right-nav custom-dropdown">
-            <input type="checkbox" checked="false" id="button">
-            <label for="button"></label>
-            <ul class="right-nav-links">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+        <div class="col-2">
+            <div id="logged-username-value"></div>
+            <nav>
+                <div id="right-nav" class="right-nav custom-dropdown">
+                    <input type="checkbox" checked="false" id="button">
+                    <label for="button"></label>
+                    <ul class="right-nav-links">
+                        <!--<li><a id="modal_trigger">Login</a></li>-->
+                        <li id="login-li"><a id="modal_trigger" href="#modal" class="btn">Login</a></li>
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <li id="li-logout" class="displayNone"><a id="logout">Logout</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
-    </div>
     </div>
 </header>
 <section>
@@ -105,5 +111,6 @@
         <span class="grey">© 2016 All Rights Reserved</span>
     </div>
 </footer>
+<script src="js/login.js"></script>
 </body>
 </html>
