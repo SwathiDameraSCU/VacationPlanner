@@ -39,7 +39,7 @@ function selectFlight(optionIndex) {
 }
 
 function getTime(dateTime) {
-  return new Date(dateTime).toLocaleTimeString();
+  return moment(new Date(dateTime)).format('h:mm a')
 }
 
 function formatDuration(legs) {
