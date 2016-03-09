@@ -25,7 +25,12 @@ function getTravellerInfo(){
 	totalPassengers = adults +children;
 
 	// latest code
-	priceForCal = parseFloat(price.replace("USD".toUpperCase(),""));
+	//priceForCal = parseFloat(price.replace("USD".toUpperCase(),""));
+	// currency changes by Swathi
+	priceForCal = parseFloat(price.replace ( /^\D+/g, ''));
+	curr =  price.replace(/[^a-zA-Z]+/g, '');
+	$('#bookingFee').append(curr+' 0.00');
+
 	taxInfo = parseFloat(((priceForCal*18)/100).toFixed(2));
 	passengerCharge	= priceForCal-taxInfo;
 	taxInfoPerPerson = parseFloat((taxInfo/totalPassengers).toFixed(2));
@@ -36,16 +41,36 @@ function getTravellerInfo(){
 
 			for(var i=1;i<=totalPassengers;i++){
 				for(var i=1;i<=adults;i++){
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Adult </span><span id='passengerPrice' class='floatRight'> "+displZeroForDecimal(totalPricePerPassgnr)+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+displZeroForDecimal(passengerPerPersonCharge)+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+displZeroForDecimal(taxInfoPerPerson)+" </span></li></ul></div>");
 				}
 				for(var i=adults+1;i<=totalPassengers;i++){
-					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+totalPricePerPassgnr+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+passengerPerPersonCharge+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+taxInfoPerPerson+" </span></li></ul></div>");
+					$('.ulStyleTr').append("<li class='toggleClass'><a id='toggle' class='styleAnch' onclick='showOnToggle("+i+")'> Traveller "+i+":<span id='passengerType'> Child </span><span id='passengerPrice' class='floatRight'> "+displZeroForDecimal(totalPricePerPassgnr)+" </span> </a></li><div id='showOntoggleTraveller_"+i+"'><ul class='ulStyleTrCl'><li> <span> Flights </span><span id='flightamount' class='floatRight'> "+displZeroForDecimal(passengerPerPersonCharge)+" </span></li><li><span> Taxes & Fees </span><span id='taxFeeAmt' class='floatRight'> "+displZeroForDecimal(taxInfoPerPerson)+" </span></li></ul></div>");
 				}
 			}
-		document.getElementById('displayPrice').innerHTML = "$"+priceForCal;
+		document.getElementById('displayPrice').innerHTML = displZeroForDecimal(priceForCal);
 
 		for(var i=1;i<=totalPassengers;i++){
         		$('#showOntoggleTraveller_'+i).hide();
         	}
 
 	}
+
+
+//logic to display zero
+function displZeroForDecimal(num){
+	 
+	var number = num.toString();
+	var numSplit = number.split(".");
+	var decimalValue;
+	if(numSplit.length==2){
+		if(numSplit[1].length==1){
+			decimalValue = numSplit[1]+"0";
+			number = numSplit[0]+'.'+decimalValue;
+		}else{
+			number = num;
+		}	
+	}else{
+			number = num+".00";
+	}
+	return curr+" "+number;
+}
