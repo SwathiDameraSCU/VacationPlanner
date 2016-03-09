@@ -14,7 +14,8 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 }
 #modal {
     top:30px;
-    min-width:300px;
+    min-width:250px;
+    max-width:400px;
 }
 .popupContainer{
 	position:absolute;
@@ -47,7 +48,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 
 .popupBody {
     padding:20px;
-    width: 80%;
+    width: 93%;
     }
 
 
@@ -127,8 +128,8 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 }
 
 .user_login input[type=text], .user_login input[type=password], .user_register input[type=text], .user_register input[type=password] {
-  /*width: 80%;*/
-  max-width:400px;
+  width: 80%;
+  /*max-width:400px;*/
   height:30px;
     font-family: "Calibri",sans-serif;
   margin:5px 0 10px 0;
