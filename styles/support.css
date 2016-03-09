@@ -94,10 +94,6 @@ ul.noSquare li:before {
     padding-left: 10px;
 }
 
-.messageStyle *{
-		float: left;
-}
-
 .button {
     display: inline-block;
     padding: 10px 10px;
