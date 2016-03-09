@@ -205,10 +205,14 @@ div.custom-dropdown ul li a:hover {
      font-size: 13px;
      text-align: left;
      padding-top: 15px;
-     padding-left:15px;
      color: white;
      width: 100%;
 }
+
+.footer nav, .footer span {
+    padding-left:15px;
+}
+
 .footer ul.footer-nav-links {
     padding-left: 0;
 }
