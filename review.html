@@ -14,16 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 	<script src="js/moment.js"></script>
-	<style>
-		.footerStyle {
-		clear: both;
-		margin-top: -200px;
-		margin-bottom: 2px;
-		/*padding-top: 0;*/
-		position: relative;
-		width: 100%;
-		}
-	</style>
+	
 </head>
 <body onload="onLoad();getTravellerInfo();setValues();">
 <div id="wrap">
@@ -274,7 +265,10 @@
 					</ul>
 				</div>
 			</section>
-
+				<div class="searchBtnMobile">
+					<input type="button" id="cntButton" value="Continue Booking" class="flat-button" onclick="nextPage();"/>
+					<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! </span>
+				</div>
 		</section>
 	</div>
 
