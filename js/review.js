@@ -190,9 +190,7 @@ function calDuration(mins){
 }
 
 function getTime(dateTime) {
-	var d = new Date(dateTime);
-	var n = d.toLocaleTimeString();
-	return n;
+	return moment(new Date(dateTime)).format('h:mm a');
 }
 
 function getDateFormat(dateValue){
