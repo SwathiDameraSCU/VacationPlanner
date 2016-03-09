@@ -64,7 +64,11 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 
 .centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
 
-.action_btns {clear:both; overflow: hidden;}
+.action_btns {
+    clear:both;
+    overflow: hidden;
+    width: 80%;
+}
 .action_btns a {display: block;}
 
 /* User Login Form */
@@ -104,7 +108,8 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
         display: flex;
         flex-flow: column wrap;
         /*justify-content: center;*/
-        width: 33%;
+        padding-right: 5px;
+            width: 30%;
 }
 .name-label {
     /*color: #009688;*/
