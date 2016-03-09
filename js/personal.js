@@ -263,18 +263,18 @@ function createTravellersForm() {
 
 }
 $(document).ready(function() {
-    document.getElementById("firstName").required = true;
-    $("firstName").prop('required',true);
+    //document.getElementById("firstName").required = true;
+    //$("firstName").prop('required',true);
 });
 
 $( window ).load(function() {
   // Run code
   console.log("inside load");
   //$("input").prop('required',true);
-   $(".firstName").attr('required',true);
-   $(".firstName").prop('required',true);
-   $(".lastName").prop('required',true);
-   $(".gender").prop('required',true);
+//   $(".firstName").attr('required',true);
+//   $(".firstName").prop('required',true);
+//   $(".lastName").prop('required',true);
+//   $(".gender").prop('required',true);
 
 });
 function getDaysForMonth(selectedMonth) {
