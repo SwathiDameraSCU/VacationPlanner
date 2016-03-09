@@ -124,6 +124,10 @@ body {
   color: white;
 }
 
+#nav li a {
+    display: block;
+}
+
 #nav li a label:before {
     font-family: fontawesome;
     color: white;
