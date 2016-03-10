@@ -190,9 +190,10 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             // Show login
             $("#login-li").css("display","inline");
 
-            var auth2 = gapi.auth2.getAuthInstance();
+            /* For google signout */
+            /*var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
-            });
+            });*/
 
             // Navigate to home.html
              window.document.location.href = 'home.html';
