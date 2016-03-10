@@ -98,6 +98,37 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                         '}';
 
             var obj = JSON.parse(text);
+
+            var requiredFields = [
+              {
+                field: 'firstname',
+                name: 'First Name'
+              },
+              {
+                field: 'lastname',
+                name: 'Last Name'
+              },
+              {
+                field: 'username',
+                name: 'Username'
+              },
+              {
+                field: 'password',
+                name: 'Password'
+              },
+              {
+                field: 'emailId',
+                name: 'Email'
+              }
+            ];
+
+            for (var i = 0; i < requiredFields.length; i++) {
+              if (!obj[requiredFields[i].field]) {
+                $("#register-error").html(requiredFields[i].name + " is required.");
+                return;
+              }
+            }
+
             var d = JSON.stringify(obj);
              $.ajax({
                       url: "http://localhost:9000/users",
