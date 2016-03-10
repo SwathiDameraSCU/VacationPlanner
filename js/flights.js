@@ -227,4 +227,3 @@ loadAirports(function (err, airportData) {
   airports = airportData;
   autoCompleteAirportInfo("#source, #dest", airports)
 });
-

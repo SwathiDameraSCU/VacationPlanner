@@ -19,8 +19,11 @@ $(document).ready(function() {
             passengers: [],
         };
         var data=fli.flightSlices.length; // to check whether it is roundtrip or One way
+
         for (var i=0; i<data; i++) {
-            flightJSONData.flights.push(fli.flightSlices[i].legs[0]);
+            for (var j=0;j<fli.flightSlices[i].legs.length;j++){
+                    flightJSONData.flights.push(fli.flightSlices[i].legs[j]);
+            }
         }
 
         flightJSONData.passengers = localStorage.getItem("passengers");
