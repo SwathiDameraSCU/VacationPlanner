@@ -117,7 +117,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                 name: 'Password'
               },
               {
-                  field: 'confirm-password',
+                  field: 'confirmpassword',
                   name: 'Confirm Password'
                 },
               {
@@ -134,9 +134,9 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             }
 
             var password = $(".user_register").find('password').val();
-            var confirm_password = $(".user_register").find('confirm-password').val();
+            var confirm_password = $(".user_register").find('confirmpassword').val();
             if(password != confirm_password) {
-                $("#register-error").html("Passwords do not match");
+                $("#register-error").html("Passwords do not match.");
                 return;
             }
 
