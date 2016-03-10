@@ -258,29 +258,14 @@ function createTravellersForm() {
 
         document.getElementById('payment-form').appendChild(f);
     }
-    //document.getElementById('payment-form').appendChild(f);
-//    if (i == totalNo) {
-//        $("input").prop('required',true);
-//        $(".firstName").prop('required',true);
-//        $(".lastName").prop('required',true);
-//    }
-
 }
+
 $(document).ready(function() {
-    //document.getElementById("firstName").required = true;
-    //$("firstName").prop('required',true);
 });
 
 $( window ).load(function() {
-  // Run code
-  console.log("inside load");
-  //$("input").prop('required',true);
-//   $(".firstName").attr('required',true);
-//   $(".firstName").prop('required',true);
-//   $(".lastName").prop('required',true);
-//   $(".gender").prop('required',true);
-
 });
+
 function getDaysForMonth(selectedMonth) {
     return monthDaysMapping[selectedMonth];
 }
@@ -329,8 +314,7 @@ function changeNoOfDays(selectedMonth) {
         data.contacts.push({"emailId":$(".personal-div").find('.email')[0].value,
          "phonenumber":$(".personal-div").find('.tel')[0].value});
 
-		console.log(JSON.stringify(data.passengers));
-		console.log(JSON.stringify(data.contacts));
+
         event.preventDefault();
 		// If no error then pass the JSON in post method to payment.html
 		// Store in local storage

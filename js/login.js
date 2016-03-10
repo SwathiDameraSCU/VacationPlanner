@@ -29,57 +29,56 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
         $("#login-user").click(function(event){
             // Get the form fields
             event.preventDefault();
+
             var username = $(".user_login").find('#login-username').val().trim();
-            var password = $(".user_login").find('#login-password').val();
-             $.ajax({
-                      url: "http://localhost:9000/users/" + username,
-                      type: 'GET',
-                      headers: {
-                        'Content-Type':'application/json',
-                        'Authorization':'password ' + password
-                          },
-                      contentType: "application/json; charset=utf-8",
-                      dataType : 'json',
-                      //success: function(result) {
-                      success: function(result, textStatus, request){
-                      console.log(result);
-                      console.log(request);
-                     /* _id: "sumanahariharan2"
-                      emailId: "shariharan@scu.edu"
-                      firstname: "Sumana"
-                      gender: null
-                      lastname: "Hariharan"
-                      middlename: "test"
-                      password: "1234"
-                      phoneNumber: "5109363713"*/
-                      // Check whether HTTP header is 200
-                      // set the username value -  logged-username-value
-                      if (request.status == 200) { // Username and password valid
-                         // Store the username
-                         localStorage.setItem("logged-user-id",result._id);
-                         localStorage.setItem("logged-firstname",result.firstname);
-                         // Display the logged in username
-                          var logged_username = result.firstname;
-                          $("#logged-username-value").html("Hi! " + logged_username);
-                          $("#logged-username-value").css("display","inline")
-                          $("#li-logout").addClass("displayLoggedUser");
-                          $("#login-li").css("display","none");
-                          // Close the popup
-                          $("#modal").css("display","none");
-						  $("#lean_overlay").css("display","none"); // added by Swathi for greying out issue.
-                      }
-                      },
-                      error: function(result, textStatus, request){
-                      console.log(result);
-                      console.log("inside error");
-                      if (result.status == 404 ) {
-                           // username and password did not match
-                            $("#error-div").text(result.responseText);
-                            $("#error-div").val(result.responseText);
-                            $("#error-div").html(result.responseText);
-                        }
-                      }
-                });
+            var password = $(".user_login").find('#login-password').val().trim();
+            if(username == "" || password == "") {
+                $("#error-div").text("Enter username and password");
+                $("#error-div").val("Enter username and password");
+                $("#error-div").html("Enter username and password");
+            }
+            else {
+                $.ajax({
+                                      url: "http://localhost:9000/users/" + username,
+                                      type: 'GET',
+                                      headers: {
+                                        'Content-Type':'application/json',
+                                        'Authorization':'password ' + password
+                                          },
+                                      contentType: "application/json; charset=utf-8",
+                                      dataType : 'json',
+                                      //success: function(result) {
+                                      success: function(result, textStatus, request){
+                                      // Check whether HTTP header is 200
+                                      // set the username value -  logged-username-value
+                                      if (request.status == 200) { // Username and password valid
+                                         // Store the username
+                                         localStorage.setItem("logged-user-id",result._id);
+                                         localStorage.setItem("logged-firstname",result.firstname);
+                                         // Display the logged in username
+                                          var logged_username = result.firstname;
+                                          $("#logged-username-value").html("Hi! " + logged_username);
+                                          $("#logged-username-value").css("display","inline")
+                                          $("#li-logout").addClass("displayLoggedUser");
+                                          $("#login-li").css("display","none");
+                                          // Close the popup
+                                          $("#modal").css("display","none");
+                						  $("#lean_overlay").css("display","none"); // added by Swathi for greying out issue.
+                                      }
+                                      },
+                                      error: function(result, textStatus, request){
+                                      console.log(result);
+                                      console.log("inside error");
+                                      if (result.status == 404 ) {
+                                           // username and password did not match
+                                            $("#error-div").text(result.responseText);
+                                            $("#error-div").val(result.responseText);
+                                            $("#error-div").html(result.responseText);
+                                        }
+                                      }
+                                });
+            }
+
         });
 
 		// Click Handler for Register button
@@ -118,6 +117,10 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                 name: 'Password'
               },
               {
+                  field: 'confirm-password',
+                  name: 'Confirm Password'
+                },
+              {
                 field: 'emailId',
                 name: 'Email'
               }
@@ -128,6 +131,13 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                 $("#register-error").html(requiredFields[i].name + " is required.");
                 return;
               }
+            }
+
+            var password = $(".user_register").find('password').val();
+            var confirm_password = $(".user_register").find('confirm-password').val();
+            if(password != confirm_password) {
+                $("#register-error").html("Passwords do not match");
+                return;
             }
 
             var d = JSON.stringify(obj);
