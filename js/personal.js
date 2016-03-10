@@ -73,8 +73,8 @@ function createTravellersForm() {
         firstName.setAttribute('type',"text");
         firstName.setAttribute('name',"firstName");
         firstName.setAttribute('class',"firstName");
-        $('#firstName').prop('required',true);
-        firstName.setAttribute("required","");
+        //$('#firstName').prop('required',true);
+        //firstName.setAttribute("required","");
         firstName.required = true;
 
         firstNameDiv.appendChild(firstNameLbl);
@@ -110,6 +110,7 @@ function createTravellersForm() {
         lastName.setAttribute('type',"text");
         lastName.setAttribute('name',"lastName");
         lastName.setAttribute('class',"lastName");
+        lastName.required = true;
 
         lastNameDiv.appendChild(lastNameLbl);
         lastNameDiv.appendChild(lastName);
@@ -133,6 +134,7 @@ function createTravellersForm() {
         maleRadio.setAttribute('name',"gender"+i);
         maleRadio.setAttribute('class',"gender");
         maleRadio.setAttribute('value',"male");
+        maleRadio.setAttribute('checked', true);
          // Label
         var maleNameLbl = document.createElement("label"); //input element, text
         maleNameLbl.setAttribute('for',"maleRadio");
@@ -228,6 +230,7 @@ function createTravellersForm() {
             email.setAttribute('type',"email");
             email.setAttribute('name',"email");
             email.setAttribute('class',"email");
+            email.required = true;
 
             emailDiv.appendChild(emailLbl);
             emailDiv.appendChild(email);
@@ -246,6 +249,7 @@ function createTravellersForm() {
             phone.setAttribute('type',"tel");
             phone.setAttribute('name',"tel");
             phone.setAttribute('class',"tel");
+            phone.required = true;
 
             phoneDiv.appendChild(phoneLbl);
             phoneDiv.appendChild(phone);
@@ -299,7 +303,13 @@ function changeNoOfDays(selectedMonth) {
             passengers: [],
             contacts: []
         };
-
+        
+        var $personalInfoForm = $('#personal-info-form')
+        if (!$personalInfoForm[0].checkValidity()) {
+            $('<input type="submit">').hide().appendTo($personalInfoForm).click().remove();
+            return
+        }
+        
 		$.each($(".personal-div"),function(i,e){
             // TO DO - Trim it
             var genderName = "gender" + j;
