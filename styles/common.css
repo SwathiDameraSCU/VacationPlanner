@@ -73,18 +73,21 @@ body {
 }
 .col-2 {
     /*width: 40%;*/
-    width:30%;
+    width:18%;
     float:right;
     color:white;
     height: 100%
 }
 .col-mid {
     /*width: 40%;*/
-    width:15%;
+    width:20%;
     color:white;
     height: 100%;
     float:left;
     text-align:right;
+}
+#logged-username-value {
+    float:right;
 }
 .nav-div {
     height:60px;

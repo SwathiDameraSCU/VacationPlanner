@@ -154,12 +154,12 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 #li-logout.displayLoggedUser {
     display:inline;
 }
-#logged-username-value {
+/*#logged-username-value {
     float:left;
     display:block;
     height:100%;
 
-}
+}*/
 #error-div, #register-error {
     color:red;
 }
