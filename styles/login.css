@@ -167,6 +167,9 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 #error-div, #register-error {
     color:red;
 }
+.social_box.fb {
+    display: none;
+}
 /* small screens */
 @media screen and (max-width: 44em) {
     .user_login label, .user_register label {
