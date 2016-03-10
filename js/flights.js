@@ -189,8 +189,8 @@ $(document).ready(function() {
     value: false
   });
 
-  $('#source').val(getUrlParam('to') || 'Source');
-  $('#dest').val(getUrlParam('from') || 'Destination');
+  $('#source').val(getUrlParam('from') || 'Source');
+  $('#dest').val(getUrlParam('to') || 'Destination');
   $('#datepicker1').val(getUrlParam('depart'));
   $('#datepicker2').val(getUrlParam('arrive'));
   $('#rb1')[0].checked = getUrlParam('trip-type') !== 'one-way';
