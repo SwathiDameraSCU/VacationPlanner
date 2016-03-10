@@ -205,6 +205,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       updateLoggedUsername();
                       // Close the popup
                         $("#modal").css("display","none");
+                        $("#lean_overlay").css("display","none"); // added by Swathi for greying out issue.
                       /*console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
                       console.log('Name: ' + profile.getName());
                       console.log('Image URL: ' + profile.getImageUrl());
