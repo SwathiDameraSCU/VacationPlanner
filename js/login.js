@@ -66,6 +66,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                           $("#login-li").css("display","none");
                           // Close the popup
                           $("#modal").css("display","none");
+						  $("#lean_overlay").css("display","none"); // added by Swathi for greying out issue.
                       }
                       },
                       error: function(result, textStatus, request){
