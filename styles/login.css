@@ -67,9 +67,13 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 .action_btns {
     clear:both;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
 }
 .action_btns a {display: block;}
+
+.social_login > div {
+    width: 90%;
+}
 
 /* User Login Form */
 .user_login {display: none;}
@@ -163,3 +167,15 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 #error-div, #register-error {
     color:red;
 }
+/* small screens */
+@media screen and (max-width: 44em) {
+    .user_login label, .user_register label {
+        font-size:14px;
+    }
+    #register-middle-name .name-label {
+        font-size:14px;
+    }
+
+}
+
+
