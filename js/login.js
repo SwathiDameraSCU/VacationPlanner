@@ -101,11 +101,11 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
 
             var requiredFields = [
               {
-                field: 'firstname',
+                field: 'first-name',
                 name: 'First Name'
               },
               {
-                field: 'lastname',
+                field: 'last-name',
                 name: 'Last Name'
               },
               {
@@ -119,7 +119,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
               {
                   field: 'confirmpassword',
                   name: 'Confirm Password'
-                },
+              },
               {
                 field: 'emailId',
                 name: 'Email'
@@ -127,15 +127,15 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             ];
 
             for (var i = 0; i < requiredFields.length; i++) {
-              if (!obj[requiredFields[i].field]) {
+              if (!$(".user_register").find('#' + requiredFields[i].field).val()) {
                 $("#register-error").html(requiredFields[i].name + " is required.");
                 return;
               }
             }
 
-            var password = $(".user_register").find('password').val();
-            var confirm_password = $(".user_register").find('confirmpassword').val();
-            if(password != confirm_password) {
+            var password = $(".user_register").find('#password').val();
+            var confirm_password = $(".user_register").find('#confirmpassword').val();
+            if(password !== confirm_password) {
                 $("#register-error").html("Passwords do not match.");
                 return;
             }
