@@ -192,9 +192,9 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             $("#login-li").css("display","inline");
 
             /* For google signout */
-            /*var auth2 = gapi.auth2.getAuthInstance();
+            var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
-            });*/
+            });
 
             // Navigate to home.html
              window.document.location.href = 'home.html';
@@ -218,6 +218,8 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
 	})
 
 	$( window ).load(function() {
+            $(".user_login").find('#login-username').val("");
+            $(".user_login").find('#login-password').val("");
       // call to update logged in username function
         updateLoggedUsername();
     });
