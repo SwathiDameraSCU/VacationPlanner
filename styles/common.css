@@ -88,6 +88,7 @@ body {
 }
 #logged-username-value {
     float:right;
+    padding-top:17px;
 }
 .nav-div {
     height:60px;
@@ -528,5 +529,8 @@ html, body {height: 100%;}
     label:before {
         margin: 0;
         font-size: 20px;
+    }
+    #logged-username-value {
+        padding-top:7px;
     }
 }
