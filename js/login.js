@@ -153,7 +153,7 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
                       dataType : 'json',
                       success: function(result, textStatus, request){
                        if (request.status == 201) { // NEW USER CREATED
-                             localStorage.setItem("logged-user-id",user_name);
+                              localStorage.setItem("logged-user-id",user_name);
                               localStorage.setItem("logged-firstname",result.first_name);
                              // Display the logged in username
                               $("#logged-username-value").text("Hi! " + first_name);
@@ -189,9 +189,28 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             $("#li-logout").removeClass("displayLoggedUser");
             // Show login
             $("#login-li").css("display","inline");
+
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            });
+
             // Navigate to home.html
              window.document.location.href = 'home.html';
         });
+
+         function onSignIn(googleUser) {
+                      var profile = googleUser.getBasicProfile();
+                      localStorage.setItem("logged-user-id","");
+                      localStorage.setItem("logged-firstname",profile.getGivenName());
+                      updateLoggedUsername();
+                      // Close the popup
+                        $("#modal").css("display","none");
+                      /*console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                      console.log('Name: ' + profile.getName());
+                      console.log('Image URL: ' + profile.getImageUrl());
+                      console.log('Email: ' + profile.getEmail());*/
+                    }
+
 
 	})
 
@@ -210,3 +229,16 @@ $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_cl
             }
         }
     }
+
+ function onSignIn(googleUser) {
+                      var profile = googleUser.getBasicProfile();
+                      localStorage.setItem("logged-user-id","");
+                      localStorage.setItem("logged-firstname",profile.getGivenName());
+                      updateLoggedUsername();
+                      // Close the popup
+                        $("#modal").css("display","none");
+                      /*console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                      console.log('Name: ' + profile.getName());
+                      console.log('Image URL: ' + profile.getImageUrl());
+                      console.log('Email: ' + profile.getEmail());*/
+                    }
