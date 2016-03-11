@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
 	<title>Escapade101 - Vacation Planner</title>
@@ -20,9 +20,7 @@
 <body onload="onLoad();getTravellerInfo();setValues();">
 <div id="wrap">
 <header>
-	<div id="travel-alerts" class="backWhite red alert">
-		<marquee behavior="scroll" direction="left">Flights to New York are delayed due to weather conditions</marquee>
-	</div>
+	
 	<div class="bgColor">
 		<div class="header col-1">
 			<div class="nav-div">
@@ -180,7 +178,7 @@
 			<div>
 
 				<div id="div1">
-					<h1 class="styleHeading"> Review your trip </h1>
+					<h2 class="styleHeading"> Review your trip </h2>
 				</div>
 				<!--<div id="tripAmount">
                     <span> Trip Total:  </span><span id="displayPrice"> </span>
@@ -206,9 +204,9 @@
 
 		</section>
 
-		<section class="right">
-			<section class="rightDisplay">
-				<p> <h1 class="styleHeading"> Trip Summary</h1></p>
+		<section class="right"> <h2> Trip Summary </h2>
+			<section class="rightDisplay"> 
+				<!--<p> <h2 class="styleHeading"> Trip Summary</h2></p>-->
 				<div id="passPerPerson">
 	<span>
 	<span id="numberOfTickets">  </span>
@@ -274,8 +272,7 @@
 				</div>
 			</section>
 				<div class="searchBtnMobile">
-					<input type="button" id="cntButton" value="Continue Booking" class="flat-button" onclick="nextPage();"/>
-					<span id="freeCnl"> <img src="images/tick.png" alt="Tick Image"/> Free Cancellation within 24 hours of booking! </span>
+					<input type="button" id="cntButton1" value="Continue Booking" class="flat-button" onclick="nextPage();"/>
 				</div>
 		</section>
 	</div>
@@ -293,7 +290,7 @@
 				</ul>
 			</div>
 		</nav>
-		</br></br>
+		<br/><br/>
 		<span class="grey">© 2016 All Rights Reserved</span>
 	</div>
 </footer>
