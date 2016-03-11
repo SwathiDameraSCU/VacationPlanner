@@ -19,15 +19,9 @@ Else, switch to branch "master", do "git pull origin master".
 
 6. Type "run" in the terminal. After the server has started, it will show you the message "Server Started" in the terminal and will tell you the Port Number on which it is listening for HTTP Requests.
 
-7.  In your browser, you can try "http://localhost:<Port Number>/airports" and it will you give the JSON object of the airports.
+7. You can click on the home.html page an start using the website.
 
-8. Sample query for getting flight information
-	1. Round-Trip
-		http://localhost:<Port Number>/flights?origin=SFO&destination=JFK&departure-date=2016-02-14&adult-count=1&child-count=0&round-trip=true&arrival-date=2016-02-16
-
-	2. One-way
-		http://localhost:<Port Number>/flights?origin=SFO&destination=JFK&departure-date=2016-02-14&adult-count=1&child-count=0&round-trip=false
-
+8. The third party flights Api key can handle 50 requests per user per day.
 
 Steps to setup mongodb
 
