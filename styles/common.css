@@ -117,55 +117,34 @@ body {
     float: left;
 }
 
-/*#nav li:hover {
-    border-color: #4DB6AC;
-    border-bottom-style: solid;
-    background-color: #009688;
-}*/
-#nav li a input {
+#nav li input {
   display: none;
 }
 
-
-#nav li a label {
+#nav li label {
   display: inline-block;
   text-align: center;
   color: white;
 }
 
-#nav li a {
+#nav li {
     display: block;
 }
 
-#nav li a label:before {
+#nav li label:before {
     font-family: fontawesome;
     color: white;
   font-weight: normal;
 }
 
-#nav li a label[for*='1']:before { content: '\f072'; }
-#nav li a label[for*='2']:before { content: '\f1b9'; }
-#nav li a label:hover {
+#nav li label[for*='1']:before { content: '\f072'; }
+#nav li label[for*='2']:before { content: '\f1b9'; }
+#nav li label:hover {
 text-decoration: underline;
   cursor: pointer;
 }
-/*span.rentals {
-position:relative;
-}
-span.rentals:before {
-        content: '\f16b';
-}
-#nav ul.nav-links a {
-    text-decoration: none;
-    color: white;
-}
-#nav ul.nav-links a:before {
-    content: '\f16b';
-}*/
 
-
-
-#nav ul.nav-links a:hover {
+#nav ul.nav-links:hover {
     text-decoration: underline;
     color: white;
 }
@@ -192,11 +171,7 @@ div.custom-dropdown ul li {
     float: left;
     width: 15%;
 }
-/*#right-nav li:hover {
-     border-color: #4DB6AC;
-     border-bottom-style: solid;
-     background-color: #009688;
-}*/
+
 div.custom-dropdown ul li a {
     text-decoration: none;
     color: white;
